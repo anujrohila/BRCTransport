@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BRCTransportDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BRCTransportDBModelStoreContainer">
+          <EntitySet Name="tblAccountsMaster" EntityType="BRCTransportDBModel.Store.tblAccountsMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBill" EntityType="BRCTransportDBModel.Store.tblBill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBillEntry" EntityType="BRCTransportDBModel.Store.tblBillEntry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblChallan" EntityType="BRCTransportDBModel.Store.tblChallan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblChallanEntry" EntityType="BRCTransportDBModel.Store.tblChallanEntry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCompany" EntityType="BRCTransportDBModel.Store.tblCompany" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblConsignee" EntityType="BRCTransportDBModel.Store.tblConsignee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblConsignmentNote" EntityType="BRCTransportDBModel.Store.tblConsignmentNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblConsignor" EntityType="BRCTransportDBModel.Store.tblConsignor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblLogin" EntityType="BRCTransportDBModel.Store.tblLogin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMRNote" EntityType="BRCTransportDBModel.Store.tblMRNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblTransaction" EntityType="BRCTransportDBModel.Store.tblTransaction" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tblBill_tblConsignor" Association="BRCTransportDBModel.Store.FK_tblBill_tblConsignor">
+            <End Role="tblConsignor" EntitySet="tblConsignor" />
+            <End Role="tblBill" EntitySet="tblBill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblBillEntry_tblBill" Association="BRCTransportDBModel.Store.FK_tblBillEntry_tblBill">
+            <End Role="tblBill" EntitySet="tblBill" />
+            <End Role="tblBillEntry" EntitySet="tblBillEntry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblChallanEntry_tblChallan" Association="BRCTransportDBModel.Store.FK_tblChallanEntry_tblChallan">
+            <End Role="tblChallan" EntitySet="tblChallan" />
+            <End Role="tblChallanEntry" EntitySet="tblChallanEntry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsignmentNote_tblConsignee" Association="BRCTransportDBModel.Store.FK_tblConsignmentNote_tblConsignee">
+            <End Role="tblConsignee" EntitySet="tblConsignee" />
+            <End Role="tblConsignmentNote" EntitySet="tblConsignmentNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsignmentNote_tblConsignor" Association="BRCTransportDBModel.Store.FK_tblConsignmentNote_tblConsignor">
+            <End Role="tblConsignor" EntitySet="tblConsignor" />
+            <End Role="tblConsignmentNote" EntitySet="tblConsignmentNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMRNote_tblBill" Association="BRCTransportDBModel.Store.FK_tblMRNote_tblBill">
+            <End Role="tblBill" EntitySet="tblBill" />
+            <End Role="tblMRNote" EntitySet="tblMRNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTransaction_tblAccountsMaster" Association="BRCTransportDBModel.Store.FK_tblTransaction_tblAccountsMaster">
+            <End Role="tblAccountsMaster" EntitySet="tblAccountsMaster" />
+            <End Role="tblTransaction" EntitySet="tblTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAccountsMaster">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="varchar" MaxLength="100" />
+          <Property Name="AccountType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AccountNo" Type="int" />
+          <Property Name="Addrees" Type="varchar" MaxLength="500" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="OpeningBalance" Type="float" />
+          <Property Name="OpeningDate" Type="date" />
+          <Property Name="Description" Type="varbinary" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblBill">
+          <Key>
+            <PropertyRef Name="BillId" />
+          </Key>
+          <Property Name="BillId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillNo" Type="int" Nullable="false" />
+          <Property Name="BillDate" Type="date" />
+          <Property Name="PartyId" Type="int" />
+          <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentDueDate" Type="date" />
+          <Property Name="BillType" Type="varchar" MaxLength="50" />
+          <Property Name="BasicOfChargesGC" Type="varchar" MaxLength="50" />
+          <Property Name="Enclosure" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceTaxThrough" Type="varchar" MaxLength="50" />
+          <Property Name="CheckedBy" Type="varchar" MaxLength="50" />
+          <Property Name="GrandTotal" Type="int" />
+          <Property Name="ServiceTaxRegdNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblBillEntry">
+          <Key>
+            <PropertyRef Name="BillOrderId" />
+          </Key>
+          <Property Name="BillOrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillId" Type="int" />
+          <Property Name="BookingOldBrCode" Type="varchar" MaxLength="50" />
+          <Property Name="OldBillNo" Type="varchar" MaxLength="50" />
+          <Property Name="OldBillDate" Type="date" />
+          <Property Name="DestnCode" Type="varchar" MaxLength="50" />
+          <Property Name="Particulars" Type="varchar" MaxLength="500" />
+          <Property Name="ChargedWeight" Type="varchar" MaxLength="50" />
+          <Property Name="Rate" Type="varchar" MaxLength="50" />
+          <Property Name="Amount" Type="float" />
+        </EntityType>
+        <EntityType Name="tblChallan">
+          <Key>
+            <PropertyRef Name="ChallanId" />
+          </Key>
+          <Property Name="ChallanId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChallanNo" Type="int" />
+          <Property Name="ChallanDateTime" Type="date" />
+          <Property Name="VehicleNo" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleMake" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleModel" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleNoOfPointLoading" Type="varchar" MaxLength="50" />
+          <Property Name="Vehicle4NoOfPointUnLoading" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleFleetCode" Type="varchar" MaxLength="50" />
+          <Property Name="FromBrCode" Type="varchar" MaxLength="50" />
+          <Property Name="LoadedForm" Type="varchar" MaxLength="50" />
+          <Property Name="ToBrCode" Type="varchar" MaxLength="50" />
+          <Property Name="Destination" Type="varchar" MaxLength="50" />
+          <Property Name="DistanceKM" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduleDateofActual" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleEngineNo" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleChassisNo" Type="varchar" MaxLength="50" />
+          <Property Name="DriverName" Type="varchar" MaxLength="50" />
+          <Property Name="DriverMobileNo" Type="varchar" MaxLength="500" />
+          <Property Name="DriverAddress" Type="varchar" MaxLength="500" />
+          <Property Name="TaxTokenNo" Type="varchar" MaxLength="50" />
+          <Property Name="TaxTokenNoValidUpto" Type="varchar" MaxLength="50" />
+          <Property Name="TaxTokenNoIssuedFrom" Type="varchar" MaxLength="50" />
+          <Property Name="DriverLicenseNo" Type="varchar" MaxLength="50" />
+          <Property Name="LicenseIssuedFrom" Type="varchar" MaxLength="50" />
+          <Property Name="LicenseValidUpto" Type="varchar" MaxLength="50" />
+          <Property Name="RoadPermitNo" Type="varchar" MaxLength="50" />
+          <Property Name="RoadPermitValidUpto" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleOwnerName" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleOwnerMobileNo" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleOwnerPanNo" Type="varchar" MaxLength="10" />
+          <Property Name="VechicleOwnerAddress" Type="varchar" MaxLength="300" />
+          <Property Name="InsPolicyNo" Type="varchar" MaxLength="200" />
+          <Property Name="InsCoWithStn" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleEngagedByNameWithEmpCode1" Type="varchar" MaxLength="300" />
+          <Property Name="VechicleEngagedByNameWithEmpCode2" Type="varchar" MaxLength="300" />
+          <Property Name="VechicleAgentName" Type="varchar" MaxLength="100" />
+          <Property Name="VechicleMobileNo" Type="varchar" MaxLength="50" />
+          <Property Name="VechicleAgentAddress" Type="varchar" MaxLength="500" />
+          <Property Name="VechicleFinancierDetails" Type="varchar" MaxLength="200" />
+          <Property Name="BrokerLoadingAdviceNoDate" Type="varchar" MaxLength="200" />
+          <Property Name="GrandTotalPKG" Type="float" />
+          <Property Name="GrandTotalKGS" Type="float" />
+          <Property Name="MaterialUnLoadingBy" Type="varchar" MaxLength="50" />
+          <Property Name="PayableTotalPackages" Type="float" />
+          <Property Name="PayableChargedWeight" Type="float" />
+          <Property Name="PayableRatePerTon" Type="float" />
+          <Property Name="TotalLorryHire" Type="float" />
+          <Property Name="ITDSDeduction" Type="float" />
+          <Property Name="PartyLorryHire" Type="float" />
+          <Property Name="BalanceLorryHire" Type="float" />
+        </EntityType>
+        <EntityType Name="tblChallanEntry">
+          <Key>
+            <PropertyRef Name="ChallanEntryNo" />
+          </Key>
+          <Property Name="ChallanEntryNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChallanId" Type="int" />
+          <Property Name="BkgStnCode" Type="varchar" MaxLength="50" />
+          <Property Name="CNNoWithAlphaCode" Type="varchar" MaxLength="50" />
+          <Property Name="PackagesNos" Type="varchar" MaxLength="50" />
+          <Property Name="PackagesMethod" Type="varchar" MaxLength="50" />
+          <Property Name="SaidToContain" Type="varchar" MaxLength="50" />
+          <Property Name="ActualWeightKgs" Type="varchar" MaxLength="50" />
+          <Property Name="DestinationName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCompany">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="ServiceTaxRegdNo" Type="varchar" MaxLength="50" />
+          <Property Name="PolicyNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblConsignee">
+          <Key>
+            <PropertyRef Name="ConsigneeId" />
+          </Key>
+          <Property Name="ConsigneeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsigneeName" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="100" />
+          <Property Name="STNOCSTNO" Type="varchar" MaxLength="50" />
+          <Property Name="TINNOVATNO" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="CreationDate" Type="date" />
+        </EntityType>
+        <EntityType Name="tblConsignmentNote">
+          <Key>
+            <PropertyRef Name="ConsignmentId" />
+          </Key>
+          <Property Name="ConsignmentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsignmentNoteNo" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="500" />
+          <Property Name="PolicyNo" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyDate" Type="date" />
+          <Property Name="CompanyAmount" Type="float" />
+          <Property Name="ConsigneeId" Type="int" />
+          <Property Name="ConsignorId" Type="int" />
+          <Property Name="ConsigneeInvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="ConsigneeServiceTaxRegNo" Type="varchar" MaxLength="50" />
+          <Property Name="ConsignorPurchaseOrderNo" Type="varchar" MaxLength="50" />
+          <Property Name="ConsignorServiceTaxRegNo" Type="varchar" MaxLength="50" />
+          <Property Name="FromCode" Type="varchar" MaxLength="500" />
+          <Property Name="ToCode" Type="varchar" MaxLength="500" />
+          <Property Name="NoofPackages" Type="varchar" MaxLength="50" />
+          <Property Name="MethodOfPacking" Type="varchar" MaxLength="50" />
+          <Property Name="ActualWtInKGS" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryOfLoad" Type="varchar" MaxLength="50" />
+          <Property Name="Rate" Type="varchar" MaxLength="50" />
+          <Property Name="LoadType" Type="varchar" MaxLength="50" />
+          <Property Name="Distance" Type="varchar" MaxLength="50" />
+          <Property Name="KMS" Type="varchar" MaxLength="50" />
+          <Property Name="DescriptionSaidToContain" Type="varchar" MaxLength="50" />
+          <Property Name="PrivateMarketOtherIdentificaion" Type="varchar" MaxLength="50" />
+          <Property Name="BusinessType" Type="varchar" MaxLength="50" />
+          <Property Name="AdvancedPaymentMRNo" Type="varchar" MaxLength="50" />
+          <Property Name="AdvancedPaymentDate" Type="date" />
+          <Property Name="AdvancedPaymentAmount" Type="varchar" MaxLength="50" />
+          <Property Name="DimensionLength" Type="varchar" MaxLength="50" />
+          <Property Name="DimensionWidth" Type="varchar" MaxLength="50" />
+          <Property Name="DimensionHeight" Type="varchar" MaxLength="50" />
+          <Property Name="DimensionNoOfPKGS" Type="varchar" MaxLength="50" />
+          <Property Name="DimensionTotalCFTCMT" Type="varchar" MaxLength="50" />
+          <Property Name="DimensionSinglePieceWeight" Type="varchar" MaxLength="50" />
+          <Property Name="DeclarationNo" Type="varchar" MaxLength="50" />
+          <Property Name="ValidUpto" Type="varchar" MaxLength="50" />
+          <Property Name="DeclaredValueOfGoods" Type="varchar" MaxLength="50" />
+          <Property Name="BasicOfBooking" Type="varchar" MaxLength="50" />
+          <Property Name="BilledWithMs" Type="varchar" MaxLength="50" />
+          <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+          <Property Name="ToPay" Type="varchar" MaxLength="50" />
+          <Property Name="Rebooking" Type="varchar" MaxLength="50" />
+          <Property Name="MainConsignmentNo" Type="varchar" MaxLength="50" />
+          <Property Name="GoodRecievedDetails" Type="varchar" MaxLength="500" />
+          <Property Name="PanNo" Type="varchar" MaxLength="50" />
+          <Property Name="PartyCode" Type="varchar" MaxLength="50" />
+          <Property Name="ServicetaxThrough" Type="varchar" MaxLength="50" />
+          <Property Name="ValidType" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="AddressofIssuing" Type="varchar" MaxLength="500" />
+          <Property Name="ConsignmentDate" Type="date" />
+          <Property Name="CentralisedServiceTaxRegnNo" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyPhone" Type="varchar" MaxLength="200" />
+          <Property Name="Charges1" Type="varchar" MaxLength="50" />
+          <Property Name="Amount1" Type="float" />
+          <Property Name="Charges2" Type="varchar" MaxLength="50" />
+          <Property Name="Amount2" Type="float" />
+          <Property Name="Charges3" Type="varchar" MaxLength="50" />
+          <Property Name="Amount3" Type="float" />
+          <Property Name="Charges4" Type="varchar" MaxLength="50" />
+          <Property Name="Amount4" Type="float" />
+          <Property Name="Charges5" Type="varchar" MaxLength="50" />
+          <Property Name="Amount5" Type="float" />
+          <Property Name="FinalAmount" Type="float" />
+          <Property Name="ServiceTaxisPayableBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblConsignor">
+          <Key>
+            <PropertyRef Name="ConsignorId" />
+          </Key>
+          <Property Name="ConsignorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsignorName" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="100" />
+          <Property Name="STNOCSTNO" Type="varchar" MaxLength="50" />
+          <Property Name="TINNOVATNO" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="CreationDate" Type="date" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblLogin">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LoginName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblMRNote">
+          <Key>
+            <PropertyRef Name="MRId" />
+          </Key>
+          <Property Name="MRId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MrNo" Type="int" />
+          <Property Name="BillId" Type="int" />
+          <Property Name="MRDate" Type="date" />
+          <Property Name="RecievedFrom" Type="varchar" MaxLength="50" />
+          <Property Name="LocationFrom" Type="varchar" MaxLength="50" />
+          <Property Name="LocationTo" Type="varchar" MaxLength="50" />
+          <Property Name="NoofPackages" Type="varchar" MaxLength="50" />
+          <Property Name="Weight" Type="varchar" MaxLength="50" />
+          <Property Name="AmountRecieved" Type="float" />
+          <Property Name="WayOfRecieve" Type="varchar" MaxLength="50" />
+          <Property Name="Fright" Type="float" />
+          <Property Name="StCharges" Type="float" />
+          <Property Name="Hamali" Type="float" />
+          <Property Name="Other1" Type="float" />
+          <Property Name="Other2" Type="float" />
+          <Property Name="Other3" Type="float" />
+          <Property Name="Other4" Type="float" />
+          <Property Name="TotalAmount" Type="float" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="TDate" Type="date" Nullable="false" />
+          <Property Name="DrAmount" Type="float" Nullable="false" />
+          <Property Name="CrAmount" Type="float" Nullable="false" />
+          <Property Name="Recievedby" Type="varchar" MaxLength="50" />
+          <Property Name="PaidBy" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeDate" Type="date" />
+        </EntityType>
+        <Association Name="FK_tblBill_tblConsignor">
+          <End Role="tblConsignor" Type="BRCTransportDBModel.Store.tblConsignor" Multiplicity="0..1" />
+          <End Role="tblBill" Type="BRCTransportDBModel.Store.tblBill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConsignor">
+              <PropertyRef Name="ConsignorId" />
+            </Principal>
+            <Dependent Role="tblBill">
+              <PropertyRef Name="PartyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblBillEntry_tblBill">
+          <End Role="tblBill" Type="BRCTransportDBModel.Store.tblBill" Multiplicity="0..1" />
+          <End Role="tblBillEntry" Type="BRCTransportDBModel.Store.tblBillEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBill">
+              <PropertyRef Name="BillId" />
+            </Principal>
+            <Dependent Role="tblBillEntry">
+              <PropertyRef Name="BillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblChallanEntry_tblChallan">
+          <End Role="tblChallan" Type="BRCTransportDBModel.Store.tblChallan" Multiplicity="0..1" />
+          <End Role="tblChallanEntry" Type="BRCTransportDBModel.Store.tblChallanEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblChallan">
+              <PropertyRef Name="ChallanId" />
+            </Principal>
+            <Dependent Role="tblChallanEntry">
+              <PropertyRef Name="ChallanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsignmentNote_tblConsignee">
+          <End Role="tblConsignee" Type="BRCTransportDBModel.Store.tblConsignee" Multiplicity="0..1" />
+          <End Role="tblConsignmentNote" Type="BRCTransportDBModel.Store.tblConsignmentNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConsignee">
+              <PropertyRef Name="ConsigneeId" />
+            </Principal>
+            <Dependent Role="tblConsignmentNote">
+              <PropertyRef Name="ConsigneeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsignmentNote_tblConsignor">
+          <End Role="tblConsignor" Type="BRCTransportDBModel.Store.tblConsignor" Multiplicity="0..1" />
+          <End Role="tblConsignmentNote" Type="BRCTransportDBModel.Store.tblConsignmentNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConsignor">
+              <PropertyRef Name="ConsignorId" />
+            </Principal>
+            <Dependent Role="tblConsignmentNote">
+              <PropertyRef Name="ConsignorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMRNote_tblBill">
+          <End Role="tblBill" Type="BRCTransportDBModel.Store.tblBill" Multiplicity="0..1" />
+          <End Role="tblMRNote" Type="BRCTransportDBModel.Store.tblMRNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBill">
+              <PropertyRef Name="BillId" />
+            </Principal>
+            <Dependent Role="tblMRNote">
+              <PropertyRef Name="BillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTransaction_tblAccountsMaster">
+          <End Role="tblAccountsMaster" Type="BRCTransportDBModel.Store.tblAccountsMaster" Multiplicity="1" />
+          <End Role="tblTransaction" Type="BRCTransportDBModel.Store.tblTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccountsMaster">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="tblTransaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BRCTransportDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BRCTransportDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAccountsMasters" EntityType="BRCTransportDBModel.tblAccountsMaster" />
+          <EntitySet Name="tblBills" EntityType="BRCTransportDBModel.tblBill" />
+          <EntitySet Name="tblBillEntries" EntityType="BRCTransportDBModel.tblBillEntry" />
+          <EntitySet Name="tblChallans" EntityType="BRCTransportDBModel.tblChallan" />
+          <EntitySet Name="tblChallanEntries" EntityType="BRCTransportDBModel.tblChallanEntry" />
+          <EntitySet Name="tblCompanies" EntityType="BRCTransportDBModel.tblCompany" />
+          <EntitySet Name="tblConsignees" EntityType="BRCTransportDBModel.tblConsignee" />
+          <EntitySet Name="tblConsignmentNotes" EntityType="BRCTransportDBModel.tblConsignmentNote" />
+          <EntitySet Name="tblConsignors" EntityType="BRCTransportDBModel.tblConsignor" />
+          <EntitySet Name="tblLogins" EntityType="BRCTransportDBModel.tblLogin" />
+          <EntitySet Name="tblMRNotes" EntityType="BRCTransportDBModel.tblMRNote" />
+          <AssociationSet Name="FK_tblBill_tblConsignor" Association="BRCTransportDBModel.FK_tblBill_tblConsignor">
+            <End Role="tblConsignor" EntitySet="tblConsignors" />
+            <End Role="tblBill" EntitySet="tblBills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblBillEntry_tblBill" Association="BRCTransportDBModel.FK_tblBillEntry_tblBill">
+            <End Role="tblBill" EntitySet="tblBills" />
+            <End Role="tblBillEntry" EntitySet="tblBillEntries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMRNote_tblBill" Association="BRCTransportDBModel.FK_tblMRNote_tblBill">
+            <End Role="tblBill" EntitySet="tblBills" />
+            <End Role="tblMRNote" EntitySet="tblMRNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblChallanEntry_tblChallan" Association="BRCTransportDBModel.FK_tblChallanEntry_tblChallan">
+            <End Role="tblChallan" EntitySet="tblChallans" />
+            <End Role="tblChallanEntry" EntitySet="tblChallanEntries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsignmentNote_tblConsignee" Association="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignee">
+            <End Role="tblConsignee" EntitySet="tblConsignees" />
+            <End Role="tblConsignmentNote" EntitySet="tblConsignmentNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsignmentNote_tblConsignor" Association="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignor">
+            <End Role="tblConsignor" EntitySet="tblConsignors" />
+            <End Role="tblConsignmentNote" EntitySet="tblConsignmentNotes" />
+          </AssociationSet>
+          <EntitySet Name="tblTransactions" EntityType="BRCTransportDBModel.tblTransaction" />
+          <AssociationSet Name="FK_tblTransaction_tblAccountsMaster" Association="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster">
+            <End Role="tblAccountsMaster" EntitySet="tblAccountsMasters" />
+            <End Role="tblTransaction" EntitySet="tblTransactions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAccountsMaster">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Type="Int32" Name="AccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AccountName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccountType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AccountNo" />
+          <Property Type="String" Name="Addrees" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="OpeningBalance" />
+          <Property Type="DateTime" Name="OpeningDate" Precision="0" />
+          <Property Type="Binary" Name="Description" MaxLength="500" FixedLength="false" />
+          <NavigationProperty Name="tblTransactions" Relationship="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" FromRole="tblAccountsMaster" ToRole="tblTransaction" />
+        </EntityType>
+        <EntityType Name="tblBill">
+          <Key>
+            <PropertyRef Name="BillId" />
+          </Key>
+          <Property Type="Int32" Name="BillId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BillNo" Nullable="false" />
+          <Property Type="DateTime" Name="BillDate" Precision="0" />
+          <Property Type="Int32" Name="PartyId" />
+          <Property Type="String" Name="BranchCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="PaymentDueDate" Precision="0" />
+          <Property Type="String" Name="BillType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BasicOfChargesGC" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Enclosure" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServiceTaxThrough" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CheckedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="GrandTotal" />
+          <Property Type="String" Name="ServiceTaxRegdNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblConsignor" Relationship="BRCTransportDBModel.FK_tblBill_tblConsignor" FromRole="tblBill" ToRole="tblConsignor" />
+          <NavigationProperty Name="tblBillEntries" Relationship="BRCTransportDBModel.FK_tblBillEntry_tblBill" FromRole="tblBill" ToRole="tblBillEntry" />
+          <NavigationProperty Name="tblMRNotes" Relationship="BRCTransportDBModel.FK_tblMRNote_tblBill" FromRole="tblBill" ToRole="tblMRNote" />
+        </EntityType>
+        <EntityType Name="tblBillEntry">
+          <Key>
+            <PropertyRef Name="BillOrderId" />
+          </Key>
+          <Property Type="Int32" Name="BillOrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BillId" />
+          <Property Type="String" Name="BookingOldBrCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OldBillNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="OldBillDate" Precision="0" />
+          <Property Type="String" Name="DestnCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Particulars" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChargedWeight" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Rate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amount" />
+          <NavigationProperty Name="tblBill" Relationship="BRCTransportDBModel.FK_tblBillEntry_tblBill" FromRole="tblBillEntry" ToRole="tblBill" />
+        </EntityType>
+        <EntityType Name="tblChallan">
+          <Key>
+            <PropertyRef Name="ChallanId" />
+          </Key>
+          <Property Type="Int32" Name="ChallanId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ChallanNo" />
+          <Property Type="DateTime" Name="ChallanDateTime" Precision="0" />
+          <Property Type="String" Name="VehicleNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VehicleType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleMake" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VehicleModel" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VehicleNoOfPointLoading" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vehicle4NoOfPointUnLoading" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VehicleFleetCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FromBrCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LoadedForm" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ToBrCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Destination" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DistanceKM" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ScheduleDateofActual" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleEngineNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleChassisNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DriverName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DriverMobileNo" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DriverAddress" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TaxTokenNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TaxTokenNoValidUpto" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TaxTokenNoIssuedFrom" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DriverLicenseNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LicenseIssuedFrom" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LicenseValidUpto" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RoadPermitNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RoadPermitValidUpto" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleOwnerName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleOwnerMobileNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleOwnerPanNo" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleOwnerAddress" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="InsPolicyNo" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="InsCoWithStn" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleEngagedByNameWithEmpCode1" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleEngagedByNameWithEmpCode2" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleAgentName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleMobileNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleAgentAddress" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VechicleFinancierDetails" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BrokerLoadingAdviceNoDate" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="GrandTotalPKG" />
+          <Property Type="Double" Name="GrandTotalKGS" />
+          <Property Type="String" Name="MaterialUnLoadingBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="PayableTotalPackages" />
+          <Property Type="Double" Name="PayableChargedWeight" />
+          <Property Type="Double" Name="PayableRatePerTon" />
+          <Property Type="Double" Name="TotalLorryHire" />
+          <Property Type="Double" Name="ITDSDeduction" />
+          <Property Type="Double" Name="PartyLorryHire" />
+          <Property Type="Double" Name="BalanceLorryHire" />
+          <NavigationProperty Name="tblChallanEntries" Relationship="BRCTransportDBModel.FK_tblChallanEntry_tblChallan" FromRole="tblChallan" ToRole="tblChallanEntry" />
+        </EntityType>
+        <EntityType Name="tblChallanEntry">
+          <Key>
+            <PropertyRef Name="ChallanEntryNo" />
+          </Key>
+          <Property Type="Int32" Name="ChallanEntryNo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ChallanId" />
+          <Property Type="String" Name="BkgStnCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CNNoWithAlphaCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PackagesNos" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PackagesMethod" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SaidToContain" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ActualWeightKgs" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DestinationName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblChallan" Relationship="BRCTransportDBModel.FK_tblChallanEntry_tblChallan" FromRole="tblChallanEntry" ToRole="tblChallan" />
+        </EntityType>
+        <EntityType Name="tblCompany">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Type="Int32" Name="CompanyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServiceTaxRegdNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PolicyNo" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblConsignee">
+          <Key>
+            <PropertyRef Name="ConsigneeId" />
+          </Key>
+          <Property Type="Int32" Name="ConsigneeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ConsigneeName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STNOCSTNO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TINNOVATNO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="0" />
+          <NavigationProperty Name="tblConsignmentNotes" Relationship="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignee" FromRole="tblConsignee" ToRole="tblConsignmentNote" />
+        </EntityType>
+        <EntityType Name="tblConsignmentNote">
+          <Key>
+            <PropertyRef Name="ConsignmentId" />
+          </Key>
+          <Property Type="Int32" Name="ConsignmentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ConsignmentNoteNo" />
+          <Property Type="String" Name="CompanyName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PolicyNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CompanyDate" Precision="0" />
+          <Property Type="Double" Name="CompanyAmount" />
+          <Property Type="Int32" Name="ConsigneeId" />
+          <Property Type="Int32" Name="ConsignorId" />
+          <Property Type="String" Name="ConsigneeInvoiceNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ConsigneeServiceTaxRegNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ConsignorPurchaseOrderNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ConsignorServiceTaxRegNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FromCode" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ToCode" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NoofPackages" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MethodOfPacking" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ActualWtInKGS" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CategoryOfLoad" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Rate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LoadType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Distance" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KMS" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescriptionSaidToContain" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PrivateMarketOtherIdentificaion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BusinessType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AdvancedPaymentMRNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="AdvancedPaymentDate" Precision="0" />
+          <Property Type="String" Name="AdvancedPaymentAmount" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DimensionLength" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DimensionWidth" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DimensionHeight" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DimensionNoOfPKGS" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DimensionTotalCFTCMT" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DimensionSinglePieceWeight" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeclarationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValidUpto" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeclaredValueOfGoods" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BasicOfBooking" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BilledWithMs" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BranchCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ToPay" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Rebooking" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MainConsignmentNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GoodRecievedDetails" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PanNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PartyCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServicetaxThrough" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValidType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AddressofIssuing" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ConsignmentDate" Precision="0" />
+          <Property Type="String" Name="CentralisedServiceTaxRegnNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CompanyPhone" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Charges1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amount1" />
+          <Property Type="String" Name="Charges2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amount2" />
+          <Property Type="String" Name="Charges3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amount3" />
+          <Property Type="String" Name="Charges4" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amount4" />
+          <Property Type="String" Name="Charges5" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amount5" />
+          <Property Type="Double" Name="FinalAmount" />
+          <Property Type="String" Name="ServiceTaxisPayableBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblConsignee" Relationship="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignee" FromRole="tblConsignmentNote" ToRole="tblConsignee" />
+          <NavigationProperty Name="tblConsignor" Relationship="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignor" FromRole="tblConsignmentNote" ToRole="tblConsignor" />
+        </EntityType>
+        <EntityType Name="tblConsignor">
+          <Key>
+            <PropertyRef Name="ConsignorId" />
+          </Key>
+          <Property Type="Int32" Name="ConsignorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ConsignorName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STNOCSTNO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TINNOVATNO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Precision="0" />
+          <Property Type="Int32" Name="Type" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblBills" Relationship="BRCTransportDBModel.FK_tblBill_tblConsignor" FromRole="tblConsignor" ToRole="tblBill" />
+          <NavigationProperty Name="tblConsignmentNotes" Relationship="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignor" FromRole="tblConsignor" ToRole="tblConsignmentNote" />
+        </EntityType>
+        <EntityType Name="tblLogin">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Type="Int32" Name="LoginId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LoginName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblMRNote">
+          <Key>
+            <PropertyRef Name="MRId" />
+          </Key>
+          <Property Type="Int32" Name="MRId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MrNo" />
+          <Property Type="Int32" Name="BillId" />
+          <Property Type="DateTime" Name="MRDate" Precision="0" />
+          <Property Type="String" Name="RecievedFrom" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LocationFrom" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LocationTo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NoofPackages" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Weight" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="AmountRecieved" />
+          <Property Type="String" Name="WayOfRecieve" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Fright" />
+          <Property Type="Double" Name="StCharges" />
+          <Property Type="Double" Name="Hamali" />
+          <Property Type="Double" Name="Other1" />
+          <Property Type="Double" Name="Other2" />
+          <Property Type="Double" Name="Other3" />
+          <Property Type="Double" Name="Other4" />
+          <Property Type="Double" Name="TotalAmount" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <NavigationProperty Name="tblBill" Relationship="BRCTransportDBModel.FK_tblMRNote_tblBill" FromRole="tblMRNote" ToRole="tblBill" />
+        </EntityType>
+        <Association Name="FK_tblBill_tblConsignor">
+          <End Type="BRCTransportDBModel.tblConsignor" Role="tblConsignor" Multiplicity="0..1" />
+          <End Type="BRCTransportDBModel.tblBill" Role="tblBill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConsignor">
+              <PropertyRef Name="ConsignorId" />
+            </Principal>
+            <Dependent Role="tblBill">
+              <PropertyRef Name="PartyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblBillEntry_tblBill">
+          <End Type="BRCTransportDBModel.tblBill" Role="tblBill" Multiplicity="0..1" />
+          <End Type="BRCTransportDBModel.tblBillEntry" Role="tblBillEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBill">
+              <PropertyRef Name="BillId" />
+            </Principal>
+            <Dependent Role="tblBillEntry">
+              <PropertyRef Name="BillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMRNote_tblBill">
+          <End Type="BRCTransportDBModel.tblBill" Role="tblBill" Multiplicity="0..1" />
+          <End Type="BRCTransportDBModel.tblMRNote" Role="tblMRNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBill">
+              <PropertyRef Name="BillId" />
+            </Principal>
+            <Dependent Role="tblMRNote">
+              <PropertyRef Name="BillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblChallanEntry_tblChallan">
+          <End Type="BRCTransportDBModel.tblChallan" Role="tblChallan" Multiplicity="0..1" />
+          <End Type="BRCTransportDBModel.tblChallanEntry" Role="tblChallanEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblChallan">
+              <PropertyRef Name="ChallanId" />
+            </Principal>
+            <Dependent Role="tblChallanEntry">
+              <PropertyRef Name="ChallanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsignmentNote_tblConsignee">
+          <End Type="BRCTransportDBModel.tblConsignee" Role="tblConsignee" Multiplicity="0..1" />
+          <End Type="BRCTransportDBModel.tblConsignmentNote" Role="tblConsignmentNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConsignee">
+              <PropertyRef Name="ConsigneeId" />
+            </Principal>
+            <Dependent Role="tblConsignmentNote">
+              <PropertyRef Name="ConsigneeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsignmentNote_tblConsignor">
+          <End Type="BRCTransportDBModel.tblConsignor" Role="tblConsignor" Multiplicity="0..1" />
+          <End Type="BRCTransportDBModel.tblConsignmentNote" Role="tblConsignmentNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConsignor">
+              <PropertyRef Name="ConsignorId" />
+            </Principal>
+            <Dependent Role="tblConsignmentNote">
+              <PropertyRef Name="ConsignorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="DateTime" Name="TDate" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="DrAmount" Nullable="false" />
+          <Property Type="Double" Name="CrAmount" Nullable="false" />
+          <Property Type="String" Name="Recievedby" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PaidBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChequeNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ChequeDate" Precision="0" />
+          <NavigationProperty Name="tblAccountsMaster" Relationship="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" FromRole="tblTransaction" ToRole="tblAccountsMaster" />
+        </EntityType>
+        <Association Name="FK_tblTransaction_tblAccountsMaster">
+          <End Type="BRCTransportDBModel.tblAccountsMaster" Role="tblAccountsMaster" Multiplicity="1" />
+          <End Type="BRCTransportDBModel.tblTransaction" Role="tblTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccountsMaster">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="tblTransaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BRCTransportDBModelStoreContainer" CdmEntityContainer="BRCTransportDBEntities">
+          <EntitySetMapping Name="tblAccountsMasters">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblAccountsMaster">
+              <MappingFragment StoreEntitySet="tblAccountsMaster">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+                <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Addrees" ColumnName="Addrees" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBills">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblBill">
+              <MappingFragment StoreEntitySet="tblBill">
+                <ScalarProperty Name="ServiceTaxRegdNo" ColumnName="ServiceTaxRegdNo" />
+                <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+                <ScalarProperty Name="CheckedBy" ColumnName="CheckedBy" />
+                <ScalarProperty Name="ServiceTaxThrough" ColumnName="ServiceTaxThrough" />
+                <ScalarProperty Name="Enclosure" ColumnName="Enclosure" />
+                <ScalarProperty Name="BasicOfChargesGC" ColumnName="BasicOfChargesGC" />
+                <ScalarProperty Name="BillType" ColumnName="BillType" />
+                <ScalarProperty Name="PaymentDueDate" ColumnName="PaymentDueDate" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="PartyId" ColumnName="PartyId" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBillEntries">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblBillEntry">
+              <MappingFragment StoreEntitySet="tblBillEntry">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="ChargedWeight" ColumnName="ChargedWeight" />
+                <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+                <ScalarProperty Name="DestnCode" ColumnName="DestnCode" />
+                <ScalarProperty Name="OldBillDate" ColumnName="OldBillDate" />
+                <ScalarProperty Name="OldBillNo" ColumnName="OldBillNo" />
+                <ScalarProperty Name="BookingOldBrCode" ColumnName="BookingOldBrCode" />
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+                <ScalarProperty Name="BillOrderId" ColumnName="BillOrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblChallans">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblChallan">
+              <MappingFragment StoreEntitySet="tblChallan">
+                <ScalarProperty Name="BalanceLorryHire" ColumnName="BalanceLorryHire" />
+                <ScalarProperty Name="PartyLorryHire" ColumnName="PartyLorryHire" />
+                <ScalarProperty Name="ITDSDeduction" ColumnName="ITDSDeduction" />
+                <ScalarProperty Name="TotalLorryHire" ColumnName="TotalLorryHire" />
+                <ScalarProperty Name="PayableRatePerTon" ColumnName="PayableRatePerTon" />
+                <ScalarProperty Name="PayableChargedWeight" ColumnName="PayableChargedWeight" />
+                <ScalarProperty Name="PayableTotalPackages" ColumnName="PayableTotalPackages" />
+                <ScalarProperty Name="MaterialUnLoadingBy" ColumnName="MaterialUnLoadingBy" />
+                <ScalarProperty Name="GrandTotalKGS" ColumnName="GrandTotalKGS" />
+                <ScalarProperty Name="GrandTotalPKG" ColumnName="GrandTotalPKG" />
+                <ScalarProperty Name="BrokerLoadingAdviceNoDate" ColumnName="BrokerLoadingAdviceNoDate" />
+                <ScalarProperty Name="VechicleFinancierDetails" ColumnName="VechicleFinancierDetails" />
+                <ScalarProperty Name="VechicleAgentAddress" ColumnName="VechicleAgentAddress" />
+                <ScalarProperty Name="VechicleMobileNo" ColumnName="VechicleMobileNo" />
+                <ScalarProperty Name="VechicleAgentName" ColumnName="VechicleAgentName" />
+                <ScalarProperty Name="VechicleEngagedByNameWithEmpCode2" ColumnName="VechicleEngagedByNameWithEmpCode2" />
+                <ScalarProperty Name="VechicleEngagedByNameWithEmpCode1" ColumnName="VechicleEngagedByNameWithEmpCode1" />
+                <ScalarProperty Name="InsCoWithStn" ColumnName="InsCoWithStn" />
+                <ScalarProperty Name="InsPolicyNo" ColumnName="InsPolicyNo" />
+                <ScalarProperty Name="VechicleOwnerAddress" ColumnName="VechicleOwnerAddress" />
+                <ScalarProperty Name="VechicleOwnerPanNo" ColumnName="VechicleOwnerPanNo" />
+                <ScalarProperty Name="VechicleOwnerMobileNo" ColumnName="VechicleOwnerMobileNo" />
+                <ScalarProperty Name="VechicleOwnerName" ColumnName="VechicleOwnerName" />
+                <ScalarProperty Name="RoadPermitValidUpto" ColumnName="RoadPermitValidUpto" />
+                <ScalarProperty Name="RoadPermitNo" ColumnName="RoadPermitNo" />
+                <ScalarProperty Name="LicenseValidUpto" ColumnName="LicenseValidUpto" />
+                <ScalarProperty Name="LicenseIssuedFrom" ColumnName="LicenseIssuedFrom" />
+                <ScalarProperty Name="DriverLicenseNo" ColumnName="DriverLicenseNo" />
+                <ScalarProperty Name="TaxTokenNoIssuedFrom" ColumnName="TaxTokenNoIssuedFrom" />
+                <ScalarProperty Name="TaxTokenNoValidUpto" ColumnName="TaxTokenNoValidUpto" />
+                <ScalarProperty Name="TaxTokenNo" ColumnName="TaxTokenNo" />
+                <ScalarProperty Name="DriverAddress" ColumnName="DriverAddress" />
+                <ScalarProperty Name="DriverMobileNo" ColumnName="DriverMobileNo" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="VechicleChassisNo" ColumnName="VechicleChassisNo" />
+                <ScalarProperty Name="VechicleEngineNo" ColumnName="VechicleEngineNo" />
+                <ScalarProperty Name="ScheduleDateofActual" ColumnName="ScheduleDateofActual" />
+                <ScalarProperty Name="DistanceKM" ColumnName="DistanceKM" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="ToBrCode" ColumnName="ToBrCode" />
+                <ScalarProperty Name="LoadedForm" ColumnName="LoadedForm" />
+                <ScalarProperty Name="FromBrCode" ColumnName="FromBrCode" />
+                <ScalarProperty Name="VehicleFleetCode" ColumnName="VehicleFleetCode" />
+                <ScalarProperty Name="Vehicle4NoOfPointUnLoading" ColumnName="Vehicle4NoOfPointUnLoading" />
+                <ScalarProperty Name="VehicleNoOfPointLoading" ColumnName="VehicleNoOfPointLoading" />
+                <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+                <ScalarProperty Name="VechicleMake" ColumnName="VechicleMake" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
+                <ScalarProperty Name="ChallanDateTime" ColumnName="ChallanDateTime" />
+                <ScalarProperty Name="ChallanNo" ColumnName="ChallanNo" />
+                <ScalarProperty Name="ChallanId" ColumnName="ChallanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblChallanEntries">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblChallanEntry">
+              <MappingFragment StoreEntitySet="tblChallanEntry">
+                <ScalarProperty Name="DestinationName" ColumnName="DestinationName" />
+                <ScalarProperty Name="ActualWeightKgs" ColumnName="ActualWeightKgs" />
+                <ScalarProperty Name="SaidToContain" ColumnName="SaidToContain" />
+                <ScalarProperty Name="PackagesMethod" ColumnName="PackagesMethod" />
+                <ScalarProperty Name="PackagesNos" ColumnName="PackagesNos" />
+                <ScalarProperty Name="CNNoWithAlphaCode" ColumnName="CNNoWithAlphaCode" />
+                <ScalarProperty Name="BkgStnCode" ColumnName="BkgStnCode" />
+                <ScalarProperty Name="ChallanId" ColumnName="ChallanId" />
+                <ScalarProperty Name="ChallanEntryNo" ColumnName="ChallanEntryNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCompanies">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblCompany">
+              <MappingFragment StoreEntitySet="tblCompany">
+                <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+                <ScalarProperty Name="ServiceTaxRegdNo" ColumnName="ServiceTaxRegdNo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConsignees">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblConsignee">
+              <MappingFragment StoreEntitySet="tblConsignee">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TINNOVATNO" ColumnName="TINNOVATNO" />
+                <ScalarProperty Name="STNOCSTNO" ColumnName="STNOCSTNO" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
+                <ScalarProperty Name="ConsigneeId" ColumnName="ConsigneeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConsignmentNotes">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblConsignmentNote">
+              <MappingFragment StoreEntitySet="tblConsignmentNote">
+                <ScalarProperty Name="ServiceTaxisPayableBy" ColumnName="ServiceTaxisPayableBy" />
+                <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+                <ScalarProperty Name="Amount5" ColumnName="Amount5" />
+                <ScalarProperty Name="Charges5" ColumnName="Charges5" />
+                <ScalarProperty Name="Amount4" ColumnName="Amount4" />
+                <ScalarProperty Name="Charges4" ColumnName="Charges4" />
+                <ScalarProperty Name="Amount3" ColumnName="Amount3" />
+                <ScalarProperty Name="Charges3" ColumnName="Charges3" />
+                <ScalarProperty Name="Amount2" ColumnName="Amount2" />
+                <ScalarProperty Name="Charges2" ColumnName="Charges2" />
+                <ScalarProperty Name="Amount1" ColumnName="Amount1" />
+                <ScalarProperty Name="Charges1" ColumnName="Charges1" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CentralisedServiceTaxRegnNo" ColumnName="CentralisedServiceTaxRegnNo" />
+                <ScalarProperty Name="ConsignmentDate" ColumnName="ConsignmentDate" />
+                <ScalarProperty Name="AddressofIssuing" ColumnName="AddressofIssuing" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="ValidType" ColumnName="ValidType" />
+                <ScalarProperty Name="ServicetaxThrough" ColumnName="ServicetaxThrough" />
+                <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+                <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+                <ScalarProperty Name="GoodRecievedDetails" ColumnName="GoodRecievedDetails" />
+                <ScalarProperty Name="MainConsignmentNo" ColumnName="MainConsignmentNo" />
+                <ScalarProperty Name="Rebooking" ColumnName="Rebooking" />
+                <ScalarProperty Name="ToPay" ColumnName="ToPay" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="BilledWithMs" ColumnName="BilledWithMs" />
+                <ScalarProperty Name="BasicOfBooking" ColumnName="BasicOfBooking" />
+                <ScalarProperty Name="DeclaredValueOfGoods" ColumnName="DeclaredValueOfGoods" />
+                <ScalarProperty Name="ValidUpto" ColumnName="ValidUpto" />
+                <ScalarProperty Name="DeclarationNo" ColumnName="DeclarationNo" />
+                <ScalarProperty Name="DimensionSinglePieceWeight" ColumnName="DimensionSinglePieceWeight" />
+                <ScalarProperty Name="DimensionTotalCFTCMT" ColumnName="DimensionTotalCFTCMT" />
+                <ScalarProperty Name="DimensionNoOfPKGS" ColumnName="DimensionNoOfPKGS" />
+                <ScalarProperty Name="DimensionHeight" ColumnName="DimensionHeight" />
+                <ScalarProperty Name="DimensionWidth" ColumnName="DimensionWidth" />
+                <ScalarProperty Name="DimensionLength" ColumnName="DimensionLength" />
+                <ScalarProperty Name="AdvancedPaymentAmount" ColumnName="AdvancedPaymentAmount" />
+                <ScalarProperty Name="AdvancedPaymentDate" ColumnName="AdvancedPaymentDate" />
+                <ScalarProperty Name="AdvancedPaymentMRNo" ColumnName="AdvancedPaymentMRNo" />
+                <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+                <ScalarProperty Name="PrivateMarketOtherIdentificaion" ColumnName="PrivateMarketOtherIdentificaion" />
+                <ScalarProperty Name="DescriptionSaidToContain" ColumnName="DescriptionSaidToContain" />
+                <ScalarProperty Name="KMS" ColumnName="KMS" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+                <ScalarProperty Name="LoadType" ColumnName="LoadType" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="CategoryOfLoad" ColumnName="CategoryOfLoad" />
+                <ScalarProperty Name="ActualWtInKGS" ColumnName="ActualWtInKGS" />
+                <ScalarProperty Name="MethodOfPacking" ColumnName="MethodOfPacking" />
+                <ScalarProperty Name="NoofPackages" ColumnName="NoofPackages" />
+                <ScalarProperty Name="ToCode" ColumnName="ToCode" />
+                <ScalarProperty Name="FromCode" ColumnName="FromCode" />
+                <ScalarProperty Name="ConsignorServiceTaxRegNo" ColumnName="ConsignorServiceTaxRegNo" />
+                <ScalarProperty Name="ConsignorPurchaseOrderNo" ColumnName="ConsignorPurchaseOrderNo" />
+                <ScalarProperty Name="ConsigneeServiceTaxRegNo" ColumnName="ConsigneeServiceTaxRegNo" />
+                <ScalarProperty Name="ConsigneeInvoiceNo" ColumnName="ConsigneeInvoiceNo" />
+                <ScalarProperty Name="ConsignorId" ColumnName="ConsignorId" />
+                <ScalarProperty Name="ConsigneeId" ColumnName="ConsigneeId" />
+                <ScalarProperty Name="CompanyAmount" ColumnName="CompanyAmount" />
+                <ScalarProperty Name="CompanyDate" ColumnName="CompanyDate" />
+                <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ConsignmentNoteNo" ColumnName="ConsignmentNoteNo" />
+                <ScalarProperty Name="ConsignmentId" ColumnName="ConsignmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConsignors">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblConsignor">
+              <MappingFragment StoreEntitySet="tblConsignor">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TINNOVATNO" ColumnName="TINNOVATNO" />
+                <ScalarProperty Name="STNOCSTNO" ColumnName="STNOCSTNO" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ConsignorName" ColumnName="ConsignorName" />
+                <ScalarProperty Name="ConsignorId" ColumnName="ConsignorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLogins">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblLogin">
+              <MappingFragment StoreEntitySet="tblLogin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMRNotes">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblMRNote">
+              <MappingFragment StoreEntitySet="tblMRNote">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Other4" ColumnName="Other4" />
+                <ScalarProperty Name="Other3" ColumnName="Other3" />
+                <ScalarProperty Name="Other2" ColumnName="Other2" />
+                <ScalarProperty Name="Other1" ColumnName="Other1" />
+                <ScalarProperty Name="Hamali" ColumnName="Hamali" />
+                <ScalarProperty Name="StCharges" ColumnName="StCharges" />
+                <ScalarProperty Name="Fright" ColumnName="Fright" />
+                <ScalarProperty Name="WayOfRecieve" ColumnName="WayOfRecieve" />
+                <ScalarProperty Name="AmountRecieved" ColumnName="AmountRecieved" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="NoofPackages" ColumnName="NoofPackages" />
+                <ScalarProperty Name="LocationTo" ColumnName="LocationTo" />
+                <ScalarProperty Name="LocationFrom" ColumnName="LocationFrom" />
+                <ScalarProperty Name="RecievedFrom" ColumnName="RecievedFrom" />
+                <ScalarProperty Name="MRDate" ColumnName="MRDate" />
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+                <ScalarProperty Name="MrNo" ColumnName="MrNo" />
+                <ScalarProperty Name="MRId" ColumnName="MRId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTransactions">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblTransaction">
+              <MappingFragment StoreEntitySet="tblTransaction">
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PaidBy" ColumnName="PaidBy" />
+                <ScalarProperty Name="Recievedby" ColumnName="Recievedby" />
+                <ScalarProperty Name="CrAmount" ColumnName="CrAmount" />
+                <ScalarProperty Name="DrAmount" ColumnName="DrAmount" />
+                <ScalarProperty Name="TDate" ColumnName="TDate" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
