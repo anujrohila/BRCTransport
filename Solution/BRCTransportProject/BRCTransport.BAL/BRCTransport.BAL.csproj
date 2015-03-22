@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78FD20B1-453B-41ED-8F9B-E5AEF3F9D10C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BRCTransport.BAL</RootNamespace>
+    <AssemblyName>BRCTransport.BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\ConsigneeBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\ConsignorBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\CompanyBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\BillBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\ChallanBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\ConsignmentNoteBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\BillReportBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\AccountsMasterBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\MRNoteBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\TransactionBusinessLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utitlity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BRCTransport.DAL\BRCTransport.DAL.csproj">
+      <Project>{46507391-0189-4397-824c-2416f4015bdf}</Project>
+      <Name>BRCTransport.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BRCTransport.Domain\BRCTransport.Domain.csproj">
+      <Project>{2f717a83-033b-408e-a234-22a6d0f7a96b}</Project>
+      <Name>BRCTransport.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
