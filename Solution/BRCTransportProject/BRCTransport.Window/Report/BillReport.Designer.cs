@@ -43,7 +43,6 @@
             this.crystalReportViewer.ActiveViewIndex = -1;
             this.crystalReportViewer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer.CachedPageNumberPerDoc = 10;
             this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer.Location = new System.Drawing.Point(12, 54);
             this.crystalReportViewer.Name = "crystalReportViewer";
