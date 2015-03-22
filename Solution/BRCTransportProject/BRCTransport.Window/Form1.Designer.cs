@@ -49,9 +49,9 @@
             this.accountListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,15 +225,6 @@
             this.transactionListToolStripMenuItem.Text = "Transaction List";
             this.transactionListToolStripMenuItem.Click += new System.EventHandler(this.transactionListToolStripMenuItem_Click);
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 24);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(812, 436);
-            this.webBrowser1.TabIndex = 1;
-            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -245,9 +236,19 @@
             // billReportToolStripMenuItem
             // 
             this.billReportToolStripMenuItem.Name = "billReportToolStripMenuItem";
-            this.billReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.billReportToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.billReportToolStripMenuItem.Text = "Bill Report";
             this.billReportToolStripMenuItem.Click += new System.EventHandler(this.billReportToolStripMenuItem_Click);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 24);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(812, 436);
+            this.webBrowser1.TabIndex = 1;
+            this.webBrowser1.Visible = false;
             // 
             // Form1
             // 
@@ -256,6 +257,7 @@
             this.ClientSize = new System.Drawing.Size(812, 460);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";

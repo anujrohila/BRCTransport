@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BRCTransport.Window.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,17 +16,26 @@ namespace BRCTransport.Window
         public Form1()
         {
             InitializeComponent();
-            webBrowser1.Url = new Uri(CommonFucntion.ApplicationWebPath, UriKind.RelativeOrAbsolute);
+            ////webBrowser1.Url = new Uri(CommonFucntion.ApplicationWebPath, UriKind.RelativeOrAbsolute);
         }
 
         private void partyListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            webBrowser1.Url = new Uri(string.Format("{0}/Consignor/Index", CommonFucntion.ApplicationWebPath), UriKind.RelativeOrAbsolute);
+            //webBrowser1.Url = new Uri(string.Format("{0}/Consignor/Index", CommonFucntion.ApplicationWebPath), UriKind.RelativeOrAbsolute);
+            var partyList = new PartyList();
+            //partyList.MdiParent = this;
+            partyList.ShowInTaskbar = false;
+            partyList.WindowState = FormWindowState.Maximized;
+            partyList.Show();
         }
 
         private void addPartyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            webBrowser1.Url = new Uri(string.Format("{0}/Consignor/Save/0", CommonFucntion.ApplicationWebPath), UriKind.RelativeOrAbsolute);
+            //webBrowser1.Url = new Uri(string.Format("{0}/Consignor/Save/0", CommonFucntion.ApplicationWebPath), UriKind.RelativeOrAbsolute);
+            PartyList partyList = new PartyList();
+            partyList.MdiParent = this;
+            partyList.ShowInTaskbar = false;
+            partyList.Show();
         }
 
         private void allChallanToolStripMenuItem_Click(object sender, EventArgs e)

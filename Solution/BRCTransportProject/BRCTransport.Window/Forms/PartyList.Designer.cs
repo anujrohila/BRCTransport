@@ -37,6 +37,7 @@
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STNOCSTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TINNOVATNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             this.Type,
             this.Code,
             this.STNOCSTNO,
-            this.TINNOVATNO});
+            this.TINNOVATNO,
+            this.Edit});
             this.gridViewParty.Location = new System.Drawing.Point(20, 68);
             this.gridViewParty.Name = "gridViewParty";
             this.gridViewParty.Size = new System.Drawing.Size(750, 466);
@@ -115,6 +117,14 @@
             this.TINNOVATNO.HeaderText = "TINNOVATNO";
             this.TINNOVATNO.Name = "TINNOVATNO";
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
             // PartyList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +135,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PartyList";
             this.Text = "PartyList";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PartyList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParty)).EndInit();
             this.ResumeLayout(false);
@@ -143,6 +154,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn STNOCSTNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINNOVATNO;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
 
 
     }
