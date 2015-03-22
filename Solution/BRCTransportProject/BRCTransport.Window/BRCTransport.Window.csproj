@@ -67,6 +67,66 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmBillList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBillList.Designer.cs">
+      <DependentUpon>frmBillList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChallanList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChallanList.Designer.cs">
+      <DependentUpon>frmChallanList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntryBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntryBill.Designer.cs">
+      <DependentUpon>frmEntryBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntryChallan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntryChallan.Designer.cs">
+      <DependentUpon>frmEntryChallan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntryLRNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntryLRNote.Designer.cs">
+      <DependentUpon>frmEntryLRNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntryMRNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntryMRNote.Designer.cs">
+      <DependentUpon>frmEntryMRNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntryTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntryTransaction.Designer.cs">
+      <DependentUpon>frmEntryTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLRNoteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLRNoteList.Designer.cs">
+      <DependentUpon>frmLRNoteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMRNoteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMRNoteList.Designer.cs">
+      <DependentUpon>frmMRNoteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTransactionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTransactionList.Designer.cs">
+      <DependentUpon>frmTransactionList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PartyList.cs">
       <SubType>Form</SubType>
     </Compile>
