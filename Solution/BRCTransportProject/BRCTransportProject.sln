@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRCTransport.Web", "BRCTransport.Web\BRCTransport.Web.csproj", "{68E49060-CA7C-47DE-BEDD-423030483EF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRCTransport.Domain", "BRCTransport.Domain\BRCTransport.Domain.csproj", "{2F717A83-033B-408E-A234-22A6D0F7A96B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRCTransport.BAL", "BRCTransport.BAL\BRCTransport.BAL.csproj", "{78FD20B1-453B-41ED-8F9B-E5AEF3F9D10C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRCTransport.DAL", "BRCTransport.DAL\BRCTransport.DAL.csproj", "{46507391-0189-4397-824C-2416F4015BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRCTransport.Database", "BRCTransport.Database\BRCTransport.Database.csproj", "{0F3AB1CA-9681-4B51-9AF7-76CCF2880DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRCTransport.Window", "BRCTransport.Window\BRCTransport.Window.csproj", "{4EA30811-CB1D-4CAE-9DD0-7CB1BC9093DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68E49060-CA7C-47DE-BEDD-423030483EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E49060-CA7C-47DE-BEDD-423030483EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E49060-CA7C-47DE-BEDD-423030483EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E49060-CA7C-47DE-BEDD-423030483EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F717A83-033B-408E-A234-22A6D0F7A96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F717A83-033B-408E-A234-22A6D0F7A96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F717A83-033B-408E-A234-22A6D0F7A96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F717A83-033B-408E-A234-22A6D0F7A96B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78FD20B1-453B-41ED-8F9B-E5AEF3F9D10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FD20B1-453B-41ED-8F9B-E5AEF3F9D10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FD20B1-453B-41ED-8F9B-E5AEF3F9D10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FD20B1-453B-41ED-8F9B-E5AEF3F9D10C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46507391-0189-4397-824C-2416F4015BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46507391-0189-4397-824C-2416F4015BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46507391-0189-4397-824C-2416F4015BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46507391-0189-4397-824C-2416F4015BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3AB1CA-9681-4B51-9AF7-76CCF2880DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3AB1CA-9681-4B51-9AF7-76CCF2880DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3AB1CA-9681-4B51-9AF7-76CCF2880DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3AB1CA-9681-4B51-9AF7-76CCF2880DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA30811-CB1D-4CAE-9DD0-7CB1BC9093DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA30811-CB1D-4CAE-9DD0-7CB1BC9093DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA30811-CB1D-4CAE-9DD0-7CB1BC9093DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA30811-CB1D-4CAE-9DD0-7CB1BC9093DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal
