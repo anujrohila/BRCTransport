@@ -1,0 +1,92 @@
+﻿@model BRCTransport.Domain.tblTransactionDTO
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Transaction")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TransactionId)
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Save Transaction</label>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">@Html.LabelFor(model => model.AccountId)</td>
+                    <td style="width: 400px">@Html.DropDownListFor(m => m.AccountId, new SelectList(Model.Accounts, "AccountId", "AccountName"), "Select")</td>
+                    <td style="width: 400px">@Html.ValidationMessageFor(model => model.AccountId)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.TDate)</td>
+                    <td>@(Html.Telerik().DatePickerFor(m => m.TDate).InputHtmlAttributes(new { @class = "input-block-level" }))</td>
+                    <td>@Html.ValidationMessageFor(model => model.TDate)</td>
+                </tr>
+                <tr>
+                    <td style="height: 40px">@Html.LabelFor(model => model.TransactionType)</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>@Html.RadioButtonFor(model => model.TransactionType, "1", null)</td>
+                                <td style="width: 80px">&nbsp;Recieved
+                                </td>
+                                <td>@Html.RadioButtonFor(model => model.TransactionType, "2", null)</td>
+                                <td style="width: 50px">&nbsp;Paid
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>@Html.ValidationMessageFor(model => model.TransactionType)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Amount)</td>
+                    <td>@Html.TextBoxFor(model => model.Amount, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Amount)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ChequeNo)</td>
+                    <td>@Html.TextBoxFor(model => model.ChequeNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.ChequeNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ChequeDate)</td>
+                    <td>@(Html.Telerik().DatePickerFor(m => m.ChequeDate).InputHtmlAttributes(new { @class = "input-block-level" }))</td>
+                    <td>@Html.ValidationMessageFor(model => model.ChequeDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Recievedby)</td>
+                    <td>@Html.TextBoxFor(model => model.Recievedby, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Recievedby)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PaidBy)</td>
+                    <td>@Html.TextBoxFor(model => model.PaidBy, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PaidBy)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description)</td>
+                    <td>@Html.TextBoxFor(model => model.Description, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnSaveCancelButton('Transaction','Index')">Cancel</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Transaction.js"></script>

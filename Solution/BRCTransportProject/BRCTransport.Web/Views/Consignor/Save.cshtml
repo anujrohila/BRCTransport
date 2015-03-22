@@ -1,0 +1,79 @@
+﻿@model BRCTransport.Domain.tblConsignorDTO
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Consignor")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ConsignorId)
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Save Partys</label>
+            </div>
+            <div class="span12">
+                @Html.ValidationSummary()
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">
+                        <label>Party Name</label></td>
+                    <td style="width: 400px">@Html.TextBoxFor(model => model.ConsignorName, null, new { @class = "input-block-level" })</td>
+                    <td style="width: 400px">@Html.ValidationMessageFor(model => model.ConsignorName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Code)</td>
+                    <td>@Html.TextBoxFor(model => model.Code, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Code)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Type)</td>
+                    <td>@Html.DropDownListFor(m => m.Type, Model.TypeList, "Select")</td>
+                    <td>@Html.ValidationMessageFor(model => model.Type)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Address)</td>
+                    <td>@Html.TextBoxFor(model => model.Address, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Address)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PhoneNo)</td>
+                    <td>@Html.TextBoxFor(model => model.PhoneNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PhoneNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.STNOCSTNO)</td>
+                    <td>@Html.TextBoxFor(model => model.STNOCSTNO, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.STNOCSTNO)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.TINNOVATNO)</td>
+                    <td>@Html.TextBoxFor(model => model.TINNOVATNO, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.TINNOVATNO)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description)</td>
+                    <td>@Html.TextBoxFor(model => model.Description, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnSaveCancelButton('Consignor','Index')">Cancel</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Consignor.js"></script>

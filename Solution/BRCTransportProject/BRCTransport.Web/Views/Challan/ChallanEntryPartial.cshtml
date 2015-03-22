@@ -1,0 +1,61 @@
+﻿@model BRCTransport.Domain.tblChallanEntryDTO
+@using Telerik.Web.Mvc.UI
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("ChallanEntryPartial", "Challan", FormMethod.Post, new { id = "frmChallanEntryInfo", @class = "form-horizontal" }))
+{
+    @Html.HiddenFor(model => model.ChallanEntryNo)
+    @Html.HiddenFor(model => model.ChallanId)
+    @Html.HiddenFor(model => model.SrNo)
+    <section class="container ContentBackground">
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">@Html.LabelFor(model => model.BkgStnCode)</td>
+                    <td style="width: 150px">@Html.TextBoxFor(model => model.BkgStnCode, null, new { @class = "input-block-level" })</td>
+                    <td style="width: 150px">@Html.ValidationMessageFor(model => model.BkgStnCode)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.CNNoWithAlphaCode)</td>
+                    <td>@Html.TextBoxFor(model => model.CNNoWithAlphaCode, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.CNNoWithAlphaCode)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PackagesNos)</td>
+                    <td>@Html.TextBoxFor(model => model.PackagesNos, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PackagesNos)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PackagesMethod)</td>
+                    <td>@Html.TextBoxFor(model => model.PackagesMethod, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PackagesMethod)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.SaidToContain)</td>
+                    <td>@Html.TextBoxFor(model => model.SaidToContain, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.SaidToContain)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ActualWeightKgs)</td>
+                    <td>@Html.TextBoxFor(model => model.ActualWeightKgs, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.ActualWeightKgs)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.DestinationName)</td>
+                    <td>@Html.TextBoxFor(model => model.DestinationName, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.DestinationName)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-success" onclick="OnChallanEntrySave()">Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnCloseChallanEntry()">Close</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Company.js"></script>

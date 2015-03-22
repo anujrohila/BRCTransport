@@ -1,0 +1,211 @@
+﻿@model BRCTransport.Domain.tblBillDTO
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Bill")
+    
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<link href="~/Content/Styles/Bill.css" rel="stylesheet" />
+@using (Html.BeginForm("Save", "Bill", FormMethod.Post, new { id = "frmBillInfo", @class = "form-horizontal" }))
+{
+    
+    <div id="windows">
+        <div id="modelBillEntryPopup" class="modal  fade" tabindex="-1" data-focus-on="input:first" data-width="600">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="OnCloseBillEntry();">×</button>
+                <h3>Save Bill Order</h3>
+            </div>
+            <div id="modelBillEntryPopupContent" class="modal-body" style="max-height: 430px;">
+            </div>
+        </div>
+    </div>
+    <div id="hiddenFieldsSave">
+        @Html.HiddenFor(model => model.BillId)
+        @Html.HiddenFor(model => model.GrandTotal)
+    </div>
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Save Bill</label>
+            </div>
+            <div class="span12">
+                @Html.ValidationSummary()
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <table class="auto-style1" style="width: 1100px">
+                            <tr>
+                                <td class="auto-style2" style="vertical-align: top">Party Name &amp; Address :<br />
+                                    @Html.DropDownListFor(m => m.PartyId, new SelectList(Model.PartyList, "ConsignorId", "PartyNameWithCode"), "Select")<br />
+                                    <label style="margin-top: 5px">Service Tax Regd. No.</label>
+                                    @Html.TextBoxFor(model => model.ServiceTaxRegdNo)
+                                </td>
+                                <td rowspan="2">
+                                    <table class="auto-style1">
+                                        <tr>
+                                            <td class="auto-style16">Bill No</td>
+                                            <td class="auto-style5">
+                                                @Html.TextBoxFor(model => model.BillNo)
+                                            </td>
+                                            <td class="auto-style6">Branch Code</td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.BranchCode)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style16">Bill Date</td>
+                                            <td class="auto-style5">
+                                                @(Html.Telerik().DatePickerFor(m => m.BillDate).InputHtmlAttributes(new { @class = "input-block-level" }).Format(System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern))
+                                            </td>
+                                            <td class="auto-style6">Payment Due Date</td>
+                                            <td>
+                                                @(Html.Telerik().DatePickerFor(m => m.PaymentDueDate).InputHtmlAttributes(new { @class = "input-block-level" }))
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style16">Tick Bill Type</td>
+                                            <td class="auto-style5" colspan="3">
+                                                @Html.DropDownListFor(m => m.BillType, Model.BillTypeList, "Select")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" style="height: 5px"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style3" colspan="4">
+                                                @Html.TextBoxFor(model => model.BasicOfChargesGC, null, new { @style = "width: 640px;" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style4">
+                                    <label>Basic of Charges G.C Note or Contract No :</label></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style4" colspan="2">
+                                    <div class="row-fluid">
+                                        <div class="span6">
+                                            <button type="button" class="btn btn-success" onclick="OnOpenSaveBillEntry(0,0)">Add Entry</button>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid" style="margin-bottom: 10px; margin-top: 5px">
+                                        @{Html.Telerik().Grid<BRCTransport.Domain.tblBillEntryDTO>()
+                                            .Name("GridBillEntryList")
+                                            .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetBillEntrys", "Bill", new { @billId = Model.BillId }))
+                                            .Columns(columns =>
+                                            {
+                                                columns.Bound(o => o.SrNo).Width(50);
+                                                columns.Bound(o => o.BookingOldBrCode).Width(100);
+                                                columns.Bound(o => o.OldBillNo).Width(80);
+                                                columns.Bound(o => o.OldBillDate).Width(80);
+                                                columns.Bound(o => o.DestnCode).Width(80);
+                                                columns.Bound(o => o.Particulars).Width(150);
+                                                columns.Bound(o => o.ChargedWeight).Width(80);
+                                                columns.Bound(o => o.Rate).Width(80);
+                                                columns.Bound(o => o.Amount).Width(80);
+                                                columns.Bound(column => column.BillOrderId)
+                                                                                .Filterable(false)
+                                                                                .Sortable(false)
+                                                                                .Groupable(false)
+                                                                                .Width(50)
+                                                                                .Title(String.Empty)
+                                                                                .ClientTemplate("<center><a class = 'btn btn-info' onClick='OnOpenSaveBillEntry(<#= SrNo #>,<#= BillOrderId #>)'>Edit</a></center>");
+                                                columns.Bound(column => column.BillOrderId)
+                                                                              .Filterable(false)
+                                                                              .Sortable(false)
+                                                                              .Groupable(false)
+                                                                              .Width(50)
+                                                                              .Title(String.Empty)
+                                                                              .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteBillEntry(<#= SrNo #>,<#= BillOrderId #>)'>Delete</a></center>");
+
+                                            })
+                                            .Pageable(paging => paging.PageSize(4).Enabled(true).Style(GridPagerStyles.NextPreviousAndNumeric).Position(GridPagerPosition.Bottom))
+                                            .ClientEvents(e => e.OnDataBound("OnBillDataBound"))
+                                            .Render();
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style4" colspan="2">
+                                    <table class="auto-style1">
+                                        <tr>
+                                            <td class="auto-style15"></td>
+                                            <td class="auto-style8"></td>
+                                            <td class="auto-style9"></td>
+                                            <td class="auto-style11">Grand Total : <span id="spanGrandTotal"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style15">Enclosure :</td>
+                                            <td class="auto-style8">
+                                                @Html.TextBoxFor(model => model.Enclosure)
+                                            </td>
+                                            <td class="auto-style9">Service Tax Through : </td>
+                                            <td class="auto-style11">
+                                                @Html.DropDownListFor(m => m.ServiceTaxThrough, Model.ServiceTaxThroughList, "Select")
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style4" colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style13">Our Centralised Service Tax Regd. No.</td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.ServiceTaxThrough)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style4" colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style14">Checked By :</td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.CheckedBy)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="PageTitleHeading"></label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success" @*onclick="OnBillSave()"*@>Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnSaveCancelButton('Bill','Index')">Cancel</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Bill.js"></script>
+

@@ -1,0 +1,52 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Company List";
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Company")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<section class="title">
+</section>
+<section class="container ContentBackground">
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="PageTitleHeading">Company List</label>
+        </div>
+    </div>
+    <div class="row-fluid" style="padding-top: 20px;">
+        <div class="span6">
+            <h4>@Html.ActionLink("Add Company", "Save", new { id = 0 }, new { @class = "btn btn-info" })</h4>
+        </div>
+    </div>
+    <div class="row-fluid" style="min-height: 300px">
+        @{Html.Telerik().Grid<BRCTransport.Domain.tblCompanyDTO>()
+                .Name("GridCompany")
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetCompany", "Company"))
+                .Columns(columns =>
+                {
+                    columns.Bound(o => o.CompanyName).Width(150);
+                    columns.Bound(o => o.PhoneNo).Width(150);
+                    columns.Bound(o => o.ServiceTaxRegdNo).Width(150);
+                    columns.Bound(o => o.PolicyNo).Width(150);
+                    columns.Bound(column => column.CompanyId)
+                                                    .Filterable(false)
+                                                    .Sortable(false)
+                                                    .Groupable(false)
+                                                    .Width(50)
+                                                    .Title(String.Empty)
+                                                    .ClientTemplate("<center><a class = 'btn btn-info' href=" + Url.Action("Save", new { id = "<#= CompanyId #>" }) + ">Edit</a></center>");
+                    columns.Bound(column => column.CompanyId)
+                                                  .Filterable(false)
+                                                  .Sortable(false)
+                                                  .Groupable(false)
+                                                  .Width(50)
+                                                  .Title(String.Empty)
+                                                  .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteCompany(<#= CompanyId #>)'>Delete</a></center>");
+
+                })
+                .Render();
+        }
+    </div>
+</section>
+<script src="~/Content/Scripts/Company.js"></script>

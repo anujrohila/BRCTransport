@@ -1,0 +1,68 @@
+﻿@model BRCTransport.Web.ReportBillPartyWiseSearch
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Report")
+    @Html.HiddenFor(hidden => hidden.StartDate)
+    @Html.HiddenFor(hidden => hidden.EndDate)
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground" style="min-height: 430px">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Party Report</label>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">Party Name</td>
+                    <td style="width: 200px">Start Date</td>
+                    <td style="width: 200px">End Date</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.DropDownListFor(m => m.PartyId, new SelectList(Model.PartyList, "ConsignorId", "PartyNameWithCode"))</td>
+                    <td>@Html.TextBoxFor(model => model.StartDate, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.TextBoxFor(model => model.EndDate, null, new { @class = "input-block-level" })</td>
+                    <td>
+                        <button type="submit" class="btn btn-success">Search</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        @if (Model.IsSearchClick == true)
+                        {
+                            @Html.ActionLink("Downlaod PDF", "DownloadReport", new
+                                                                            {
+                                                                                countryId = Model.PartyId,
+                                                                                startDate = Model.StartDate,
+                                                                                endDate = Model.EndDate,
+                                                                                format = "pdf"
+                                                                            }, new { @class = "btn btn-info" })
+
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        @if (Model.IsSearchClick == true)
+                        {
+                            <hr />
+                            <img src="@Url.Action("GenerateAndDisplayReport", "Report", new { countryId = Model.PartyId, startDate = Model.StartDate, endDate = Model.EndDate, format = "pdf" })"   />
+                            <hr />
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+
+
+

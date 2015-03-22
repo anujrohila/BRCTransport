@@ -1,0 +1,92 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Bill List";
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Bill")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<section class="title">
+</section>
+<section class="container ContentBackground">
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="PageTitleHeading">Bill List</label>
+        </div>
+    </div>
+    <div class="row-fluid" style="padding-top: 20px;">
+        <div class="span6">
+            <h4>@Html.ActionLink("Add Bill", "Save", new { id = 0 }, new { @class = "btn btn-info" })</h4>
+        </div>
+    </div>
+    <div class="row-fluid" style="min-height: 300px">
+        @(Html.Telerik().Grid<BRCTransport.Domain.tblBillDTO>()
+                .Name("GridBill")
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetBills", "Bill"))
+                .Columns(columns =>
+                        {
+                            columns.Bound(o => o.tblConsignorDTO.ConsignorName).Title("Party Name");
+                            columns.Bound(o => o.BillNo);
+                            columns.Bound(o => o.BillDate).Format("{0:" + System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern + "}");
+                            columns.Bound(o => o.BranchCode);
+                            columns.Bound(o => o.BillType);
+                            columns.Bound(o => o.PaymentDueDate).Format("{0:" + System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern + "}");
+                            columns.Bound(o => o.GrandTotal);
+                            columns.Bound(column => column.BillId)
+                                                            .Filterable(false)
+                                                            .Sortable(false)
+                                                            .Groupable(false)
+                                                            .Width(80)
+                                                            .Title(String.Empty)
+                                                            .ClientTemplate("<center><a class = 'btn btn-info' href=" + Url.Action("Save", new { id = "<#= BillId #>" }) + ">Edit</a></center>");
+                            columns.Bound(column => column.BillId)
+                                                    .Filterable(false)
+                                                    .Sortable(false)
+                                                    .Groupable(false)
+                                                    .Width(80)
+                                                    .Title(String.Empty)
+                                                    .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteBill(<#= BillId #>)'>Delete</a></center>");
+                        })
+            .Sortable()
+            .Selectable()
+            .Filterable()
+            .Scrollable(t => t.Height("auto"))
+            .Groupable(group => group.Groups(g => g.Add(eventMaster => eventMaster.tblConsignorDTO.ConsignorName)))
+            .HtmlAttributes(new { style = "width:100%;" })
+            .Resizable(resizing => resizing.Columns(true))
+            .Pageable(paging => paging.PageSize(50).Enabled(true).Style(GridPagerStyles.NextPreviousAndNumeric).Position(GridPagerPosition.Bottom))
+            .ClientEvents(events => events.OnDataBound("CollapseGroups"))
+            .DetailView(subEvents => subEvents.ClientTemplate(
+                        Html.Telerik().Grid<BRCTransport.Domain.tblMRNoteDTO>()
+                            .Name("ListMRNotesGrid_<#= BillId #>")
+                            .DataKeys(datakKey => datakKey.Add(key => key.BillId))
+                            .DataBinding(dataBinding => dataBinding.Ajax().Select("ListMRNotesAjax", "Bill", new { billId = "<#= BillId #>" }))
+                            .Columns(columns =>
+                                        {
+                                            columns.Bound(o => o.MrNo);
+                                            columns.Bound(o => o.MRDate).Format("{0:" + System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern + "}");
+                                            columns.Bound(o => o.LocationFrom).Width(80);
+                                            columns.Bound(o => o.LocationTo).Width(80);
+                                            columns.Bound(o => o.BillNo);
+                                            columns.Bound(o => o.BillDate);
+                                            columns.Bound(o => o.BillAmount);
+                                            columns.Bound(o => o.NoofPackages);
+                                            columns.Bound(o => o.Weight);
+                                            columns.Bound(o => o.AmountRecieved);
+                                        })
+                            .Sortable()
+                            .Selectable()
+                            .Filterable()
+                            .Scrollable(t => t.Height("auto"))
+                            .HtmlAttributes(new { style = "width:100%;" })
+                            .Resizable(resizing => resizing.Columns(true))
+                            .ClientEvents(events => events.OnDataBound("CollapseGroups"))
+                            .Pageable(paging => paging.PageSize(50).Enabled(true).Style(GridPagerStyles.NextPreviousAndNumeric).Position(GridPagerPosition.Bottom)
+
+                            ).ToHtmlString()
+
+                    ))
+    )
+    </div>
+</section>
+<script src="~/Content/Scripts/Bill.js"></script>

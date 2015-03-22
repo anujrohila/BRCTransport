@@ -1,0 +1,490 @@
+﻿@model BRCTransport.Domain.tblChallanDTO
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Challan")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<link href="~/Content/Styles/Challan.css" rel="stylesheet" />
+@using (Html.BeginForm("Save", "Challan", FormMethod.Post, new { id = "frmChallanInfo", @class = "form-horizontal" }))
+{
+    <div id="windows">
+        <div id="modelChallanEntryPopup" class="modal  fade" tabindex="-1" data-focus-on="input:first" data-width="600">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="OnCloseChallanEntry();">×</button>
+                <h3>Save Challan Order</h3>
+            </div>
+            <div id="modelChallanEntryPopupContent" class="modal-body" style="max-height: 430px;">
+            </div>
+        </div>
+    </div>
+    <div id="hiddenFieldsSave">
+        @Html.HiddenFor(model => model.ChallanId, new { @class = "width115" })
+    </div>
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Save Challan</label>
+            </div>
+            <div class="span12">
+                @Html.ValidationSummary()
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table style="width: 1100px">
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="width: 122px">LORRY Challen No.</td>
+                                <td style="width: 122px">Challen Date &amp; Time</td>
+                                <td style="width: 122px">Vechile No.</td>
+                                <td style="width: 122px">Vechile Type.</td>
+                                <td style="width: 122px">Make</td>
+                                <td style="width: 122px">Model</td>
+                                <td style="width: 122px">Loading</td>
+                                <td style="width: 122px">Un-Loading</td>
+                                <td style="width: 122px">Company/Attchd.<br />
+                                    Fleet Code</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(model => model.ChallanNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @(Html.Telerik().DatePickerFor(m => m.ChallanDateTime).InputHtmlAttributes(new { @class = "input-block-level" }))
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VehicleNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VehicleType, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VechicleMake, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VehicleModel, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VehicleNoOfPointLoading, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Vehicle4NoOfPointUnLoading, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VehicleFleetCode, new { @class = "width115" })
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="auto-style1">
+                            <tr>
+                                <td style="width: 183px">From Br, Code</td>
+                                <td style="width: 183px">Loded From</td>
+                                <td style="width: 183px">To Br Code</td>
+                                <td style="width: 183px">Destination</td>
+                                <td style="width: 183px">Distance(Km)</td>
+                                <td style="width: 183px">Schedule Date of Arrival</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(model => model.FromBrCode, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.LoadedForm, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.ToBrCode, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Destination, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.DistanceKM, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.ScheduleDateofActual, new { @class = "width115" })
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="auto-style1">
+                            <tr>
+                                <td style="width: 275px">Vechicle Enginee No.</td>
+                                <td style="width: 275px">Vechicle Chassis No.</td>
+                                <td style="width: 275px">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Driver&#39;s Name :
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.DriverName, new { @class = "width115" })</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width: 275px">Address</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VechicleEngineNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.VechicleChassisNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Mobile No.
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.DriverMobileNo, new { @class = "width115" })</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.DriverAddress, new { @class = "width250" })
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="auto-style1">
+                            <tr>
+                                <td style="width: 183px">Tax Token No.</td>
+                                <td style="width: 183px">Valid Upto</td>
+                                <td style="width: 183px">Issued From</td>
+                                <td style="width: 183px">Driver License No.</td>
+                                <td style="width: 183px">License Issued From</td>
+                                <td style="width: 183px">Valid Upto</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(model => model.TaxTokenNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.TaxTokenNoValidUpto, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.TaxTokenNoIssuedFrom, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.DriverLicenseNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.LicenseIssuedFrom, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.LicenseValidUpto, new { @class = "width115" })
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="auto-style1">
+                            <tr>
+                                <td style="width: 183px">Road Permit No :</td>
+                                <td style="width: 183px">Valid Upto :</td>
+                                <td style="width: 366px">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Owner&#39;s Name :
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.VechicleOwnerName, new { @class = "width115" })</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width: 366px">Addrees :</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(model => model.RoadPermitNo, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.RoadPermitValidUpto, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Mobile No :
+                                            </td>
+                                            <td style="vertical-align: top;">@Html.TextBoxFor(model => model.VechicleOwnerMobileNo, new { @class = "width115" })</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td rowspan="3">
+                                    @Html.TextAreaFor(model => model.VechicleOwnerAddress, new { @class = "width350", @rows = "3" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1" colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Ins. Policy No:
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.InsPolicyNo, new { @class = "width115" })</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td class="auto-style1">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">PAN No :
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleOwnerPanNo, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Ins. Co. with Stn:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.InsCoWithStn, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Agnet Name :
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleAgentName, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Engaged By Name :
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleEngagedByNameWithEmpCode1, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Mobile No :
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleMobileNo, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Address:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleAgentAddress, new { @class = "width200" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Engaged By Name :
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleEngagedByNameWithEmpCode2, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Vechicle Financier
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.VechicleFinancierDetails, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 110px">Loading Advise No:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(model => model.BrokerLoadingAdviceNoDate, new { @class = "width115" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <button type="button" class="btn btn-success" onclick="OnOpenSaveChallanEntry(0,0)">Add Entry</button>
+                            </div>
+                        </div>
+                        <div class="row-fluid" style="margin-bottom: 10px; margin-top: 5px">
+                            @{Html.Telerik().Grid<BRCTransport.Domain.tblChallanEntryDTO>()
+                                            .Name("GridChallanEntryList")
+                                            .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetChallanEntrys", "Challan", new { @ChallanId = Model.ChallanId }))
+                                            .Columns(columns =>
+                                            {
+                                                columns.Bound(o => o.SrNo).Width(50);
+                                                columns.Bound(o => o.BkgStnCode).Width(100);
+                                                columns.Bound(o => o.CNNoWithAlphaCode).Width(80);
+                                                columns.Bound(o => o.PackagesMethod).Width(80);
+                                                columns.Bound(o => o.SaidToContain).Width(80);
+                                                columns.Bound(o => o.ActualWeightKgs).Width(150);
+                                                columns.Bound(o => o.DestinationName).Width(80);
+                                                columns.Bound(column => column.ChallanEntryNo)
+                                                                                .Filterable(false)
+                                                                                .Sortable(false)
+                                                                                .Groupable(false)
+                                                                                .Width(50)
+                                                                                .Title(String.Empty)
+                                                                                .ClientTemplate("<center><a class = 'btn btn-info' onClick='OnOpenSaveChallanEntry(<#= SrNo #>,<#= ChallanEntryNo #>)'>Edit</a></center>");
+                                                columns.Bound(column => column.ChallanEntryNo)
+                                                                              .Filterable(false)
+                                                                              .Sortable(false)
+                                                                              .Groupable(false)
+                                                                              .Width(50)
+                                                                              .Title(String.Empty)
+                                                                              .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteChallanEntry(<#= SrNo #>,<#= ChallanEntryNo #>)'>Delete</a></center>");
+
+                                            })
+                                            .Pageable(paging => paging.PageSize(4).Enabled(true).Style(GridPagerStyles.NextPreviousAndNumeric).Position(GridPagerPosition.Bottom))
+                                            .Render();
+                            }
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="width: 250px">1. CN No. 2. Material un-Loading By
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.MaterialUnLoadingBy, new { @class = "width250" })
+                                </td>
+                                <td style="padding-left: 20px">PARTY
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 600px">
+                            <tr>
+                                <td style="width: 150px">Total Packages No.</td>
+                                <td style="width: 150px">Charged Weight Kgs.</td>
+                                <td style="width: 150px">Rate Per Ton</td>
+                                <td style="width: 150px"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(model => model.PayableTotalPackages, new { @class = "width115" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.PayableChargedWeight, new { @class = "width115", @onkeydown = "CalculateChallanRatePerTon(event)" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.PayableRatePerTon, new { @class = "width115", @disabled = "disabled" })
+                                </td>
+                                <td>Amount</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 600px">
+                            <tr>
+                                <td style="width: 450px">Total Lorry Hire (if Included Challen No.)</td>
+                                <td style="width: 150px">
+                                    @Html.TextBoxFor(model => model.TotalLorryHire, new { @class = "width115", @onkeydown = "CalculateChallanRatePerTon(event)" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style2">ITDC - DEDUCTION</td>
+                                <td class="auto-style2">
+                                    @Html.TextBoxFor(model => model.ITDSDeduction, new { @class = "width115", @onkeydown = "CalculateChallanRatePerTon(event)" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PART Lorry HIRE</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.PartyLorryHire, new { @class = "width115", @onkeydown = "CalculateChallanRatePerTon(event)" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Balance Lorry HIRE</td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.BalanceLorryHire, new { @class = "width115", @disabled = "disabled" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="PageTitleHeading"></label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success" @*onclick="OnChallanSave()"*@>Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnSaveCancelButton('Challan','Index')">Cancel</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Challan.js"></script>

@@ -1,0 +1,62 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Party List";
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Consignor")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<section class="title">
+</section>
+<section id="about-us" class="container ContentBackground">
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="PageTitleHeading">Party List</label>
+        </div>
+    </div>
+    <div class="row-fluid" style="padding-top: 20px;">
+        <div class="span6">
+            <h4>@Html.ActionLink("Add Party", "Save", new { id = 0 }, new { @class = "btn btn-info" })</h4>
+        </div>
+    </div>
+    <div class="row-fluid" style="min-height: 300px">
+        @{Html.Telerik().Grid<BRCTransport.Domain.tblConsignorDTO>()
+                .Name("GridConsignor")
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetConsignor", "Consignor"))
+                .Columns(columns =>
+                {
+                    columns.Bound(o => o.ConsignorName).Width(200).Title("Party Name");
+                    columns.Bound(o => o.Code).Width(100);
+                    columns.Bound(o => o.PartyType).Width(100);
+                    columns.Bound(o => o.STNOCSTNO).Width(100);
+                    columns.Bound(o => o.TINNOVATNO).Width(100);
+                    columns.Bound(column => column.ConsignorId)
+                                                    .Filterable(false)
+                                                    .Sortable(false)
+                                                    .Groupable(false)
+                                                    .Width(50)
+                                                    .Title(String.Empty)
+                                                    .ClientTemplate("<center><a class = 'btn btn-info' href=" + Url.Action("Save", new { id = "<#= ConsignorId #>" }) + ">Edit</a></center>");
+                    columns.Bound(column => column.ConsignorId)
+                                                  .Filterable(false)
+                                                  .Sortable(false)
+                                                  .Groupable(false)
+                                                  .Width(50)
+                                                  .Title(String.Empty)
+                                                  .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteConsignor(<#= ConsignorId #>)'>Delete</a></center>");
+
+                })
+                .Sortable()
+                .Selectable()
+                .Filterable()
+                .Groupable(group => group.Groups(g => g.Add(eventMaster => eventMaster.PartyType)))
+                .Scrollable(t => t.Height("auto"))
+                .HtmlAttributes(new { style = "width:100%;" })
+                .Resizable(resizing => resizing.Columns(true))
+                .Pageable(paging => paging.PageSize(50).Enabled(true).Style(GridPagerStyles.NextPreviousAndNumeric).Position(GridPagerPosition.Bottom))
+                .ClientEvents(events => events.OnDataBound("CollapseGroups"))
+                .Render();
+        }
+    </div>
+</section>
+<script src="~/Content/Scripts/Consignor.js"></script>

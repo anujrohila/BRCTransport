@@ -1,0 +1,53 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Accounts List";
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "AccountMaster")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<section class="title">
+</section>
+<section class="container ContentBackground">
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="PageTitleHeading">Accounts List</label>
+        </div>
+    </div>
+    <div class="row-fluid" style="padding-top: 20px;">
+        <div class="span6">
+            <h4>@Html.ActionLink("Add AccountMaster", "Save", new { id = 0 }, new { @class = "btn btn-info" })</h4>
+        </div>
+    </div>
+    <div class="row-fluid" style="min-height: 300px">
+        @{Html.Telerik().Grid<BRCTransport.Domain.tblAccountsMasterDTO>()
+                .Name("GridAccountMaster")
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetAccountMaster", "AccountMaster"))
+                .Columns(columns =>
+                {
+                    columns.Bound(o => o.AccountName).Width(150);
+                    columns.Bound(o => o.AccountTypeName).Width(150);
+                    columns.Bound(o => o.AccountNo).Width(150);
+                    columns.Bound(o => o.OpeningDate).Width(100);
+                    columns.Bound(o => o.OpeningBalance).Width(100);
+                    columns.Bound(column => column.AccountId)
+                                                    .Filterable(false)
+                                                    .Sortable(false)
+                                                    .Groupable(false)
+                                                    .Width(50)
+                                                    .Title(String.Empty)
+                                                    .ClientTemplate("<center><a class = 'btn btn-info' href=" + Url.Action("Save", new { id = "<#= AccountId #>" }) + ">Edit</a></center>");
+                    columns.Bound(column => column.AccountId)
+                                                  .Filterable(false)
+                                                  .Sortable(false)
+                                                  .Groupable(false)
+                                                  .Width(50)
+                                                  .Title(String.Empty)
+                                                  .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteAccountsMaster(<#= AccountId #>)'>Delete</a></center>");
+
+                })
+                .Render();
+        }
+    </div>
+</section>
+<script src="~/Content/Scripts/AccountsMaster.js"></script>

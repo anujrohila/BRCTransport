@@ -1,0 +1,89 @@
+﻿@model BRCTransport.Domain.tblAccountsMasterDTO
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "AccountMaster")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.AccountId)
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Save Account</label>
+            </div>
+            <div class="span12">
+                @Html.ValidationSummary()
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">@Html.LabelFor(model => model.AccountName)</td>
+                    <td style="width: 400px">@Html.TextBoxFor(model => model.AccountName, null, new { @class = "input-block-level" })</td>
+                    <td style="width: 400px">@Html.ValidationMessageFor(model => model.AccountName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AccountType)</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td >@Html.RadioButtonFor(model => model.AccountType, "1", null)</td>
+                                <td style="width: 50px">Bank
+                                </td>
+                                <td>@Html.RadioButtonFor(model => model.AccountType, "2", null)</td>
+                                <td style="width: 50px">Cash
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>@Html.ValidationMessageFor(model => model.AccountType)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AccountNo)</td>
+                    <td>@Html.TextBoxFor(model => model.AccountNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.AccountNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Addrees)</td>
+                    <td>@Html.TextBoxFor(model => model.Addrees, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Addrees)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PhoneNo)</td>
+                    <td>@Html.TextBoxFor(model => model.PhoneNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PhoneNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.OpeningBalance)</td>
+                    <td>@Html.TextBoxFor(model => model.OpeningBalance, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.OpeningBalance)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.OpeningDate)</td>
+                    <td>@Html.TextBoxFor(model => model.OpeningDate, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.OpeningDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description)</td>
+                    <td>@Html.TextBoxFor(model => model.Description, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnSaveCancelButton('AccountMaster','Index')">Cancel</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/AccountMaster.js"></script>

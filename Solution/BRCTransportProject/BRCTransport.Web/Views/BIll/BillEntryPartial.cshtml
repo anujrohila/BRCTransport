@@ -1,0 +1,66 @@
+﻿@model BRCTransport.Domain.tblBillEntryDTO
+@using Telerik.Web.Mvc.UI
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("BillEntryPartial", "Bill", FormMethod.Post, new { id = "frmBillEntryInfo", @class = "form-horizontal" }))
+{
+    @Html.HiddenFor(model => model.BillOrderId)
+    @Html.HiddenFor(model => model.BillId)
+    @Html.HiddenFor(model => model.SrNo)
+    <section class="container ContentBackground">
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">@Html.LabelFor(model => model.BookingOldBrCode)</td>
+                    <td style="width: 150px">@Html.TextBoxFor(model => model.BookingOldBrCode, null, new { @class = "input-block-level" })</td>
+                    <td style="width: 150px">@Html.ValidationMessageFor(model => model.BookingOldBrCode)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.OldBillNo)</td>
+                    <td>@Html.TextBoxFor(model => model.OldBillNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.OldBillNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.OldBillDate)</td>
+                    <td>@Html.TextBoxFor(model => model.OldBillDate, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.OldBillDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.DestnCode)</td>
+                    <td>@Html.TextBoxFor(model => model.DestnCode, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.DestnCode)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Particulars)</td>
+                    <td>@Html.TextBoxFor(model => model.Particulars, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Particulars)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ChargedWeight)</td>
+                    <td>@Html.TextBoxFor(model => model.ChargedWeight, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.ChargedWeight)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Rate)</td>
+                    <td>@Html.TextBoxFor(model => model.Rate, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Rate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Amount)</td>
+                    <td>@Html.TextBoxFor(model => model.Amount, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Amount)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-success" onclick="OnBillEntrySave()">Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnCloseBillEntry()">Close</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Company.js"></script>

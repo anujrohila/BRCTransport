@@ -1,0 +1,51 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Consignee List";
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Consignee")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+<section class="title">
+</section>
+<section id="about-us" class="container ContentBackground">
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="PageTitleHeading">Consignee List</label>
+        </div>
+    </div>
+    <div class="row-fluid" style="padding-top: 20px;">
+        <div class="span6">
+            <h4>@Html.ActionLink("Add Consignee", "Save", new { id = 0 }, new { @class = "btn btn-info" })</h4>
+        </div>
+    </div>
+    <div class="row-fluid" style="min-height: 300px">
+        @{Html.Telerik().Grid<BRCTransport.Domain.tblConsigneeDTO>()
+                .Name("GridConsignee")
+                .DataBinding(dataBinding => dataBinding.Ajax().Select("_AjaxGetConsignee", "Consignee"))
+                .Columns(columns =>
+                {
+                    columns.Bound(o => o.ConsigneeName).Width(200);
+                    columns.Bound(o => o.STNOCSTNO).Width(200);
+                    columns.Bound(o => o.TINNOVATNO).Width(200);
+                    columns.Bound(column => column.ConsigneeId)
+                                                    .Filterable(false)
+                                                    .Sortable(false)
+                                                    .Groupable(false)
+                                                    .Width(50)
+                                                    .Title(String.Empty)
+                                                    .ClientTemplate("<center><a class = 'btn btn-info' href=" + Url.Action("Save", new { id = "<#= ConsigneeId #>" }) + ">Edit</a></center>");
+                    columns.Bound(column => column.ConsigneeId)
+                                                  .Filterable(false)
+                                                  .Sortable(false)
+                                                  .Groupable(false)
+                                                  .Width(50)
+                                                  .Title(String.Empty)
+                                                  .ClientTemplate("<center><a class='btn btn-danger' href='javascript:void(0)' onClick='OnDeleteConsignee(<#= ConsigneeId #>)'>Delete</a></center>");
+
+                })
+                .Render();
+        }
+    </div>
+</section>
+<script src="~/Content/Scripts/Consignee.js"></script>

@@ -1,0 +1,65 @@
+﻿@model BRCTransport.Domain.tblCompanyDTO
+@using Telerik.Web.Mvc.UI
+@{
+    
+}
+<div id="hiddenValues">
+    @Html.Hidden("ActiveMenuName", "Company")
+</div>
+<link href="~/Content/Styles/CommonStyle.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CompanyId)
+    <section class="title">
+    </section>
+    <section id="about-us" class="container ContentBackground">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="PageTitleHeading">Save Company</label>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <table>
+                <tr>
+                    <td style="width: 150px">@Html.LabelFor(model => model.CompanyName)</td>
+                    <td style="width: 400px">@Html.TextBoxFor(model => model.CompanyName, null, new { @class = "input-block-level" })</td>
+                    <td style="width: 400px">@Html.ValidationMessageFor(model => model.CompanyName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Address)</td>
+                    <td>@Html.TextBoxFor(model => model.Address, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Address)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PhoneNo)</td>
+                    <td>@Html.TextBoxFor(model => model.PhoneNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PhoneNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description)</td>
+                    <td>@Html.TextBoxFor(model => model.Description, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.ServiceTaxRegdNo)</td>
+                    <td>@Html.TextBoxFor(model => model.ServiceTaxRegdNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.ServiceTaxRegdNo)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PolicyNo)</td>
+                    <td>@Html.TextBoxFor(model => model.PolicyNo, null, new { @class = "input-block-level" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PolicyNo)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-info" onclick="OnSaveCancelButton('Company','Index')">Cancel</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+}
+<script src="~/Content/Scripts/Company.js"></script>
