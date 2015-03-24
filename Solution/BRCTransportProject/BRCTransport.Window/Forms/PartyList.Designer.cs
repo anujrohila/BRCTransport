@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.gridViewParty = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsignorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,27 +38,6 @@
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParty)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGreen;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(20, 46);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 3);
-            this.panel1.TabIndex = 26;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 26);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Part List";
             // 
             // gridViewParty
             // 
@@ -74,9 +51,10 @@
             this.STNOCSTNO,
             this.TINNOVATNO,
             this.Edit});
-            this.gridViewParty.Location = new System.Drawing.Point(20, 68);
+            this.gridViewParty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridViewParty.Location = new System.Drawing.Point(0, 0);
             this.gridViewParty.Name = "gridViewParty";
-            this.gridViewParty.Size = new System.Drawing.Size(750, 466);
+            this.gridViewParty.Size = new System.Drawing.Size(777, 561);
             this.gridViewParty.TabIndex = 27;
             this.gridViewParty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewParty_CellContentClick);
             // 
@@ -131,22 +109,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 561);
             this.Controls.Add(this.gridViewParty);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Name = "PartyList";
             this.Text = "PartyList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PartyList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParty)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gridViewParty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConsignorName;
