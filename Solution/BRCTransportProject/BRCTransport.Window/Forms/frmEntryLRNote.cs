@@ -81,5 +81,10 @@ namespace BRCTransport.Window.Forms
         #endregion
 
         public static int ConsignmentId { get; set; }
+
+        private void textBox52_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
