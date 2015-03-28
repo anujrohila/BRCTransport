@@ -56,7 +56,9 @@ namespace BRCTransport.Window.Forms
             if (Action == "Edit")
             {
                 ChallanEntryNo = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
-              
+                //frmchallan.ChallanEntryNo = ChallanEntryNo;
+                frmchallan.FormClosed += frmParty_FormClosed;
+                frmchallan.Show();
               
             }
 
@@ -81,7 +83,7 @@ namespace BRCTransport.Window.Forms
             }
         }
 
-        void frmEntrychallan_FormClosed(object sender, FormClosedEventArgs e)
+        void frmParty_FormClosed(object sender, FormClosedEventArgs e)
         {
             FillGridData();
         }

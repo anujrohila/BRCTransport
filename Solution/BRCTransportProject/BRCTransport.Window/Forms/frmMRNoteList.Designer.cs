@@ -39,6 +39,8 @@
             this.AmountRecieved = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WayOfRecieve = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewMr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,9 @@
             this.Weight,
             this.AmountRecieved,
             this.WayOfRecieve,
-            this.TotalAmount});
+            this.TotalAmount,
+            this.Edit,
+            this.Delete});
             this.GridViewMr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewMr.Location = new System.Drawing.Point(0, 0);
             this.GridViewMr.Name = "GridViewMr";
@@ -113,6 +117,20 @@
             this.TotalAmount.HeaderText = "TotalAmount";
             this.TotalAmount.Name = "TotalAmount";
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
             // MRNoteList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,5 +159,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AmountRecieved;
         private System.Windows.Forms.DataGridViewTextBoxColumn WayOfRecieve;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }

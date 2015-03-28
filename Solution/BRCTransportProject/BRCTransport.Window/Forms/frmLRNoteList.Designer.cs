@@ -39,6 +39,8 @@
             this.MethodOfPacking = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FinalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewLR)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,9 @@
             this.ToCode,
             this.MethodOfPacking,
             this.Distance,
-            this.FinalAmount});
+            this.FinalAmount,
+            this.Edit,
+            this.Delete});
             this.GridViewLR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewLR.Location = new System.Drawing.Point(0, 0);
             this.GridViewLR.Name = "GridViewLR";
@@ -113,6 +117,20 @@
             this.FinalAmount.HeaderText = "FinalAmount";
             this.FinalAmount.Name = "FinalAmount";
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
             // frmLRNoteList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,5 +159,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MethodOfPacking;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distance;
         private System.Windows.Forms.DataGridViewTextBoxColumn FinalAmount;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }

@@ -49,5 +49,7 @@ namespace BRCTransport.Window.Forms
         }
         
         #endregion
+
+        public int TransactionId { get; set; }
     }
 }

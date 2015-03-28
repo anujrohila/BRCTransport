@@ -217,6 +217,9 @@
     <EmbeddedResource Include="Forms\frmMRNoteList.resx">
       <DependentUpon>frmMRNoteList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTransactionList.resx">
+      <DependentUpon>frmTransactionList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartyList.resx">
       <DependentUpon>PartyList.cs</DependentUpon>
     </EmbeddedResource>

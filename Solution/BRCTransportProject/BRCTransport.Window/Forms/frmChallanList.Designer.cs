@@ -37,8 +37,8 @@
             this.SaidToContain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActualWeightKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DestinationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChallan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,13 +117,17 @@
             // 
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
-            this.Edit.Width = 50;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            this.Edit.Width = 31;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
-            this.Delete.Width = 63;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            this.Delete.Width = 44;
             // 
             // ChallanList
             // 
@@ -150,7 +154,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SaidToContain;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActualWeightKgs;
         private System.Windows.Forms.DataGridViewTextBoxColumn DestinationName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Delete;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }
