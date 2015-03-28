@@ -36,6 +36,7 @@
             this.STNOCSTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TINNOVATNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             this.Code,
             this.STNOCSTNO,
             this.TINNOVATNO,
-            this.Edit});
+            this.Edit,
+            this.Delete});
             this.gridViewParty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridViewParty.Location = new System.Drawing.Point(0, 0);
             this.gridViewParty.Name = "gridViewParty";
@@ -103,6 +105,15 @@
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForLinkValue = true;
             // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
             // PartyList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +139,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STNOCSTNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINNOVATNO;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
 
 
     }
