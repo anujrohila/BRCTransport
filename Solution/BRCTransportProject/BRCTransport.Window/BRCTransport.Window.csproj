@@ -184,6 +184,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChallanList.resx">
+      <DependentUpon>frmChallanList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmChildBill.resx">
       <DependentUpon>frmChildBill.cs</DependentUpon>
     </EmbeddedResource>
