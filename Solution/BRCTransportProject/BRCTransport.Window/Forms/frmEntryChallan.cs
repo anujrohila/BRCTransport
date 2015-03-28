@@ -29,5 +29,7 @@ namespace BRCTransport.Window.Forms
 
 
         }
+
+        public static int ChallanEntryNo { get; set; }
     }
 }

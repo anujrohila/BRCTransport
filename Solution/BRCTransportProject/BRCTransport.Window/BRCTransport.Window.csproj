@@ -211,6 +211,12 @@
     <EmbeddedResource Include="Forms\frmEntryTransaction.resx">
       <DependentUpon>frmEntryTransaction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLRNoteList.resx">
+      <DependentUpon>frmLRNoteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMRNoteList.resx">
+      <DependentUpon>frmMRNoteList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartyList.resx">
       <DependentUpon>PartyList.cs</DependentUpon>
     </EmbeddedResource>

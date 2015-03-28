@@ -17,7 +17,7 @@ namespace BRCTransport.Window.Forms
 
         private Int32 PartyId = 0;
         frmParty frmParty = new frmParty();
-
+        
         #endregion
 
         public PartyList()

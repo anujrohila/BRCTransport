@@ -16,5 +16,10 @@ namespace BRCTransport.Window.Forms
         {
             InitializeComponent();
         }
+
+        private void frmLRNoteList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
