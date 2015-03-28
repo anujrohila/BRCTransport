@@ -70,7 +70,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGreen;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(17, 39);
+            this.panel1.Location = new System.Drawing.Point(17, 38);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(390, 3);
@@ -158,11 +158,12 @@
             // 
             // txtPartyName
             // 
-            this.txtPartyName.Location = new System.Drawing.Point(102, 57);
+            this.txtPartyName.Location = new System.Drawing.Point(103, 57);
             this.txtPartyName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPartyName.Name = "txtPartyName";
             this.txtPartyName.Size = new System.Drawing.Size(270, 20);
             this.txtPartyName.TabIndex = 10;
+            this.txtPartyName.TextChanged += new System.EventHandler(this.txtPartyName_TextChanged);
             // 
             // txtCode
             // 
@@ -180,6 +181,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(270, 60);
             this.txtAddress.TabIndex = 13;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtTINNOVATNO
             // 
@@ -225,6 +227,7 @@
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(120, 21);
             this.cbType.TabIndex = 17;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // BtnSave
             // 
@@ -246,6 +249,7 @@
             this.BtnCancel.TabIndex = 19;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // label10
             // 

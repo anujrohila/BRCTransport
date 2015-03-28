@@ -16,5 +16,15 @@ namespace BRCTransport.Window.Forms
         {
             InitializeComponent();
         }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

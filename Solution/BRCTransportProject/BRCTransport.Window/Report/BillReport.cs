@@ -45,11 +45,8 @@ namespace BRCTransport.Window.Report
 
             BillReportDTO bill = new BillReportDTO();
 
-            // set the data source of the report
             myDataReport.SetDataSource(result);
 
-            // set the report source of the created “crystalReportViewer”
-            // component to the created report
             crystalReportViewer.ReportSource = myDataReport;
         }
 

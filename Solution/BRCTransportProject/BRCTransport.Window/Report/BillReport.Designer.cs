@@ -51,7 +51,7 @@
             // 
             // BtnSearch
             // 
-            this.BtnSearch.Location = new System.Drawing.Point(688, 15);
+            this.BtnSearch.Location = new System.Drawing.Point(721, 15);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(75, 23);
             this.BtnSearch.TabIndex = 13;
@@ -62,9 +62,9 @@
             // ddlEndDate
             // 
             this.ddlEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ddlEndDate.Location = new System.Drawing.Point(565, 15);
+            this.ddlEndDate.Location = new System.Drawing.Point(587, 16);
             this.ddlEndDate.Name = "ddlEndDate";
-            this.ddlEndDate.Size = new System.Drawing.Size(100, 20);
+            this.ddlEndDate.Size = new System.Drawing.Size(117, 20);
             this.ddlEndDate.TabIndex = 12;
             this.ddlEndDate.Value = new System.DateTime(2015, 1, 11, 17, 17, 18, 0);
             // 
@@ -73,14 +73,14 @@
             this.ddlStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ddlStartDate.Location = new System.Drawing.Point(393, 15);
             this.ddlStartDate.Name = "ddlStartDate";
-            this.ddlStartDate.Size = new System.Drawing.Size(100, 20);
+            this.ddlStartDate.Size = new System.Drawing.Size(115, 20);
             this.ddlStartDate.TabIndex = 11;
             this.ddlStartDate.Value = new System.DateTime(2015, 1, 11, 17, 17, 18, 0);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(510, 18);
+            this.label3.Location = new System.Drawing.Point(532, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 10;

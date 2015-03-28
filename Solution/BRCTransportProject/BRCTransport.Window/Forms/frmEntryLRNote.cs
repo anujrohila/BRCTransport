@@ -16,5 +16,45 @@ namespace BRCTransport.Window.Forms
         {
             InitializeComponent();
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmEntryLRNote_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox36_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox37_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

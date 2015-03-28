@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace BRCTransport.Window.Forms
 {
-    public partial class frmEntryChallan : Form
+    public partial class frmChildBill : Form
     {
-        public frmEntryChallan()
+
+
+        public frmChildBill()
         {
             InitializeComponent();
         }
 
-        private void frmEntryChallan_Load(object sender, EventArgs e)
+        private void frmChildBill_Load(object sender, EventArgs e)
         {
-
+           
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            var childchallan = new frmChildChallan();
-            childchallan.ShowDialog();
-
-
-        }
     }
 }

@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ErrorHanding.cs" />
+    <Compile Include="Classes\CommonClass.cs" />
     <Compile Include="Dataset\BRCReportDatasetxsd.cs">
       <DependentUpon>BRCReportDatasetxsd.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -78,6 +80,24 @@
     </Compile>
     <Compile Include="Forms\frmChallanList.Designer.cs">
       <DependentUpon>frmChallanList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChildBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChildBill.Designer.cs">
+      <DependentUpon>frmChildBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChildChallan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChildChallan.Designer.cs">
+      <DependentUpon>frmChildChallan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntryAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEntryAccount.Designer.cs">
+      <DependentUpon>frmEntryAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEntryBill.cs">
       <SubType>Form</SubType>
@@ -133,11 +153,11 @@
     <Compile Include="Forms\PartyList.Designer.cs">
       <DependentUpon>PartyList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Partys.cs">
+    <Compile Include="Forms\frmParty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Partys.Designer.cs">
-      <DependentUpon>Partys.cs</DependentUpon>
+    <Compile Include="Forms\frmParty.Designer.cs">
+      <DependentUpon>frmParty.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,11 +184,35 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChildBill.resx">
+      <DependentUpon>frmChildBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChildChallan.resx">
+      <DependentUpon>frmChildChallan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntryAccount.resx">
+      <DependentUpon>frmEntryAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntryBill.resx">
+      <DependentUpon>frmEntryBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntryChallan.resx">
+      <DependentUpon>frmEntryChallan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntryLRNote.resx">
+      <DependentUpon>frmEntryLRNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntryMRNote.resx">
+      <DependentUpon>frmEntryMRNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEntryTransaction.resx">
+      <DependentUpon>frmEntryTransaction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartyList.resx">
       <DependentUpon>PartyList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Partys.resx">
-      <DependentUpon>Partys.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmParty.resx">
+      <DependentUpon>frmParty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

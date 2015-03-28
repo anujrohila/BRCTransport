@@ -15,7 +15,7 @@ namespace BRCTransport.Window.Forms
     public partial class frmParty : Form
     {
         public Int32 PartyId = 0;
-
+        
         public frmParty()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace BRCTransport.Window.Forms
             if (PartyId > 0)
             {
                 var partyDetails = ConsignorBusinessLogic.Get(PartyId);
+                
                 txtPartyName.Text = partyDetails.ConsignorName;
                 txtCode.Text = partyDetails.Code;
                 if (partyDetails.Type == 1)
@@ -49,6 +50,7 @@ namespace BRCTransport.Window.Forms
             if (IsFormValidate())
             {
                 tblConsignorDTO tblConsignorDTO = new tblConsignorDTO();
+                
                 tblConsignorDTO.ConsignorId = PartyId;
                 tblConsignorDTO.ConsignorName = txtPartyName.Text;
                 tblConsignorDTO.Code = txtCode.Text;
@@ -113,6 +115,26 @@ namespace BRCTransport.Window.Forms
                 return false;
             }
             return isValidate;
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPartyName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

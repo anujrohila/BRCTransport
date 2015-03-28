@@ -106,14 +106,14 @@
             // allChallanToolStripMenuItem
             // 
             this.allChallanToolStripMenuItem.Name = "allChallanToolStripMenuItem";
-            this.allChallanToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.allChallanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.allChallanToolStripMenuItem.Text = "Add Challan";
             this.allChallanToolStripMenuItem.Click += new System.EventHandler(this.allChallanToolStripMenuItem_Click);
             // 
             // listChallanToolStripMenuItem
             // 
             this.listChallanToolStripMenuItem.Name = "listChallanToolStripMenuItem";
-            this.listChallanToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.listChallanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listChallanToolStripMenuItem.Text = "List Challan";
             this.listChallanToolStripMenuItem.Click += new System.EventHandler(this.listChallanToolStripMenuItem_Click);
             // 
