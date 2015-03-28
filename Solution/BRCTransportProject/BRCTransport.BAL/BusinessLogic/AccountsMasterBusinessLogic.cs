@@ -42,5 +42,10 @@ namespace BRCTransport.BAL
         }
 
         #endregion
+
+        public static bool CheckDuplicateCodeExists(string p1, int p2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

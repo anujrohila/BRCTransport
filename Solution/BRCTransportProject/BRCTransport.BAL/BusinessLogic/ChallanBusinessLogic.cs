@@ -68,4 +68,16 @@ namespace BRCTransport.BAL
 
         #endregion
     }
+
+    //public class ChallanEntryLogic
+    //{
+    //    #region
+    //    public static int Save(tblChallanEntryDTO tblChallanEntryDTO)
+    //    {
+    //        return ChallanEntryLogic.Save(tblChallanEntryDTO);
+
+    //    }
+
+    //    #endregion
+    //}
 }
