@@ -56,7 +56,7 @@ namespace BRCTransport.Window.Forms
             if (Action == "Edit")
             {
                 ChallanEntryNo = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
-                frmEntryChallan.ChallanEntryNo = ChallanEntryNo;
+              
               
             }
 

@@ -39,5 +39,7 @@ namespace BRCTransport.Window.Forms
         }
 
         #endregion
+
+        public static int MRId { get; set; }
     }
 }

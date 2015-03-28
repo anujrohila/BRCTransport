@@ -79,5 +79,7 @@ namespace BRCTransport.Window.Forms
         }
 
         #endregion
+
+        public static int ConsignmentId { get; set; }
     }
 }

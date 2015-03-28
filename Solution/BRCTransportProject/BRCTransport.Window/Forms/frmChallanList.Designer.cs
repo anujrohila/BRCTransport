@@ -45,6 +45,7 @@
             // GridViewChallan
             // 
             this.GridViewChallan.AllowUserToOrderColumns = true;
+            this.GridViewChallan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.GridViewChallan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewChallan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ChallanNo,
@@ -68,51 +69,61 @@
             // 
             this.ChallanNo.HeaderText = "ChallanNo";
             this.ChallanNo.Name = "ChallanNo";
+            this.ChallanNo.Width = 81;
             // 
             // BkgStnCode
             // 
             this.BkgStnCode.HeaderText = "BkgStnCode";
             this.BkgStnCode.Name = "BkgStnCode";
+            this.BkgStnCode.Width = 92;
             // 
             // CNNoWithAlphaCode
             // 
             this.CNNoWithAlphaCode.HeaderText = "CNNoWithAlphaCode";
             this.CNNoWithAlphaCode.Name = "CNNoWithAlphaCode";
+            this.CNNoWithAlphaCode.Width = 135;
             // 
             // PackagesNos
             // 
             this.PackagesNos.HeaderText = "PackagesNos";
             this.PackagesNos.Name = "PackagesNos";
+            this.PackagesNos.Width = 99;
             // 
             // PackagesMethod
             // 
             this.PackagesMethod.HeaderText = "PackagesMethod";
             this.PackagesMethod.Name = "PackagesMethod";
+            this.PackagesMethod.Width = 116;
             // 
             // SaidToContain
             // 
             this.SaidToContain.HeaderText = "SaidToContain";
             this.SaidToContain.Name = "SaidToContain";
+            this.SaidToContain.Width = 102;
             // 
             // ActualWeightKgs
             // 
             this.ActualWeightKgs.HeaderText = "ActualWeightKgs";
             this.ActualWeightKgs.Name = "ActualWeightKgs";
+            this.ActualWeightKgs.Width = 114;
             // 
             // DestinationName
             // 
             this.DestinationName.HeaderText = "DestinationName";
             this.DestinationName.Name = "DestinationName";
+            this.DestinationName.Width = 113;
             // 
             // Edit
             // 
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
+            this.Edit.Width = 50;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
+            this.Delete.Width = 63;
             // 
             // ChallanList
             // 
