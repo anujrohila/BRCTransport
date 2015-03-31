@@ -44,6 +44,7 @@
             // 
             // GridViewtransaction
             // 
+            this.GridViewtransaction.AllowUserToOrderColumns = true;
             this.GridViewtransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewtransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TDate,
@@ -56,49 +57,58 @@
             this.ChequeDate,
             this.Edit,
             this.Delete});
-            this.GridViewtransaction.Location = new System.Drawing.Point(1, 2);
+            this.GridViewtransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridViewtransaction.Location = new System.Drawing.Point(0, 0);
             this.GridViewtransaction.Name = "GridViewtransaction";
-            this.GridViewtransaction.Size = new System.Drawing.Size(616, 418);
+            this.GridViewtransaction.Size = new System.Drawing.Size(619, 419);
             this.GridViewtransaction.TabIndex = 0;
             this.GridViewtransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TDate
             // 
+            this.TDate.DataPropertyName = "TDate";
             this.TDate.HeaderText = "TDate";
             this.TDate.Name = "TDate";
             // 
             // DrAmount
             // 
+            this.DrAmount.DataPropertyName = "DrAmount";
             this.DrAmount.HeaderText = "DrAmount";
             this.DrAmount.Name = "DrAmount";
             // 
             // CrAmount
             // 
+            this.CrAmount.DataPropertyName = "CrAmount";
             this.CrAmount.HeaderText = "CrAmount";
             this.CrAmount.Name = "CrAmount";
             // 
             // Recievedby
             // 
+            this.Recievedby.DataPropertyName = "Recievedby";
             this.Recievedby.HeaderText = "Recievedby";
             this.Recievedby.Name = "Recievedby";
             // 
             // PaidBy
             // 
+            this.PaidBy.DataPropertyName = "PaidBy";
             this.PaidBy.HeaderText = "PaidBy";
             this.PaidBy.Name = "PaidBy";
             // 
             // Description
             // 
+            this.Description.DataPropertyName = "Description";
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             // 
             // ChequeNo
             // 
+            this.ChequeNo.DataPropertyName = "ChequeNo";
             this.ChequeNo.HeaderText = "ChequeNo";
             this.ChequeNo.Name = "ChequeNo";
             // 
             // ChequeDate
             // 
+            this.ChequeDate.DataPropertyName = "ChequeDate";
             this.ChequeDate.HeaderText = "ChequeDate";
             this.ChequeDate.Name = "ChequeDate";
             // 

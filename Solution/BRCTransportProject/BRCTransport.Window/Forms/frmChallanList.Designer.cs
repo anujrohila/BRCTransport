@@ -30,13 +30,17 @@
         {
             this.GridViewChallan = new System.Windows.Forms.DataGridView();
             this.ChallanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BkgStnCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CNNoWithAlphaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackagesNos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackagesMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SaidToContain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActualWeightKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DestinationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChallanDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DistanceKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduleDateofActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverMobileNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverLicenseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BalanceLorryHire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChallan)).BeginInit();
@@ -49,13 +53,17 @@
             this.GridViewChallan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewChallan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ChallanNo,
-            this.BkgStnCode,
-            this.CNNoWithAlphaCode,
-            this.PackagesNos,
-            this.PackagesMethod,
-            this.SaidToContain,
-            this.ActualWeightKgs,
-            this.DestinationName,
+            this.ChallanDateTime,
+            this.VehicleNo,
+            this.VehicleType,
+            this.Destination,
+            this.DistanceKM,
+            this.ScheduleDateofActual,
+            this.DriverName,
+            this.DriverMobileNo,
+            this.DriverAddress,
+            this.DriverLicenseNo,
+            this.BalanceLorryHire,
             this.Edit,
             this.Delete});
             this.GridViewChallan.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -67,51 +75,87 @@
             // 
             // ChallanNo
             // 
+            this.ChallanNo.DataPropertyName = "ChallanNo";
             this.ChallanNo.HeaderText = "ChallanNo";
             this.ChallanNo.Name = "ChallanNo";
             this.ChallanNo.Width = 81;
             // 
-            // BkgStnCode
+            // ChallanDateTime
             // 
-            this.BkgStnCode.HeaderText = "BkgStnCode";
-            this.BkgStnCode.Name = "BkgStnCode";
-            this.BkgStnCode.Width = 92;
+            this.ChallanDateTime.DataPropertyName = "ChallanDateTime";
+            this.ChallanDateTime.HeaderText = "ChallanDateTime";
+            this.ChallanDateTime.Name = "ChallanDateTime";
+            this.ChallanDateTime.Width = 113;
             // 
-            // CNNoWithAlphaCode
+            // VehicleNo
             // 
-            this.CNNoWithAlphaCode.HeaderText = "CNNoWithAlphaCode";
-            this.CNNoWithAlphaCode.Name = "CNNoWithAlphaCode";
-            this.CNNoWithAlphaCode.Width = 135;
+            this.VehicleNo.DataPropertyName = "VehicleNo";
+            this.VehicleNo.HeaderText = "VehicleNo";
+            this.VehicleNo.Name = "VehicleNo";
+            this.VehicleNo.Width = 81;
             // 
-            // PackagesNos
+            // VehicleType
             // 
-            this.PackagesNos.HeaderText = "PackagesNos";
-            this.PackagesNos.Name = "PackagesNos";
-            this.PackagesNos.Width = 99;
+            this.VehicleType.DataPropertyName = "VehicleType";
+            this.VehicleType.HeaderText = "VehicleType";
+            this.VehicleType.Name = "VehicleType";
+            this.VehicleType.Width = 91;
             // 
-            // PackagesMethod
+            // Destination
             // 
-            this.PackagesMethod.HeaderText = "PackagesMethod";
-            this.PackagesMethod.Name = "PackagesMethod";
-            this.PackagesMethod.Width = 116;
+            this.Destination.DataPropertyName = "Destination";
+            this.Destination.HeaderText = "Destination";
+            this.Destination.Name = "Destination";
+            this.Destination.Width = 85;
             // 
-            // SaidToContain
+            // DistanceKM
             // 
-            this.SaidToContain.HeaderText = "SaidToContain";
-            this.SaidToContain.Name = "SaidToContain";
-            this.SaidToContain.Width = 102;
+            this.DistanceKM.DataPropertyName = "DistanceKM";
+            this.DistanceKM.HeaderText = "DistanceKM";
+            this.DistanceKM.Name = "DistanceKM";
+            this.DistanceKM.Width = 90;
             // 
-            // ActualWeightKgs
+            // ScheduleDateofActual
             // 
-            this.ActualWeightKgs.HeaderText = "ActualWeightKgs";
-            this.ActualWeightKgs.Name = "ActualWeightKgs";
-            this.ActualWeightKgs.Width = 114;
+            this.ScheduleDateofActual.DataPropertyName = "ScheduleDateofActual";
+            this.ScheduleDateofActual.HeaderText = "ScheduleDateofActual";
+            this.ScheduleDateofActual.Name = "ScheduleDateofActual";
+            this.ScheduleDateofActual.Width = 139;
             // 
-            // DestinationName
+            // DriverName
             // 
-            this.DestinationName.HeaderText = "DestinationName";
-            this.DestinationName.Name = "DestinationName";
-            this.DestinationName.Width = 113;
+            this.DriverName.DataPropertyName = "DriverName";
+            this.DriverName.HeaderText = "DriverName";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.Width = 88;
+            // 
+            // DriverMobileNo
+            // 
+            this.DriverMobileNo.DataPropertyName = "DriverMobileNo";
+            this.DriverMobileNo.HeaderText = "DriverMobileNo";
+            this.DriverMobileNo.Name = "DriverMobileNo";
+            this.DriverMobileNo.Width = 105;
+            // 
+            // DriverAddress
+            // 
+            this.DriverAddress.DataPropertyName = "DriverAddress";
+            this.DriverAddress.HeaderText = "DriverAddress";
+            this.DriverAddress.Name = "DriverAddress";
+            this.DriverAddress.Width = 98;
+            // 
+            // DriverLicenseNo
+            // 
+            this.DriverLicenseNo.DataPropertyName = "DriverLicenseNo";
+            this.DriverLicenseNo.HeaderText = "DriverLicenseNo";
+            this.DriverLicenseNo.Name = "DriverLicenseNo";
+            this.DriverLicenseNo.Width = 111;
+            // 
+            // BalanceLorryHire
+            // 
+            this.BalanceLorryHire.DataPropertyName = "BalanceLorryHire";
+            this.BalanceLorryHire.HeaderText = "BalanceLorryHire";
+            this.BalanceLorryHire.Name = "BalanceLorryHire";
+            this.BalanceLorryHire.Width = 113;
             // 
             // Edit
             // 
@@ -147,13 +191,17 @@
 
         private System.Windows.Forms.DataGridView GridViewChallan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChallanNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BkgStnCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CNNoWithAlphaCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PackagesNos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PackagesMethod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaidToContain;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActualWeightKgs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DestinationName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChallanDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Destination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DistanceKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScheduleDateofActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverMobileNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverLicenseNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BalanceLorryHire;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }

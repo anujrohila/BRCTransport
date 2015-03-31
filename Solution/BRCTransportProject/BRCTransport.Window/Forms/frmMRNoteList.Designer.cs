@@ -69,51 +69,61 @@
             // 
             // MRDate
             // 
+            this.MRDate.DataPropertyName = "MRDate";
             this.MRDate.HeaderText = "MRDate";
             this.MRDate.Name = "MRDate";
             // 
             // CreationDate
             // 
+            this.CreationDate.DataPropertyName = "CreationDate";
             this.CreationDate.HeaderText = "CreationDate";
             this.CreationDate.Name = "CreationDate";
             // 
             // RecievedFrom
             // 
+            this.RecievedFrom.DataPropertyName = "RecievedFrom";
             this.RecievedFrom.HeaderText = "RecievedFrom";
             this.RecievedFrom.Name = "RecievedFrom";
             // 
             // LocationFrom
             // 
+            this.LocationFrom.DataPropertyName = "LocationFrom";
             this.LocationFrom.HeaderText = "LocationFrom";
             this.LocationFrom.Name = "LocationFrom";
             // 
             // LocationTo
             // 
+            this.LocationTo.DataPropertyName = "LocationTo";
             this.LocationTo.HeaderText = "LocationTo";
             this.LocationTo.Name = "LocationTo";
             // 
             // NoofPackages
             // 
+            this.NoofPackages.DataPropertyName = "NoofPackages";
             this.NoofPackages.HeaderText = "NoofPackages";
             this.NoofPackages.Name = "NoofPackages";
             // 
             // Weight
             // 
+            this.Weight.DataPropertyName = "Weight";
             this.Weight.HeaderText = "Weight";
             this.Weight.Name = "Weight";
             // 
             // AmountRecieved
             // 
+            this.AmountRecieved.DataPropertyName = "AmountRecieved";
             this.AmountRecieved.HeaderText = "AmountRecieved";
             this.AmountRecieved.Name = "AmountRecieved";
             // 
             // WayOfRecieve
             // 
+            this.WayOfRecieve.DataPropertyName = "WayOfRecieve";
             this.WayOfRecieve.HeaderText = "WayOfRecieve";
             this.WayOfRecieve.Name = "WayOfRecieve";
             // 
             // TotalAmount
             // 
+            this.TotalAmount.DataPropertyName = "TotalAmount";
             this.TotalAmount.HeaderText = "TotalAmount";
             this.TotalAmount.Name = "TotalAmount";
             // 

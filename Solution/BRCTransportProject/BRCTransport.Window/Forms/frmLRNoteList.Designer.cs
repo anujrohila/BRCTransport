@@ -46,6 +46,7 @@
             // 
             // GridViewLR
             // 
+            this.GridViewLR.AllowUserToOrderColumns = true;
             this.GridViewLR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewLR.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ConsignmentNoteNo,
@@ -69,51 +70,61 @@
             // 
             // ConsignmentNoteNo
             // 
+            this.ConsignmentNoteNo.DataPropertyName = "ConsignmentNoteNo";
             this.ConsignmentNoteNo.HeaderText = "ConsignmentNoteNo";
             this.ConsignmentNoteNo.Name = "ConsignmentNoteNo";
             // 
             // CompanyName
             // 
+            this.CompanyName.DataPropertyName = "CompanyName";
             this.CompanyName.HeaderText = "CompanyName";
             this.CompanyName.Name = "CompanyName";
             // 
             // PolicyNo
             // 
+            this.PolicyNo.DataPropertyName = "PolicyNo";
             this.PolicyNo.HeaderText = "PolicyNo";
             this.PolicyNo.Name = "PolicyNo";
             // 
             // CompanyDate
             // 
+            this.CompanyDate.DataPropertyName = "CompanyDate";
             this.CompanyDate.HeaderText = "CompanyDate";
             this.CompanyDate.Name = "CompanyDate";
             // 
             // CompanyAmount
             // 
+            this.CompanyAmount.DataPropertyName = "CompanyAmount";
             this.CompanyAmount.HeaderText = "CompanyAmount";
             this.CompanyAmount.Name = "CompanyAmount";
             // 
             // FromCode
             // 
+            this.FromCode.DataPropertyName = "FromCode";
             this.FromCode.HeaderText = "FromCode";
             this.FromCode.Name = "FromCode";
             // 
             // ToCode
             // 
+            this.ToCode.DataPropertyName = "ToCode";
             this.ToCode.HeaderText = "ToCode";
             this.ToCode.Name = "ToCode";
             // 
             // MethodOfPacking
             // 
+            this.MethodOfPacking.DataPropertyName = "MethodOfPacking";
             this.MethodOfPacking.HeaderText = "MethodOfPacking";
             this.MethodOfPacking.Name = "MethodOfPacking";
             // 
             // Distance
             // 
+            this.Distance.DataPropertyName = "Distance";
             this.Distance.HeaderText = "Distance";
             this.Distance.Name = "Distance";
             // 
             // FinalAmount
             // 
+            this.FinalAmount.DataPropertyName = "FinalAmount";
             this.FinalAmount.HeaderText = "FinalAmount";
             this.FinalAmount.Name = "FinalAmount";
             // 

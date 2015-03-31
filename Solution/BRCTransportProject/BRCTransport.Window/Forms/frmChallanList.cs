@@ -16,7 +16,7 @@ namespace BRCTransport.Window.Forms
     {
         #region MyRegion
 
-        private Int32 ChallanEntryNo = 0;
+        private Int32 ChallanId = 0;
         frmEntryChallan frmchallan = new frmEntryChallan();
 
        
@@ -55,7 +55,7 @@ namespace BRCTransport.Window.Forms
 
             if (Action == "Edit")
             {
-                ChallanEntryNo = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
+                ChallanId = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
                 //frmchallan.ChallanEntryNo = ChallanEntryNo;
                 frmchallan.FormClosed += frmParty_FormClosed;
                 frmchallan.Show();
@@ -66,11 +66,11 @@ namespace BRCTransport.Window.Forms
             {
                 try
                 {
-                    ChallanEntryNo = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
+                    ChallanId = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
                     var messageBoxResult = MessageBox.Show("Are you sure want to delete this record?", "Delete", MessageBoxButtons.YesNo);
                     if (messageBoxResult == DialogResult.Yes)
                     {
-                        var result = ChallanBusinessLogic.Delete(ChallanEntryNo);
+                        var result = ChallanBusinessLogic.Delete(ChallanId);
                         MessageBox.Show("Party deleted successfully.");
                         FillGridData();
                     }
