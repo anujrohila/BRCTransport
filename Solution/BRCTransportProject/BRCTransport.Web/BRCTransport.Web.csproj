@@ -64,6 +64,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -100,10 +101,6 @@
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
@@ -883,16 +880,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BRCTransport.BAL\BRCTransport.BAL.csproj">
-      <Project>{78fd20b1-453b-41ed-8f9b-e5aef3f9d10c}</Project>
-      <Name>BRCTransport.BAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BRCTransport.Domain\BRCTransport.Domain.csproj">
-      <Project>{2f717a83-033b-408e-a234-22a6d0f7a96b}</Project>
-      <Name>BRCTransport.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_GlobalResources\UploadLocalization.zh-CN.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>UploadLocalization.zh-CN.designer.cs</LastGenOutput>
@@ -1116,6 +1103,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Content\Report\ReportBillPartyWiseReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BRCTransport.BAL\BRCTransport.BAL.csproj">
+      <Project>{78fd20b1-453b-41ed-8f9b-e5aef3f9d10c}</Project>
+      <Name>BRCTransport.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BRCTransport.Domain\BRCTransport.Domain.csproj">
+      <Project>{2f717a83-033b-408e-a234-22a6d0f7a96b}</Project>
+      <Name>BRCTransport.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
