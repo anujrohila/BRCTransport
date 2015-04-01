@@ -32,7 +32,7 @@ namespace BRCTransport.Domain
         public String AccountTypeName { get; set; }
 
         [DataMember()]
-        public Nullable<Int32> AccountNo { get; set; }
+        public String AccountNo { get; set; }
 
         [DataMember()]
         public String Addrees { get; set; }
@@ -49,6 +49,6 @@ namespace BRCTransport.Domain
         public Nullable<DateTime> OpeningDate { get; set; }
 
         [DataMember()]
-        public Byte[] Description { get; set; }
+        public String Description { get; set; }
     }
 }
