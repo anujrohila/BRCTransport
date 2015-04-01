@@ -18,7 +18,7 @@ namespace BRCTransport.Window
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEntryLRNote());
+            Application.Run(new Dashboard());
         }
     }
 }
