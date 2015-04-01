@@ -54,6 +54,10 @@
   <ItemGroup>
     <Compile Include="Classes\ErrorHanding.cs" />
     <Compile Include="Classes\CommonClass.cs" />
+    <Compile Include="Dashboard.cs" />
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\BRCReportDatasetxsd.cs">
       <DependentUpon>BRCReportDatasetxsd.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -181,6 +185,9 @@
     </Compile>
     <Compile Include="Utility\CommonFucntion.cs" />
     <Compile Include="Utility\ControlValidation.cs" />
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAccountList.resx">
       <DependentUpon>frmAccountList.cs</DependentUpon>
     </EmbeddedResource>
