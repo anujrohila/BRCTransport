@@ -1,4 +1,4 @@
-﻿// Default code generation is disabled for model 'F:\Project\BRCTransport\trunk\BRCTransportProject\BRCTransport.Database\ORM\BRCTransport.edmx'. 
+﻿// Default code generation is disabled for model 'D:\Client Work\BRCTranfort\trunk\Solution\BRCTransportProject\BRCTransport.Database\ORM\BRCTransport.edmx'. 
 // To enable default code generation, change the value of the 'Code Generation Strategy' designer
 // property to an alternate value. This property is available in the Properties Window when the model is
 // open in the designer.

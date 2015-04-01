@@ -22,12 +22,12 @@ namespace BRCTransport.Database.ORM
         public int AccountId { get; set; }
         public string AccountName { get; set; }
         public string AccountType { get; set; }
-        public Nullable<int> AccountNo { get; set; }
+        public string AccountNo { get; set; }
         public string Addrees { get; set; }
         public string PhoneNo { get; set; }
         public Nullable<double> OpeningBalance { get; set; }
         public Nullable<System.DateTime> OpeningDate { get; set; }
-        public byte[] Description { get; set; }
+        public string Description { get; set; }
     
         public virtual ICollection<tblTransaction> tblTransactions { get; set; }
     }

@@ -7,6 +7,8 @@
     <Schema Namespace="BRCTransportDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="BRCTransportDBModelStoreContainer">
           <EntitySet Name="tblAccountsMaster" EntityType="BRCTransportDBModel.Store.tblAccountsMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBankMaster" EntityType="BRCTransportDBModel.Store.tblBankMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBankTransaction" EntityType="BRCTransportDBModel.Store.tblBankTransaction" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblBill" EntityType="BRCTransportDBModel.Store.tblBill" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblBillEntry" EntityType="BRCTransportDBModel.Store.tblBillEntry" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblChallan" EntityType="BRCTransportDBModel.Store.tblChallan" store:Type="Tables" Schema="dbo" />
@@ -18,6 +20,10 @@
           <EntitySet Name="tblLogin" EntityType="BRCTransportDBModel.Store.tblLogin" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblMRNote" EntityType="BRCTransportDBModel.Store.tblMRNote" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblTransaction" EntityType="BRCTransportDBModel.Store.tblTransaction" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BankTransaction_BankTransaction" Association="BRCTransportDBModel.Store.FK_BankTransaction_BankTransaction">
+            <End Role="tblBankMaster" EntitySet="tblBankMaster" />
+            <End Role="tblBankTransaction" EntitySet="tblBankTransaction" />
+          </AssociationSet>
           <AssociationSet Name="FK_tblBill_tblConsignor" Association="BRCTransportDBModel.Store.FK_tblBill_tblConsignor">
             <End Role="tblConsignor" EntitySet="tblConsignor" />
             <End Role="tblBill" EntitySet="tblBill" />
@@ -54,12 +60,38 @@
           <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="AccountName" Type="varchar" MaxLength="100" />
           <Property Name="AccountType" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="AccountNo" Type="int" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="50" />
           <Property Name="Addrees" Type="varchar" MaxLength="500" />
           <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
           <Property Name="OpeningBalance" Type="float" />
           <Property Name="OpeningDate" Type="date" />
-          <Property Name="Description" Type="varbinary" MaxLength="500" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblBankMaster">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Name="BankId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="varchar" MaxLength="100" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="AccountType" Type="varchar" MaxLength="50" />
+          <Property Name="Addrees" Type="varchar" MaxLength="500" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="OpeningBalance" Type="float" />
+          <Property Name="OpeningDate" Type="date" />
+        </EntityType>
+        <EntityType Name="tblBankTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankId" Type="int" Nullable="false" />
+          <Property Name="TDate" Type="date" Nullable="false" />
+          <Property Name="TType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DrAmount" Type="float" Nullable="false" />
+          <Property Name="CrAmount" Type="float" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="tblBill">
           <Key>
@@ -323,6 +355,18 @@
           <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
           <Property Name="ChequeDate" Type="date" />
         </EntityType>
+        <Association Name="FK_BankTransaction_BankTransaction">
+          <End Role="tblBankMaster" Type="BRCTransportDBModel.Store.tblBankMaster" Multiplicity="1" />
+          <End Role="tblBankTransaction" Type="BRCTransportDBModel.Store.tblBankTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBankMaster">
+              <PropertyRef Name="BankId" />
+            </Principal>
+            <Dependent Role="tblBankTransaction">
+              <PropertyRef Name="BankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblBill_tblConsignor">
           <End Role="tblConsignor" Type="BRCTransportDBModel.Store.tblConsignor" Multiplicity="0..1" />
           <End Role="tblBill" Type="BRCTransportDBModel.Store.tblBill" Multiplicity="*" />
@@ -413,6 +457,8 @@
       <Schema Namespace="BRCTransportDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BRCTransportDBEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="tblAccountsMasters" EntityType="BRCTransportDBModel.tblAccountsMaster" />
+          <EntitySet Name="tblBankMasters" EntityType="BRCTransportDBModel.tblBankMaster" />
+          <EntitySet Name="tblBankTransactions" EntityType="BRCTransportDBModel.tblBankTransaction" />
           <EntitySet Name="tblBills" EntityType="BRCTransportDBModel.tblBill" />
           <EntitySet Name="tblBillEntries" EntityType="BRCTransportDBModel.tblBillEntry" />
           <EntitySet Name="tblChallans" EntityType="BRCTransportDBModel.tblChallan" />
@@ -423,6 +469,15 @@
           <EntitySet Name="tblConsignors" EntityType="BRCTransportDBModel.tblConsignor" />
           <EntitySet Name="tblLogins" EntityType="BRCTransportDBModel.tblLogin" />
           <EntitySet Name="tblMRNotes" EntityType="BRCTransportDBModel.tblMRNote" />
+          <EntitySet Name="tblTransactions" EntityType="BRCTransportDBModel.tblTransaction" />
+          <AssociationSet Name="FK_tblTransaction_tblAccountsMaster" Association="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster">
+            <End Role="tblAccountsMaster" EntitySet="tblAccountsMasters" />
+            <End Role="tblTransaction" EntitySet="tblTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BankTransaction_BankTransaction" Association="BRCTransportDBModel.FK_BankTransaction_BankTransaction">
+            <End Role="tblBankMaster" EntitySet="tblBankMasters" />
+            <End Role="tblBankTransaction" EntitySet="tblBankTransactions" />
+          </AssociationSet>
           <AssociationSet Name="FK_tblBill_tblConsignor" Association="BRCTransportDBModel.FK_tblBill_tblConsignor">
             <End Role="tblConsignor" EntitySet="tblConsignors" />
             <End Role="tblBill" EntitySet="tblBills" />
@@ -447,11 +502,6 @@
             <End Role="tblConsignor" EntitySet="tblConsignors" />
             <End Role="tblConsignmentNote" EntitySet="tblConsignmentNotes" />
           </AssociationSet>
-          <EntitySet Name="tblTransactions" EntityType="BRCTransportDBModel.tblTransaction" />
-          <AssociationSet Name="FK_tblTransaction_tblAccountsMaster" Association="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster">
-            <End Role="tblAccountsMaster" EntitySet="tblAccountsMasters" />
-            <End Role="tblTransaction" EntitySet="tblTransactions" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tblAccountsMaster">
           <Key>
@@ -460,13 +510,41 @@
           <Property Type="Int32" Name="AccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="AccountName" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="AccountType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="AccountNo" />
+          <Property Type="String" Name="AccountNo" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Addrees" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Double" Name="OpeningBalance" />
           <Property Type="DateTime" Name="OpeningDate" Precision="0" />
-          <Property Type="Binary" Name="Description" MaxLength="500" FixedLength="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblTransactions" Relationship="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" FromRole="tblAccountsMaster" ToRole="tblTransaction" />
+        </EntityType>
+        <EntityType Name="tblBankMaster">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Type="Int32" Name="BankId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BankName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccountNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccountType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Addrees" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="OpeningBalance" />
+          <Property Type="DateTime" Name="OpeningDate" Precision="0" />
+          <NavigationProperty Name="tblBankTransactions" Relationship="BRCTransportDBModel.FK_BankTransaction_BankTransaction" FromRole="tblBankMaster" ToRole="tblBankTransaction" />
+        </EntityType>
+        <EntityType Name="tblBankTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="BankId" Nullable="false" />
+          <Property Type="DateTime" Name="TDate" Nullable="false" Precision="0" />
+          <Property Type="String" Name="TType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="DrAmount" Nullable="false" />
+          <Property Type="Double" Name="CrAmount" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblBankMaster" Relationship="BRCTransportDBModel.FK_BankTransaction_BankTransaction" FromRole="tblBankTransaction" ToRole="tblBankMaster" />
         </EntityType>
         <EntityType Name="tblBill">
           <Key>
@@ -727,6 +805,46 @@
           <Property Type="DateTime" Name="CreationDate" Precision="3" />
           <NavigationProperty Name="tblBill" Relationship="BRCTransportDBModel.FK_tblMRNote_tblBill" FromRole="tblMRNote" ToRole="tblBill" />
         </EntityType>
+        <EntityType Name="tblTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="DateTime" Name="TDate" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="DrAmount" Nullable="false" />
+          <Property Type="Double" Name="CrAmount" Nullable="false" />
+          <Property Type="String" Name="Recievedby" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PaidBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ChequeNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ChequeDate" Precision="0" />
+          <NavigationProperty Name="tblAccountsMaster" Relationship="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" FromRole="tblTransaction" ToRole="tblAccountsMaster" />
+        </EntityType>
+        <Association Name="FK_tblTransaction_tblAccountsMaster">
+          <End Type="BRCTransportDBModel.tblAccountsMaster" Role="tblAccountsMaster" Multiplicity="1" />
+          <End Type="BRCTransportDBModel.tblTransaction" Role="tblTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAccountsMaster">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="tblTransaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BankTransaction_BankTransaction">
+          <End Type="BRCTransportDBModel.tblBankMaster" Role="tblBankMaster" Multiplicity="1" />
+          <End Type="BRCTransportDBModel.tblBankTransaction" Role="tblBankTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBankMaster">
+              <PropertyRef Name="BankId" />
+            </Principal>
+            <Dependent Role="tblBankTransaction">
+              <PropertyRef Name="BankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblBill_tblConsignor">
           <End Type="BRCTransportDBModel.tblConsignor" Role="tblConsignor" Multiplicity="0..1" />
           <End Type="BRCTransportDBModel.tblBill" Role="tblBill" Multiplicity="*" />
@@ -799,34 +917,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="tblTransaction">
-          <Key>
-            <PropertyRef Name="TransactionId" />
-          </Key>
-          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="AccountId" Nullable="false" />
-          <Property Type="DateTime" Name="TDate" Nullable="false" Precision="0" />
-          <Property Type="Double" Name="DrAmount" Nullable="false" />
-          <Property Type="Double" Name="CrAmount" Nullable="false" />
-          <Property Type="String" Name="Recievedby" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="PaidBy" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ChequeNo" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ChequeDate" Precision="0" />
-          <NavigationProperty Name="tblAccountsMaster" Relationship="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" FromRole="tblTransaction" ToRole="tblAccountsMaster" />
-        </EntityType>
-        <Association Name="FK_tblTransaction_tblAccountsMaster">
-          <End Type="BRCTransportDBModel.tblAccountsMaster" Role="tblAccountsMaster" Multiplicity="1" />
-          <End Type="BRCTransportDBModel.tblTransaction" Role="tblTransaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAccountsMaster">
-              <PropertyRef Name="AccountId" />
-            </Principal>
-            <Dependent Role="tblTransaction">
-              <PropertyRef Name="AccountId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -845,6 +935,34 @@
                 <ScalarProperty Name="AccountType" ColumnName="AccountType" />
                 <ScalarProperty Name="AccountName" ColumnName="AccountName" />
                 <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBankMasters">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblBankMaster">
+              <MappingFragment StoreEntitySet="tblBankMaster">
+                <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+                <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Addrees" ColumnName="Addrees" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBankTransactions">
+            <EntityTypeMapping TypeName="BRCTransportDBModel.tblBankTransaction">
+              <MappingFragment StoreEntitySet="tblBankTransaction">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CrAmount" ColumnName="CrAmount" />
+                <ScalarProperty Name="DrAmount" ColumnName="DrAmount" />
+                <ScalarProperty Name="TType" ColumnName="TType" />
+                <ScalarProperty Name="TDate" ColumnName="TDate" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,25 +5,28 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="be59b1e88ecb4386b976a36271849c0b" Name="Diagram1" ZoomLevel="69">
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblAccountsMaster" Width="1.5" PointX="3.3683537502625742" PointY="12.787574386590894" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblBill" Width="1.5" PointX="5.5688855524961305" PointY="29.612041159352305" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblBillEntry" Width="1.5" PointX="3.7360154947899353" PointY="7.6212575620139287" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblChallan" Width="1.5" PointX="11.503300152487727" PointY="26.017602053479106" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblChallanEntry" Width="1.5" PointX="11.568180883102203" PointY="14.11072391928673" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblCompany" Width="1.5" PointX="6.2351258761413044" PointY="30.163734807709108" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblConsignee" Width="1.5" PointX="8.68254002587988" PointY="14.095638460524212" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblConsignmentNote" Width="1.5" PointX="7.0594345606208933" PointY="13.034519693364631" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblConsignor" Width="1.5" PointX="2.3572800691971927" PointY="21.135136688656704" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblLogin" Width="1.5" PointX="9.8354121902191132" PointY="28.962835593597422" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblMRNote" Width="1.5" PointX="8.1628923379643332" PointY="7.447962421666813" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblAccountsMaster" Width="1.5" PointX="1.341693197070478" PointY="10.185403172944394" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblBankMaster" Width="1.5" PointX="5.4881712000296314" PointY="4.055614205103188" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblBankTransaction" Width="1.5" PointX="5.7971473791623245" PointY="8.0828737654177818" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblBill" Width="1.5" PointX="0.25246926595106223" PointY="20.318593556209745" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblBillEntry" Width="1.5" PointX="7.9461066443222146" PointY="26.8316788649334" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblChallan" Width="1.5" PointX="6.0241030594446254" PointY="19.939987042890856" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblChallanEntry" Width="1.5" PointX="9.1022911188669" PointY="15.023265309176997" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblCompany" Width="1.5" PointX="11.486101118608424" PointY="17.068334363898419" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblConsignee" Width="1.5" PointX="2.2582199379141534" PointY="0.31386002912831495" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblConsignmentNote" Width="1.5" PointX="9.8955500376855721" PointY="5.608346703279925" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblConsignor" Width="1.5" PointX="8.5818865618584148" PointY="15.842434681878627" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblLogin" Width="1.5" PointX="2.254524507678358" PointY="2.8795430226621885" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblMRNote" Width="1.5" PointX="11.972905140357515" PointY="3.6837282942997889" />
+        <EntityTypeShape EntityType="BRCTransportDBModel.tblTransaction" Width="1.5" PointX="10.605009784272411" PointY="10.352450345806988" />
+        <AssociationConnector Association="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" />
+        <AssociationConnector Association="BRCTransportDBModel.FK_BankTransaction_BankTransaction" />
         <AssociationConnector Association="BRCTransportDBModel.FK_tblBill_tblConsignor" />
         <AssociationConnector Association="BRCTransportDBModel.FK_tblBillEntry_tblBill" />
         <AssociationConnector Association="BRCTransportDBModel.FK_tblMRNote_tblBill" />
         <AssociationConnector Association="BRCTransportDBModel.FK_tblChallanEntry_tblChallan" />
         <AssociationConnector Association="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignee" />
         <AssociationConnector Association="BRCTransportDBModel.FK_tblConsignmentNote_tblConsignor" />
-        <EntityTypeShape EntityType="BRCTransportDBModel.tblTransaction" Width="1.5" PointX="0.22226372557797644" PointY="8.4362730274145825" />
-        <AssociationConnector Association="BRCTransportDBModel.FK_tblTransaction_tblAccountsMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
