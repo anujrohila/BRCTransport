@@ -48,6 +48,7 @@ namespace BRCTransport.DAL
             using (var dbObject = new BRCTransportDBEntities())
             {
                 return (from transaction in dbObject.tblTransactions
+                        where(transaction.TransactionId == transactionId)
                         select new tblTransactionDTO
                         {
                             AccountId = transaction.AccountId,
