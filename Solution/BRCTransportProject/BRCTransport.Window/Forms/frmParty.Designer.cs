@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +54,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.errorType = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorAddress = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorPhoneNo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorPartyname = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPhoneNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPartyname)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -162,8 +173,10 @@
             this.txtPartyName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPartyName.Name = "txtPartyName";
             this.txtPartyName.Size = new System.Drawing.Size(270, 20);
-            this.txtPartyName.TabIndex = 10;
-            this.txtPartyName.TextChanged += new System.EventHandler(this.txtPartyName_TextChanged);
+            this.txtPartyName.TabIndex = 0;
+            this.txtPartyName.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtPartyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtPartyName.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCode
             // 
@@ -171,7 +184,10 @@
             this.txtCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(270, 20);
-            this.txtCode.TabIndex = 11;
+            this.txtCode.TabIndex = 2;
+            this.txtCode.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtCode.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtAddress
             // 
@@ -180,8 +196,10 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(270, 60);
-            this.txtAddress.TabIndex = 13;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            this.txtAddress.TabIndex = 4;
+            this.txtAddress.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAddress.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtTINNOVATNO
             // 
@@ -189,7 +207,10 @@
             this.txtTINNOVATNO.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTINNOVATNO.Name = "txtTINNOVATNO";
             this.txtTINNOVATNO.Size = new System.Drawing.Size(132, 20);
-            this.txtTINNOVATNO.TabIndex = 14;
+            this.txtTINNOVATNO.TabIndex = 7;
+            this.txtTINNOVATNO.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtTINNOVATNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTINNOVATNO.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtPhoneNo
             // 
@@ -197,7 +218,10 @@
             this.txtPhoneNo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(132, 20);
-            this.txtPhoneNo.TabIndex = 14;
+            this.txtPhoneNo.TabIndex = 5;
+            this.txtPhoneNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtPhoneNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtPhoneNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtSTNOCSTNO
             // 
@@ -205,7 +229,10 @@
             this.txtSTNOCSTNO.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSTNOCSTNO.Name = "txtSTNOCSTNO";
             this.txtSTNOCSTNO.Size = new System.Drawing.Size(132, 20);
-            this.txtSTNOCSTNO.TabIndex = 15;
+            this.txtSTNOCSTNO.TabIndex = 6;
+            this.txtSTNOCSTNO.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtSTNOCSTNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtSTNOCSTNO.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDescription
             // 
@@ -214,7 +241,10 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(270, 59);
-            this.txtDescription.TabIndex = 16;
+            this.txtDescription.TabIndex = 8;
+            this.txtDescription.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDescription.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // cbType
             // 
@@ -226,8 +256,10 @@
             this.cbType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(120, 21);
-            this.cbType.TabIndex = 17;
-            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
+            this.cbType.TabIndex = 3;
+            this.cbType.Enter += new System.EventHandler(this.EnterEvent);
+            this.cbType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.cbType.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // BtnSave
             // 
@@ -235,7 +267,7 @@
             this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(62, 25);
-            this.BtnSave.TabIndex = 18;
+            this.BtnSave.TabIndex = 9;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -246,7 +278,7 @@
             this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(62, 25);
-            this.BtnCancel.TabIndex = 19;
+            this.BtnCancel.TabIndex = 10;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -311,6 +343,26 @@
             this.label14.TabIndex = 24;
             this.label14.Text = "*";
             // 
+            // errorType
+            // 
+            this.errorType.ContainerControl = this;
+            // 
+            // errorAddress
+            // 
+            this.errorAddress.ContainerControl = this;
+            // 
+            // errorCode
+            // 
+            this.errorCode.ContainerControl = this;
+            // 
+            // errorPhoneNo
+            // 
+            this.errorPhoneNo.ContainerControl = this;
+            // 
+            // errorPartyname
+            // 
+            this.errorPartyname.ContainerControl = this;
+            // 
             // frmParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +398,11 @@
             this.Name = "frmParty";
             this.Text = "Partys";
             this.Load += new System.EventHandler(this.frmPartys_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPhoneNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPartyname)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +435,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ErrorProvider errorType;
+        private System.Windows.Forms.ErrorProvider errorAddress;
+        private System.Windows.Forms.ErrorProvider errorCode;
+        private System.Windows.Forms.ErrorProvider errorPhoneNo;
+        private System.Windows.Forms.ErrorProvider errorPartyname;
     }
 }

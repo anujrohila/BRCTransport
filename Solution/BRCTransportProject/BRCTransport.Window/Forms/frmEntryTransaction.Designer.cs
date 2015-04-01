@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAccountName = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbrecieved = new System.Windows.Forms.RadioButton();
+            this.rbPaid = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtChanqueno = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,18 +47,34 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRecievedby = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPaidby = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dpTdate = new System.Windows.Forms.DateTimePicker();
+            this.dpChaqurDate = new System.Windows.Forms.DateTimePicker();
+            this.errorAccountName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTDate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorAmount = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorChequeno = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorChequeDate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorRecievedby = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorPaidBy = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDescription = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorAccountName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorChequeno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorChequeDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorRecievedby)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPaidBy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescription)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -69,16 +86,16 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Account Name";
             // 
-            // comboBox1
+            // cmbAccountName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 10);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 23);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Enter += new System.EventHandler(this.EnterEvent);
-            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.comboBox1.Leave += new System.EventHandler(this.LeaveEvent);
+            this.cmbAccountName.FormattingEnabled = true;
+            this.cmbAccountName.Location = new System.Drawing.Point(152, 10);
+            this.cmbAccountName.Name = "cmbAccountName";
+            this.cmbAccountName.Size = new System.Drawing.Size(233, 23);
+            this.cmbAccountName.TabIndex = 2;
+            this.cmbAccountName.Enter += new System.EventHandler(this.EnterEvent);
+            this.cmbAccountName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.cmbAccountName.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label10
             // 
@@ -110,33 +127,33 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Transaction Type";
             // 
-            // radioButton1
+            // rbrecieved
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(152, 73);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(76, 19);
-            this.radioButton1.TabIndex = 26;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Recieved";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Enter += new System.EventHandler(this.EnterEvent);
-            this.radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.radioButton1.Leave += new System.EventHandler(this.LeaveEvent);
+            this.rbrecieved.AutoSize = true;
+            this.rbrecieved.Checked = true;
+            this.rbrecieved.Location = new System.Drawing.Point(152, 73);
+            this.rbrecieved.Name = "rbrecieved";
+            this.rbrecieved.Size = new System.Drawing.Size(76, 19);
+            this.rbrecieved.TabIndex = 26;
+            this.rbrecieved.TabStop = true;
+            this.rbrecieved.Text = "Recieved";
+            this.rbrecieved.UseVisualStyleBackColor = true;
+            this.rbrecieved.Enter += new System.EventHandler(this.EnterEvent);
+            this.rbrecieved.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.rbrecieved.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // radioButton2
+            // rbPaid
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(241, 73);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 19);
-            this.radioButton2.TabIndex = 27;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Paid";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.Enter += new System.EventHandler(this.EnterEvent);
-            this.radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.radioButton2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.rbPaid.AutoSize = true;
+            this.rbPaid.Location = new System.Drawing.Point(241, 73);
+            this.rbPaid.Name = "rbPaid";
+            this.rbPaid.Size = new System.Drawing.Size(50, 19);
+            this.rbPaid.TabIndex = 27;
+            this.rbPaid.Text = "Paid";
+            this.rbPaid.UseVisualStyleBackColor = true;
+            this.rbPaid.Enter += new System.EventHandler(this.EnterEvent);
+            this.rbPaid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.rbPaid.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label5
             // 
@@ -147,15 +164,15 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Amount";
             // 
-            // textBox2
+            // txtAmount
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 21);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.Enter += new System.EventHandler(this.EnterEvent);
-            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.textBox2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAmount.Location = new System.Drawing.Point(152, 100);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(139, 21);
+            this.txtAmount.TabIndex = 29;
+            this.txtAmount.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label6
             // 
@@ -166,15 +183,15 @@
             this.label6.TabIndex = 30;
             this.label6.Text = "Cheque No";
             // 
-            // textBox3
+            // txtChanqueno
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 21);
-            this.textBox3.TabIndex = 31;
-            this.textBox3.Enter += new System.EventHandler(this.EnterEvent);
-            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.textBox3.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtChanqueno.Location = new System.Drawing.Point(152, 130);
+            this.txtChanqueno.Name = "txtChanqueno";
+            this.txtChanqueno.Size = new System.Drawing.Size(139, 21);
+            this.txtChanqueno.TabIndex = 31;
+            this.txtChanqueno.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtChanqueno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtChanqueno.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label7
             // 
@@ -254,15 +271,15 @@
             this.label14.TabIndex = 39;
             this.label14.Text = "Recieved By";
             // 
-            // textBox5
+            // txtRecievedby
             // 
-            this.textBox5.Location = new System.Drawing.Point(151, 190);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(233, 21);
-            this.textBox5.TabIndex = 40;
-            this.textBox5.Enter += new System.EventHandler(this.EnterEvent);
-            this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.textBox5.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtRecievedby.Location = new System.Drawing.Point(151, 190);
+            this.txtRecievedby.Name = "txtRecievedby";
+            this.txtRecievedby.Size = new System.Drawing.Size(233, 21);
+            this.txtRecievedby.TabIndex = 40;
+            this.txtRecievedby.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtRecievedby.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtRecievedby.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label15
             // 
@@ -296,17 +313,16 @@
             this.label17.Size = new System.Drawing.Size(17, 24);
             this.label17.TabIndex = 43;
             this.label17.Text = "*";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
-            // textBox6
+            // txtPaidby
             // 
-            this.textBox6.Location = new System.Drawing.Point(151, 221);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(233, 21);
-            this.textBox6.TabIndex = 44;
-            this.textBox6.Enter += new System.EventHandler(this.EnterEvent);
-            this.textBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.textBox6.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtPaidby.Location = new System.Drawing.Point(151, 221);
+            this.txtPaidby.Name = "txtPaidby";
+            this.txtPaidby.Size = new System.Drawing.Size(233, 21);
+            this.txtPaidby.TabIndex = 44;
+            this.txtPaidby.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtPaidby.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtPaidby.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label18
             // 
@@ -316,36 +332,37 @@
             this.label18.Size = new System.Drawing.Size(69, 15);
             this.label18.TabIndex = 45;
             this.label18.Text = "Description";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
-            // textBox7
+            // txtDescription
             // 
-            this.textBox7.Location = new System.Drawing.Point(150, 252);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(233, 67);
-            this.textBox7.TabIndex = 46;
-            this.textBox7.Enter += new System.EventHandler(this.EnterEvent);
-            this.textBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.textBox7.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtDescription.Location = new System.Drawing.Point(150, 252);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(233, 67);
+            this.txtDescription.TabIndex = 46;
+            this.txtDescription.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDescription.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(149, 329);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 27);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(149, 329);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(87, 27);
+            this.btnSave.TabIndex = 47;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(249, 329);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 27);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(249, 329);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(87, 27);
+            this.btnClose.TabIndex = 48;
+            this.btnClose.Text = "Cancel";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label19
             // 
@@ -359,47 +376,79 @@
             this.label19.TabIndex = 49;
             this.label19.Text = "*";
             // 
-            // dateTimePicker1
+            // dpTdate
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(139, 21);
-            this.dateTimePicker1.TabIndex = 50;
-            this.dateTimePicker1.Enter += new System.EventHandler(this.EnterEvent);
-            this.dateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.dateTimePicker1.Leave += new System.EventHandler(this.LeaveEvent);
+            this.dpTdate.CustomFormat = "dd-MM-yyyy";
+            this.dpTdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpTdate.Location = new System.Drawing.Point(152, 42);
+            this.dpTdate.Name = "dpTdate";
+            this.dpTdate.Size = new System.Drawing.Size(139, 21);
+            this.dpTdate.TabIndex = 50;
+            this.dpTdate.Enter += new System.EventHandler(this.EnterEvent);
+            this.dpTdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.dpTdate.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // dateTimePicker2
+            // dpChaqurDate
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(152, 161);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(139, 21);
-            this.dateTimePicker2.TabIndex = 51;
-            this.dateTimePicker2.Enter += new System.EventHandler(this.EnterEvent);
-            this.dateTimePicker2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.dateTimePicker2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.dpChaqurDate.CustomFormat = "dd-MM-yyyy";
+            this.dpChaqurDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpChaqurDate.Location = new System.Drawing.Point(152, 161);
+            this.dpChaqurDate.Name = "dpChaqurDate";
+            this.dpChaqurDate.Size = new System.Drawing.Size(139, 21);
+            this.dpChaqurDate.TabIndex = 51;
+            this.dpChaqurDate.Enter += new System.EventHandler(this.EnterEvent);
+            this.dpChaqurDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.dpChaqurDate.Leave += new System.EventHandler(this.LeaveEvent);
+            // 
+            // errorAccountName
+            // 
+            this.errorAccountName.ContainerControl = this;
+            // 
+            // errorTDate
+            // 
+            this.errorTDate.ContainerControl = this;
+            // 
+            // errorAmount
+            // 
+            this.errorAmount.ContainerControl = this;
+            // 
+            // errorChequeno
+            // 
+            this.errorChequeno.ContainerControl = this;
+            // 
+            // errorChequeDate
+            // 
+            this.errorChequeDate.ContainerControl = this;
+            // 
+            // errorRecievedby
+            // 
+            this.errorRecievedby.ContainerControl = this;
+            // 
+            // errorPaidBy
+            // 
+            this.errorPaidBy.ContainerControl = this;
+            // 
+            // errorDescription
+            // 
+            this.errorDescription.ContainerControl = this;
             // 
             // frmEntryTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 369);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dpChaqurDate);
+            this.Controls.Add(this.dpTdate);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtPaidby);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtRecievedby);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -407,20 +456,28 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtChanqueno);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbPaid);
+            this.Controls.Add(this.rbrecieved);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbAccountName);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmEntryTransaction";
             this.Text = "Transaction";
+            ((System.ComponentModel.ISupportInitialize)(this.errorAccountName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorChequeno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorChequeDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorRecievedby)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPaidBy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescription)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,16 +486,16 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbAccountName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbrecieved;
+        private System.Windows.Forms.RadioButton rbPaid;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtChanqueno;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -446,17 +503,25 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtRecievedby;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPaidby;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dpTdate;
+        private System.Windows.Forms.DateTimePicker dpChaqurDate;
+        private System.Windows.Forms.ErrorProvider errorAccountName;
+        private System.Windows.Forms.ErrorProvider errorTDate;
+        private System.Windows.Forms.ErrorProvider errorAmount;
+        private System.Windows.Forms.ErrorProvider errorChequeno;
+        private System.Windows.Forms.ErrorProvider errorChequeDate;
+        private System.Windows.Forms.ErrorProvider errorRecievedby;
+        private System.Windows.Forms.ErrorProvider errorPaidBy;
+        private System.Windows.Forms.ErrorProvider errorDescription;
     }
 }

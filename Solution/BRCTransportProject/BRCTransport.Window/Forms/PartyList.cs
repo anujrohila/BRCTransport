@@ -16,8 +16,7 @@ namespace BRCTransport.Window.Forms
         #region MyRegion
 
         private Int32 PartyId = 0;
-        frmParty frmParty = new frmParty();
-        
+       
         #endregion
 
         public PartyList()
@@ -54,6 +53,7 @@ namespace BRCTransport.Window.Forms
 
             if (Action == "Edit")
             {
+                frmParty frmParty = new frmParty();
                 PartyId = Convert.ToInt32(gridViewParty.Rows[e.RowIndex].Cells[0].Value);
                 frmParty.PartyId = PartyId;
                 frmParty.FormClosed += frmParty_FormClosed;

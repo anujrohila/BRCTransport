@@ -17,11 +17,21 @@ namespace BRCTransport.Window.Forms
     public partial class frmEntryAccount : Form
     {
         public Int32 AccountId = 0;
-        
+
 
         public frmEntryAccount()
         {
             InitializeComponent();
+            this.Load += frmEntryAccount_Load;
+        }
+
+        void frmEntryAccount_Load(object sender, EventArgs e)
+        {
+            if (AccountId > 0)
+            {
+                setflag();
+            }
+            textaccountname.Focus();
         }
 
 
@@ -29,35 +39,37 @@ namespace BRCTransport.Window.Forms
 
         private void setflag()
         {
-            //if (AccountId > 0)
-            //{
-            //    int anint;    
-            //    var accountdetail = AccountsMasterBusinessLogic.Get(AccountId);
-            //    textaccountname.Text = accountdetail.AccountName;
-            //    anint = Convert.ToInt32(accountdetail.AccountNo);
-
-            //    textaddress.Text = accountdetail.Addrees;
-            //    if (radioButton1.Checked)
-            //    {
-            //        accountdetail.AccountType = "Bank";
-            //    }
-            //    else if (radioButton2.Checked)ta
-            //    {
-            //        accountdetail.AccountType = "Cash";
-            //    }
-            //    textphoneno.Text = accountdetail.PhoneNo;
-            //    anint = Convert.ToInt32(accountdetail.OpeningBalance);
-            //    accountdate.Text = System.DateTime.Today.ToShortDateString();          
-          
-            //}
+            if (AccountId > 0)
+            {
+               var accountdetail = AccountsMasterBusinessLogic.Get(AccountId);
+                textaccountname.Text = accountdetail.AccountName;
+                textaccountno.Text = Convert.ToString(accountdetail.AccountNo);
+                textaddress.Text  =accountdetail.Addrees;
+                textopeningbal.Text = Convert.ToString(accountdetail.OpeningBalance);
+                if (accountdetail.AccountType == "1")
+                {
+                    rbcash.Checked = true;
+                }
+                else
+                {
+                    rbBank.Checked = true;
+                }
+                textphoneno.Text = accountdetail.PhoneNo;
+                accountdate.Text = Convert.ToString(accountdetail.OpeningDate);
+                textdescription.Text = Convert.ToString(accountdetail.Description);
+            }
         }
+
         private void cleandata()
         {
-
-            tblAccountsMasterDTO tblaccountmasterdto = new tblAccountsMasterDTO();
-            tblaccountmasterdto.AccountName = " ";
-            
-            
+            textaccountname.Text = "";
+            textaccountno.Text = "";
+            textaddress.Text = "";
+            textphoneno.Text = "";
+            accountdate.Text = "";
+            rbBank.Checked = true;
+            textdescription.Text = "";
+            textopeningbal.Text = "";
         }
 
         private Boolean ValidateData()
@@ -74,21 +86,22 @@ namespace BRCTransport.Window.Forms
             else
                 return false;
 
-
-            
-            
-
         }
         #endregion
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-          
+
             if (ValidateData())
             {
+
                 tblAccountsMasterDTO tblaccountmasterdto = new tblAccountsMasterDTO();
+                if (AccountId > 0)
+                {
+                    tblaccountmasterdto.AccountId = AccountId;
+                }
                 tblaccountmasterdto.AccountName = textaccountname.Text;
-                if (Convert.ToString(radioButton1.Checked) == "Bank")
+                if (rbBank.Checked)
                 {
                     tblaccountmasterdto.AccountType = "2";
                 }
@@ -97,28 +110,18 @@ namespace BRCTransport.Window.Forms
                     tblaccountmasterdto.AccountType = "1";
                 }
 
-
-                //if (Convert.ToString(radioButton1.Checked) == "Bank")
-                //{
-                //    tblaccountmasterdto.AccountType = "1";
-                //}
-                //else if (Convert.ToString(radioButton1.Checked) == "Cash")
-                //{
-                //    tblaccountmasterdto.AccountType = "2";
-                //}
-
-                tblaccountmasterdto.AccountNo = Convert.ToInt32(textaccountno.Text);
+                tblaccountmasterdto.AccountNo = Convert.ToString(textaccountno.Text);
                 tblaccountmasterdto.Addrees = textaddress.Text;
                 tblaccountmasterdto.PhoneNo = textphoneno.Text;
-                tblaccountmasterdto.OpeningBalance = Convert.ToDouble(textopeningbal.Text);                                
+                tblaccountmasterdto.OpeningBalance = Convert.ToDouble(textopeningbal.Text);
                 tblaccountmasterdto.OpeningDate = accountdate.Value;
-              
-                
+                tblaccountmasterdto.Description = textdescription.Text;
                 var result = AccountsMasterBusinessLogic.Save(tblaccountmasterdto);
-                tblaccountmasterdto.AccountName = " ";
-               
-
-                
+                if (AccountId > 0)
+                {
+                    this.Close();
+                }
+                cleandata();
             }
 
         }
@@ -156,6 +159,11 @@ namespace BRCTransport.Window.Forms
 
 
         #endregion
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }

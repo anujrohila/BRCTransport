@@ -35,8 +35,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbBank = new System.Windows.Forms.RadioButton();
+            this.rbcash = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textaccountno = new System.Windows.Forms.TextBox();
@@ -138,33 +138,33 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "*";
             // 
-            // radioButton1
+            // rbBank
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(125, 89);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(50, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Bank";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Enter += new System.EventHandler(this.EnterEvent);
-            this.radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.radioButton1.Leave += new System.EventHandler(this.LeaveEvent);
+            this.rbBank.AutoSize = true;
+            this.rbBank.Checked = true;
+            this.rbBank.Location = new System.Drawing.Point(125, 89);
+            this.rbBank.Name = "rbBank";
+            this.rbBank.Size = new System.Drawing.Size(50, 17);
+            this.rbBank.TabIndex = 2;
+            this.rbBank.TabStop = true;
+            this.rbBank.Text = "Bank";
+            this.rbBank.UseVisualStyleBackColor = true;
+            this.rbBank.Enter += new System.EventHandler(this.EnterEvent);
+            this.rbBank.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.rbBank.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // radioButton2
+            // rbcash
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(186, 89);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.Text = "Cash";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.Enter += new System.EventHandler(this.EnterEvent);
-            this.radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.radioButton2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.rbcash.AutoSize = true;
+            this.rbcash.Location = new System.Drawing.Point(186, 89);
+            this.rbcash.Name = "rbcash";
+            this.rbcash.Size = new System.Drawing.Size(49, 17);
+            this.rbcash.TabIndex = 3;
+            this.rbcash.Text = "Cash";
+            this.rbcash.UseVisualStyleBackColor = true;
+            this.rbcash.Enter += new System.EventHandler(this.EnterEvent);
+            this.rbcash.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.rbcash.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label5
             // 
@@ -362,6 +362,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -444,8 +445,8 @@
             this.Controls.Add(this.textaccountno);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbcash);
+            this.Controls.Add(this.rbBank);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
@@ -475,8 +476,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbBank;
+        private System.Windows.Forms.RadioButton rbcash;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textaccountno;

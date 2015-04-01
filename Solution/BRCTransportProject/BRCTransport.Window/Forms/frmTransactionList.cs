@@ -15,8 +15,7 @@ namespace BRCTransport.Window.Forms
     {
 
         private Int32 TransactionId = 0;
-        frmEntryTransaction frmtransaction = new frmEntryTransaction();
-
+       
         public frmTransactionList()
         {
             this.Load += frmTransactionList_Load;
@@ -42,6 +41,8 @@ namespace BRCTransport.Window.Forms
 
             if (Action == "Edit")
             {
+                frmEntryTransaction frmtransaction = new frmEntryTransaction();
+
                 TransactionId = Convert.ToInt32(GridViewtransaction.Rows[e.RowIndex].Cells[0].Value);
                 frmtransaction.TransactionId = TransactionId;
                 frmtransaction.FormClosed += frmParty_FormClosed;
@@ -56,7 +57,7 @@ namespace BRCTransport.Window.Forms
                     var messageBoxResult = MessageBox.Show("Are you sure want to delete this record?", "Delete", MessageBoxButtons.YesNo);
                     if (messageBoxResult == DialogResult.Yes)
                     {
-                        var result = ConsignorBusinessLogic.Delete(TransactionId);
+                        var result = TransactionBusinessLogic.Delete(TransactionId);
                         MessageBox.Show("Party deleted successfully.");
                         fillgriddata();
                     }

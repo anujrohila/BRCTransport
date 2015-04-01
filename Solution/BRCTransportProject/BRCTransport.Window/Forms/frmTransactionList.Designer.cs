@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GridViewtransaction = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DrAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CrAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,7 @@
             this.GridViewtransaction.AllowUserToOrderColumns = true;
             this.GridViewtransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewtransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.TDate,
             this.DrAmount,
             this.CrAmount,
@@ -60,9 +62,16 @@
             this.GridViewtransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewtransaction.Location = new System.Drawing.Point(0, 0);
             this.GridViewtransaction.Name = "GridViewtransaction";
-            this.GridViewtransaction.Size = new System.Drawing.Size(619, 419);
+            this.GridViewtransaction.Size = new System.Drawing.Size(1173, 455);
             this.GridViewtransaction.TabIndex = 0;
             this.GridViewtransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TransactionId";
+            this.Column1.HeaderText = "TransactionId";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
             // 
             // TDate
             // 
@@ -130,10 +139,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 419);
+            this.ClientSize = new System.Drawing.Size(1173, 455);
             this.Controls.Add(this.GridViewtransaction);
             this.Name = "frmTransactionList";
             this.Text = "frmTransactionList";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.GridViewtransaction)).EndInit();
             this.ResumeLayout(false);
 
@@ -142,6 +152,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridViewtransaction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn CrAmount;

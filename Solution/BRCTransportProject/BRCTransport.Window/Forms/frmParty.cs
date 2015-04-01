@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BRCTransport.Domain;
+using BRCTransport.Window.Class;
 
 namespace BRCTransport.Window.Forms
 {
@@ -71,8 +72,8 @@ namespace BRCTransport.Window.Forms
                 {
                     tblConsignorDTO.CreationDate = DateTime.Now;
                     var result = ConsignorBusinessLogic.Save(tblConsignorDTO);
-                    if (result > 0)
-                        this.Close();
+                    if(PartyId > 0)
+                       this.Close();
                 }
                 else
                 {
@@ -83,58 +84,56 @@ namespace BRCTransport.Window.Forms
 
         private bool IsFormValidate()
         {
-            bool isValidate = true;
-            if (string.IsNullOrWhiteSpace(txtPartyName.Text))
-            {
-                MessageBox.Show("Please provide party name.");
-                txtPartyName.Focus();
+            ErrorHanding.SetErrorCount();
+            ErrorHanding.SetTextboxErrorWithCount(errorPartyname, txtPartyName, "Enter Party name");
+            ErrorHanding.SetTextboxErrorWithCount(errorCode, txtCode, "Enter Code");
+            ErrorHanding.SetTextboxErrorWithCount(errorType,cbType , "Select Type");
+            ErrorHanding.SetTextboxErrorWithCount(errorAddress, txtAddress, "Enter Address");
+            ErrorHanding.SetTextboxErrorWithCount(errorPhoneNo, txtPhoneNo, "Enter Phone No.");
+
+            if (ErrorHanding.GetErrorCount() == 0)
+                return true;
+            else
                 return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtCode.Text))
-            {
-                MessageBox.Show("Please provide code.");
-                txtCode.Focus();
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(Convert.ToString(cbType.SelectedItem)))
-            {
-                MessageBox.Show("Please provide type.");
-                txtPartyName.Focus();
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtAddress.Text))
-            {
-                MessageBox.Show("Please provide address.");
-                txtAddress.Focus();
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtPhoneNo.Text))
-            {
-                MessageBox.Show("Please provide phone no.");
-                txtPhoneNo.Focus();
-                return false;
-            }
-            return isValidate;
+
         }
 
-        private void txtAddress_TextChanged(object sender, EventArgs e)
+        #region Key Event
+
+        private void EnterEvent(object sender, EventArgs e)
         {
-
+            CommonClass.EnterEvents(sender, e);
         }
+
+        private void LeaveEvent(object sender, EventArgs e)
+        {
+            CommonClass.LeaveEvents(sender, e);
+        }
+
+        private void txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
+
+     
+        #endregion
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPartyName_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
