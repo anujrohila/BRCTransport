@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GridViewMr = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MRDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecievedFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             // 
             this.GridViewMr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewMr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.MRDate,
             this.CreationDate,
             this.RecievedFrom,
@@ -63,9 +65,16 @@
             this.GridViewMr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewMr.Location = new System.Drawing.Point(0, 0);
             this.GridViewMr.Name = "GridViewMr";
-            this.GridViewMr.Size = new System.Drawing.Size(561, 413);
+            this.GridViewMr.Size = new System.Drawing.Size(1247, 526);
             this.GridViewMr.TabIndex = 0;
             this.GridViewMr.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MRId";
+            this.Column1.HeaderText = "MRId";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
             // 
             // MRDate
             // 
@@ -145,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 413);
+            this.ClientSize = new System.Drawing.Size(1247, 526);
             this.Controls.Add(this.GridViewMr);
             this.Name = "MRNoteList";
             this.Text = "frmMRNoteList";
@@ -159,6 +168,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridViewMr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MRDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreationDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecievedFrom;

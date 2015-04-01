@@ -42,9 +42,12 @@ namespace BRCTransport.Window.Forms
 
             if (Action == "Edit")
             {
+                frmEntryMRNote frm = new frmEntryMRNote();
                 MRId = Convert.ToInt32(GridViewMr.Rows[e.RowIndex].Cells[0].Value);
-                frmEntryMRNote.MRId = MRId;
-             
+                frm.MRId = MRId;
+                frm.FormClosed += frm_FormClosed;
+                frm.Show();
+                
             }
 
             if (Action == "Delete")
@@ -55,17 +58,22 @@ namespace BRCTransport.Window.Forms
                     var messageBoxResult = MessageBox.Show("Are you sure want to delete this record?", "Delete", MessageBoxButtons.YesNo);
                     if (messageBoxResult == DialogResult.Yes)
                     {
-                        var result = ConsignorBusinessLogic.Delete(MRId);
-                        MessageBox.Show("Party deleted successfully.");
+                        var result = MRNoteBusinessLogic.Delete(MRId);
+                        MessageBox.Show("MR Note deleted successfully.");
                         FillGridData();
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Party already used some where else can't deleted successfully.");
+                    MessageBox.Show("MR Note already used some where else can't deleted successfully.");
                 }
 
             }
+        }
+
+        void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FillGridData();
         }
     }
 }
