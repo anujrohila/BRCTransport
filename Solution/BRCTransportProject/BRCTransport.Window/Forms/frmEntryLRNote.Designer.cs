@@ -34,21 +34,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPolicyNo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dpDate1 = new System.Windows.Forms.DateTimePicker();
+            this.dpCompanyDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbConsineeName = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtInvoiceNo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtServiceTaxRegNo = new System.Windows.Forms.TextBox();
+            this.txtConsigneeServiceTaxRegNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbConsignorName = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPurchaseOrderNo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtServiceTaxRegNo2 = new System.Windows.Forms.TextBox();
+            this.txtConsignorServiceTaxRegNo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dpDate3 = new System.Windows.Forms.DateTimePicker();
+            this.dpAdvancePaymentDate = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.txtFromCodeName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,10 +66,10 @@
             this.txtRate = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtCharges = new System.Windows.Forms.TextBox();
-            this.txtAmount2 = new System.Windows.Forms.TextBox();
+            this.txtCharges1 = new System.Windows.Forms.TextBox();
+            this.txtAmount1 = new System.Windows.Forms.TextBox();
             this.txtRate2 = new System.Windows.Forms.TextBox();
-            this.txtAmount3 = new System.Windows.Forms.TextBox();
+            this.txtAmount2 = new System.Windows.Forms.TextBox();
             this.txtCharges2 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtFinalAmount = new System.Windows.Forms.TextBox();
@@ -78,15 +78,15 @@
             this.label27 = new System.Windows.Forms.Label();
             this.txtKms = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.dpDate2 = new System.Windows.Forms.DateTimePicker();
+            this.dpConsignmentDate = new System.Windows.Forms.DateTimePicker();
             this.label29 = new System.Windows.Forms.Label();
             this.txtBusinessType = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txtSalesTaxForm = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.txtPrivvateMarks = new System.Windows.Forms.TextBox();
+            this.txtPrivateMarks = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.txtAmount7 = new System.Windows.Forms.TextBox();
+            this.txtAdvancePaymentAmount = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txtLength = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.txtNoOfPkgs = new System.Windows.Forms.TextBox();
+            this.txtDiamentionNoOfPkgs = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.txtTotalCFT = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txtValidType = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.txtDeclaredValue = new System.Windows.Forms.TextBox();
+            this.txtDeclaredValueGoods = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.txtServiceTaxThrough = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.txtRebooking = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.txtOrigional = new System.Windows.Forms.TextBox();
+            this.txtMainConsignment = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.cmbServiceTaxisPaybleBy = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -148,15 +148,15 @@
             this.label66 = new System.Windows.Forms.Label();
             this.txtCentralisedServiceTaxRegNo = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
-            this.txtAmount1 = new System.Windows.Forms.TextBox();
+            this.txtCompanyAmount = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
-            this.txtPhoneNo = new System.Windows.Forms.TextBox();
+            this.txtCompanyPhoneNo = new System.Windows.Forms.TextBox();
             this.txtCharges3 = new System.Windows.Forms.TextBox();
-            this.txtAmount4 = new System.Windows.Forms.TextBox();
+            this.txtAmount3 = new System.Windows.Forms.TextBox();
             this.txtCharges4 = new System.Windows.Forms.TextBox();
-            this.txtAmount5 = new System.Windows.Forms.TextBox();
+            this.txtAmount4 = new System.Windows.Forms.TextBox();
             this.txtCharges5 = new System.Windows.Forms.TextBox();
-            this.txtAmount6 = new System.Windows.Forms.TextBox();
+            this.txtAmount5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorCompanyName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorDate = new System.Windows.Forms.ErrorProvider(this.components);
@@ -227,17 +227,19 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Date";
             // 
-            // dpDate1
+            // dpCompanyDate
             // 
-            this.dpDate1.CustomFormat = "dd-MM-yyyy";
-            this.dpDate1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpDate1.Location = new System.Drawing.Point(102, 31);
-            this.dpDate1.Name = "dpDate1";
-            this.dpDate1.Size = new System.Drawing.Size(145, 20);
-            this.dpDate1.TabIndex = 1;
-            this.dpDate1.Enter += new System.EventHandler(this.EnterEvent);
-            this.dpDate1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.dpDate1.Leave += new System.EventHandler(this.LeaveEvent);
+            this.dpCompanyDate.CustomFormat = "dd-MM-yyyy";
+            this.dpCompanyDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpCompanyDate.Location = new System.Drawing.Point(102, 31);
+            this.dpCompanyDate.MinDate = new System.DateTime(1996, 1, 28, 0, 0, 0, 0);
+            this.dpCompanyDate.Name = "dpCompanyDate";
+            this.dpCompanyDate.Size = new System.Drawing.Size(145, 20);
+            this.dpCompanyDate.TabIndex = 1;
+            this.dpCompanyDate.Value = new System.DateTime(2015, 3, 1, 0, 0, 0, 0);
+            this.dpCompanyDate.Enter += new System.EventHandler(this.EnterEvent);
+            this.dpCompanyDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.dpCompanyDate.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label5
             // 
@@ -287,15 +289,15 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Service Tax Regn.No";
             // 
-            // txtServiceTaxRegNo
+            // txtConsigneeServiceTaxRegNo
             // 
-            this.txtServiceTaxRegNo.Location = new System.Drawing.Point(387, 103);
-            this.txtServiceTaxRegNo.Name = "txtServiceTaxRegNo";
-            this.txtServiceTaxRegNo.Size = new System.Drawing.Size(129, 20);
-            this.txtServiceTaxRegNo.TabIndex = 6;
-            this.txtServiceTaxRegNo.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtServiceTaxRegNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtServiceTaxRegNo.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtConsigneeServiceTaxRegNo.Location = new System.Drawing.Point(387, 103);
+            this.txtConsigneeServiceTaxRegNo.Name = "txtConsigneeServiceTaxRegNo";
+            this.txtConsigneeServiceTaxRegNo.Size = new System.Drawing.Size(129, 20);
+            this.txtConsigneeServiceTaxRegNo.TabIndex = 6;
+            this.txtConsigneeServiceTaxRegNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtConsigneeServiceTaxRegNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtConsigneeServiceTaxRegNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label8
             // 
@@ -345,15 +347,15 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Service Tax Regn.No";
             // 
-            // txtServiceTaxRegNo2
+            // txtConsignorServiceTaxRegNo
             // 
-            this.txtServiceTaxRegNo2.Location = new System.Drawing.Point(389, 178);
-            this.txtServiceTaxRegNo2.Name = "txtServiceTaxRegNo2";
-            this.txtServiceTaxRegNo2.Size = new System.Drawing.Size(127, 20);
-            this.txtServiceTaxRegNo2.TabIndex = 9;
-            this.txtServiceTaxRegNo2.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtServiceTaxRegNo2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtServiceTaxRegNo2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtConsignorServiceTaxRegNo.Location = new System.Drawing.Point(389, 178);
+            this.txtConsignorServiceTaxRegNo.Name = "txtConsignorServiceTaxRegNo";
+            this.txtConsignorServiceTaxRegNo.Size = new System.Drawing.Size(127, 20);
+            this.txtConsignorServiceTaxRegNo.TabIndex = 9;
+            this.txtConsignorServiceTaxRegNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtConsignorServiceTaxRegNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtConsignorServiceTaxRegNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label13
             // 
@@ -364,17 +366,17 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Date";
             // 
-            // dpDate3
+            // dpAdvancePaymentDate
             // 
-            this.dpDate3.CustomFormat = "dd-MM-yyyy";
-            this.dpDate3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpDate3.Location = new System.Drawing.Point(764, 350);
-            this.dpDate3.Name = "dpDate3";
-            this.dpDate3.Size = new System.Drawing.Size(102, 20);
-            this.dpDate3.TabIndex = 38;
-            this.dpDate3.Enter += new System.EventHandler(this.EnterEvent);
-            this.dpDate3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.dpDate3.Leave += new System.EventHandler(this.LeaveEvent);
+            this.dpAdvancePaymentDate.CustomFormat = "dd-MM-yyyy";
+            this.dpAdvancePaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpAdvancePaymentDate.Location = new System.Drawing.Point(764, 350);
+            this.dpAdvancePaymentDate.Name = "dpAdvancePaymentDate";
+            this.dpAdvancePaymentDate.Size = new System.Drawing.Size(102, 20);
+            this.dpAdvancePaymentDate.TabIndex = 38;
+            this.dpAdvancePaymentDate.Enter += new System.EventHandler(this.EnterEvent);
+            this.dpAdvancePaymentDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.dpAdvancePaymentDate.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label14
             // 
@@ -538,25 +540,25 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Amount( Rs.)";
             // 
-            // txtCharges
+            // txtCharges1
             // 
-            this.txtCharges.Location = new System.Drawing.Point(884, 246);
-            this.txtCharges.Name = "txtCharges";
-            this.txtCharges.Size = new System.Drawing.Size(102, 20);
-            this.txtCharges.TabIndex = 22;
-            this.txtCharges.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtCharges.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtCharges.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtCharges1.Location = new System.Drawing.Point(884, 246);
+            this.txtCharges1.Name = "txtCharges1";
+            this.txtCharges1.Size = new System.Drawing.Size(102, 20);
+            this.txtCharges1.TabIndex = 22;
+            this.txtCharges1.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtCharges1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtCharges1.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // txtAmount2
+            // txtAmount1
             // 
-            this.txtAmount2.Location = new System.Drawing.Point(1024, 246);
-            this.txtAmount2.Name = "txtAmount2";
-            this.txtAmount2.Size = new System.Drawing.Size(108, 20);
-            this.txtAmount2.TabIndex = 23;
-            this.txtAmount2.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAmount1.Location = new System.Drawing.Point(1024, 246);
+            this.txtAmount1.Name = "txtAmount1";
+            this.txtAmount1.Size = new System.Drawing.Size(108, 20);
+            this.txtAmount1.TabIndex = 23;
+            this.txtAmount1.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAmount1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount1.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtRate2
             // 
@@ -568,15 +570,15 @@
             this.txtRate2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             this.txtRate2.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // txtAmount3
+            // txtAmount2
             // 
-            this.txtAmount3.Location = new System.Drawing.Point(1024, 271);
-            this.txtAmount3.Name = "txtAmount3";
-            this.txtAmount3.Size = new System.Drawing.Size(108, 20);
-            this.txtAmount3.TabIndex = 29;
-            this.txtAmount3.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount3.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAmount2.Location = new System.Drawing.Point(1024, 271);
+            this.txtAmount2.Name = "txtAmount2";
+            this.txtAmount2.Size = new System.Drawing.Size(108, 20);
+            this.txtAmount2.TabIndex = 29;
+            this.txtAmount2.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAmount2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount2.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges2
             // 
@@ -599,6 +601,7 @@
             // 
             // txtFinalAmount
             // 
+            this.txtFinalAmount.Enabled = false;
             this.txtFinalAmount.Location = new System.Drawing.Point(1024, 379);
             this.txtFinalAmount.Name = "txtFinalAmount";
             this.txtFinalAmount.Size = new System.Drawing.Size(108, 20);
@@ -654,17 +657,17 @@
             this.label28.TabIndex = 0;
             this.label28.Text = "Date";
             // 
-            // dpDate2
+            // dpConsignmentDate
             // 
-            this.dpDate2.CustomFormat = "dd-MM-yyyy";
-            this.dpDate2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpDate2.Location = new System.Drawing.Point(930, 65);
-            this.dpDate2.Name = "dpDate2";
-            this.dpDate2.Size = new System.Drawing.Size(176, 20);
-            this.dpDate2.TabIndex = 13;
-            this.dpDate2.Enter += new System.EventHandler(this.EnterEvent);
-            this.dpDate2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.dpDate2.Leave += new System.EventHandler(this.LeaveEvent);
+            this.dpConsignmentDate.CustomFormat = "dd-MM-yyyy";
+            this.dpConsignmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpConsignmentDate.Location = new System.Drawing.Point(930, 65);
+            this.dpConsignmentDate.Name = "dpConsignmentDate";
+            this.dpConsignmentDate.Size = new System.Drawing.Size(176, 20);
+            this.dpConsignmentDate.TabIndex = 13;
+            this.dpConsignmentDate.Enter += new System.EventHandler(this.EnterEvent);
+            this.dpConsignmentDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.dpConsignmentDate.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label29
             // 
@@ -713,15 +716,15 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "Sales Tax Form/Permit/Declaration No.";
             // 
-            // txtPrivvateMarks
+            // txtPrivateMarks
             // 
-            this.txtPrivvateMarks.Location = new System.Drawing.Point(195, 327);
-            this.txtPrivvateMarks.Name = "txtPrivvateMarks";
-            this.txtPrivvateMarks.Size = new System.Drawing.Size(176, 20);
-            this.txtPrivvateMarks.TabIndex = 33;
-            this.txtPrivvateMarks.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtPrivvateMarks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtPrivvateMarks.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtPrivateMarks.Location = new System.Drawing.Point(195, 327);
+            this.txtPrivateMarks.Name = "txtPrivateMarks";
+            this.txtPrivateMarks.Size = new System.Drawing.Size(176, 20);
+            this.txtPrivateMarks.TabIndex = 33;
+            this.txtPrivateMarks.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtPrivateMarks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtPrivateMarks.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label32
             // 
@@ -732,15 +735,15 @@
             this.label32.TabIndex = 0;
             this.label32.Text = "Amount";
             // 
-            // txtAmount7
+            // txtAdvancePaymentAmount
             // 
-            this.txtAmount7.Location = new System.Drawing.Point(764, 379);
-            this.txtAmount7.Name = "txtAmount7";
-            this.txtAmount7.Size = new System.Drawing.Size(102, 20);
-            this.txtAmount7.TabIndex = 42;
-            this.txtAmount7.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount7.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAdvancePaymentAmount.Location = new System.Drawing.Point(764, 379);
+            this.txtAdvancePaymentAmount.Name = "txtAdvancePaymentAmount";
+            this.txtAdvancePaymentAmount.Size = new System.Drawing.Size(102, 20);
+            this.txtAdvancePaymentAmount.TabIndex = 42;
+            this.txtAdvancePaymentAmount.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAdvancePaymentAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAdvancePaymentAmount.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label33
             // 
@@ -808,15 +811,15 @@
             this.label36.TabIndex = 0;
             this.label36.Text = "No.of pkgs";
             // 
-            // txtNoOfPkgs
+            // txtDiamentionNoOfPkgs
             // 
-            this.txtNoOfPkgs.Location = new System.Drawing.Point(389, 436);
-            this.txtNoOfPkgs.Name = "txtNoOfPkgs";
-            this.txtNoOfPkgs.Size = new System.Drawing.Size(113, 20);
-            this.txtNoOfPkgs.TabIndex = 47;
-            this.txtNoOfPkgs.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtNoOfPkgs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtNoOfPkgs.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtDiamentionNoOfPkgs.Location = new System.Drawing.Point(389, 436);
+            this.txtDiamentionNoOfPkgs.Name = "txtDiamentionNoOfPkgs";
+            this.txtDiamentionNoOfPkgs.Size = new System.Drawing.Size(113, 20);
+            this.txtDiamentionNoOfPkgs.TabIndex = 47;
+            this.txtDiamentionNoOfPkgs.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDiamentionNoOfPkgs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDiamentionNoOfPkgs.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label37
             // 
@@ -884,15 +887,15 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "Declared value of goods :";
             // 
-            // txtDeclaredValue
+            // txtDeclaredValueGoods
             // 
-            this.txtDeclaredValue.Location = new System.Drawing.Point(158, 474);
-            this.txtDeclaredValue.Name = "txtDeclaredValue";
-            this.txtDeclaredValue.Size = new System.Drawing.Size(165, 20);
-            this.txtDeclaredValue.TabIndex = 51;
-            this.txtDeclaredValue.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtDeclaredValue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtDeclaredValue.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtDeclaredValueGoods.Location = new System.Drawing.Point(158, 474);
+            this.txtDeclaredValueGoods.Name = "txtDeclaredValueGoods";
+            this.txtDeclaredValueGoods.Size = new System.Drawing.Size(165, 20);
+            this.txtDeclaredValueGoods.TabIndex = 51;
+            this.txtDeclaredValueGoods.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDeclaredValueGoods.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDeclaredValueGoods.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label41
             // 
@@ -1036,15 +1039,15 @@
             this.label48.TabIndex = 0;
             this.label48.Text = "Origional /Main Consignment No. with Stn. Code";
             // 
-            // txtOrigional
+            // txtMainConsignment
             // 
-            this.txtOrigional.Location = new System.Drawing.Point(617, 550);
-            this.txtOrigional.Name = "txtOrigional";
-            this.txtOrigional.Size = new System.Drawing.Size(165, 20);
-            this.txtOrigional.TabIndex = 59;
-            this.txtOrigional.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtOrigional.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtOrigional.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtMainConsignment.Location = new System.Drawing.Point(617, 550);
+            this.txtMainConsignment.Name = "txtMainConsignment";
+            this.txtMainConsignment.Size = new System.Drawing.Size(165, 20);
+            this.txtMainConsignment.TabIndex = 59;
+            this.txtMainConsignment.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtMainConsignment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtMainConsignment.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label50
             // 
@@ -1357,15 +1360,15 @@
             this.label67.TabIndex = 128;
             this.label67.Text = "Centralised Service Tax Regn. No.";
             // 
-            // txtAmount1
+            // txtCompanyAmount
             // 
-            this.txtAmount1.Location = new System.Drawing.Point(329, 30);
-            this.txtAmount1.Name = "txtAmount1";
-            this.txtAmount1.Size = new System.Drawing.Size(148, 20);
-            this.txtAmount1.TabIndex = 3;
-            this.txtAmount1.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount1.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtCompanyAmount.Location = new System.Drawing.Point(329, 30);
+            this.txtCompanyAmount.Name = "txtCompanyAmount";
+            this.txtCompanyAmount.Size = new System.Drawing.Size(148, 20);
+            this.txtCompanyAmount.TabIndex = 3;
+            this.txtCompanyAmount.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtCompanyAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtCompanyAmount.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label68
             // 
@@ -1376,15 +1379,15 @@
             this.label68.TabIndex = 130;
             this.label68.Text = "Amount";
             // 
-            // txtPhoneNo
+            // txtCompanyPhoneNo
             // 
-            this.txtPhoneNo.Location = new System.Drawing.Point(930, 178);
-            this.txtPhoneNo.Name = "txtPhoneNo";
-            this.txtPhoneNo.Size = new System.Drawing.Size(176, 20);
-            this.txtPhoneNo.TabIndex = 16;
-            this.txtPhoneNo.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtPhoneNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtPhoneNo.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtCompanyPhoneNo.Location = new System.Drawing.Point(930, 178);
+            this.txtCompanyPhoneNo.Name = "txtCompanyPhoneNo";
+            this.txtCompanyPhoneNo.Size = new System.Drawing.Size(176, 20);
+            this.txtCompanyPhoneNo.TabIndex = 16;
+            this.txtCompanyPhoneNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtCompanyPhoneNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtCompanyPhoneNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges3
             // 
@@ -1396,15 +1399,15 @@
             this.txtCharges3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             this.txtCharges3.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // txtAmount4
+            // txtAmount3
             // 
-            this.txtAmount4.Location = new System.Drawing.Point(1024, 298);
-            this.txtAmount4.Name = "txtAmount4";
-            this.txtAmount4.Size = new System.Drawing.Size(108, 20);
-            this.txtAmount4.TabIndex = 32;
-            this.txtAmount4.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount4.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAmount3.Location = new System.Drawing.Point(1024, 298);
+            this.txtAmount3.Name = "txtAmount3";
+            this.txtAmount3.Size = new System.Drawing.Size(108, 20);
+            this.txtAmount3.TabIndex = 32;
+            this.txtAmount3.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAmount3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount3.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges4
             // 
@@ -1416,15 +1419,15 @@
             this.txtCharges4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             this.txtCharges4.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // txtAmount5
+            // txtAmount4
             // 
-            this.txtAmount5.Location = new System.Drawing.Point(1024, 324);
-            this.txtAmount5.Name = "txtAmount5";
-            this.txtAmount5.Size = new System.Drawing.Size(108, 20);
-            this.txtAmount5.TabIndex = 36;
-            this.txtAmount5.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount5.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAmount4.Location = new System.Drawing.Point(1024, 324);
+            this.txtAmount4.Name = "txtAmount4";
+            this.txtAmount4.Size = new System.Drawing.Size(108, 20);
+            this.txtAmount4.TabIndex = 36;
+            this.txtAmount4.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAmount4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount4.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges5
             // 
@@ -1436,15 +1439,15 @@
             this.txtCharges5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             this.txtCharges5.Leave += new System.EventHandler(this.LeaveEvent);
             // 
-            // txtAmount6
+            // txtAmount5
             // 
-            this.txtAmount6.Location = new System.Drawing.Point(1024, 350);
-            this.txtAmount6.Name = "txtAmount6";
-            this.txtAmount6.Size = new System.Drawing.Size(108, 20);
-            this.txtAmount6.TabIndex = 40;
-            this.txtAmount6.Enter += new System.EventHandler(this.EnterEvent);
-            this.txtAmount6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtAmount6.Leave += new System.EventHandler(this.LeaveEvent);
+            this.txtAmount5.Location = new System.Drawing.Point(1024, 350);
+            this.txtAmount5.Name = "txtAmount5";
+            this.txtAmount5.Size = new System.Drawing.Size(108, 20);
+            this.txtAmount5.TabIndex = 40;
+            this.txtAmount5.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAmount5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount5.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label4
             // 
@@ -1502,12 +1505,12 @@
             this.ClientSize = new System.Drawing.Size(1157, 679);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCharges5);
-            this.Controls.Add(this.txtAmount6);
-            this.Controls.Add(this.txtCharges4);
             this.Controls.Add(this.txtAmount5);
-            this.Controls.Add(this.txtCharges3);
+            this.Controls.Add(this.txtCharges4);
             this.Controls.Add(this.txtAmount4);
-            this.Controls.Add(this.txtAmount1);
+            this.Controls.Add(this.txtCharges3);
+            this.Controls.Add(this.txtAmount3);
+            this.Controls.Add(this.txtCompanyAmount);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.txtCentralisedServiceTaxRegNo);
             this.Controls.Add(this.label67);
@@ -1538,7 +1541,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbServiceTaxisPaybleBy);
             this.Controls.Add(this.label50);
-            this.Controls.Add(this.txtOrigional);
+            this.Controls.Add(this.txtMainConsignment);
             this.Controls.Add(this.label48);
             this.Controls.Add(this.txtRebooking);
             this.Controls.Add(this.label47);
@@ -1554,7 +1557,7 @@
             this.Controls.Add(this.label42);
             this.Controls.Add(this.txtServiceTaxThrough);
             this.Controls.Add(this.label41);
-            this.Controls.Add(this.txtDeclaredValue);
+            this.Controls.Add(this.txtDeclaredValueGoods);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.txtValidType);
             this.Controls.Add(this.label39);
@@ -1562,7 +1565,7 @@
             this.Controls.Add(this.label38);
             this.Controls.Add(this.txtTotalCFT);
             this.Controls.Add(this.label37);
-            this.Controls.Add(this.txtNoOfPkgs);
+            this.Controls.Add(this.txtDiamentionNoOfPkgs);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.txtHeight);
             this.Controls.Add(this.label35);
@@ -1570,15 +1573,15 @@
             this.Controls.Add(this.label34);
             this.Controls.Add(this.txtLength);
             this.Controls.Add(this.label33);
-            this.Controls.Add(this.txtAmount7);
+            this.Controls.Add(this.txtAdvancePaymentAmount);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.txtPrivvateMarks);
+            this.Controls.Add(this.txtPrivateMarks);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.txtSalesTaxForm);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.txtBusinessType);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.dpDate2);
+            this.Controls.Add(this.dpConsignmentDate);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.txtKms);
             this.Controls.Add(this.label27);
@@ -1587,10 +1590,10 @@
             this.Controls.Add(this.txtFinalAmount);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.txtCharges2);
-            this.Controls.Add(this.txtAmount3);
-            this.Controls.Add(this.txtRate2);
             this.Controls.Add(this.txtAmount2);
-            this.Controls.Add(this.txtCharges);
+            this.Controls.Add(this.txtRate2);
+            this.Controls.Add(this.txtAmount1);
+            this.Controls.Add(this.txtCharges1);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.txtRate);
@@ -1603,27 +1606,27 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtNoOfPackages);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.txtPhoneNo);
+            this.Controls.Add(this.txtCompanyPhoneNo);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtToCodeName);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtFromCodeName);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dpDate3);
+            this.Controls.Add(this.dpAdvancePaymentDate);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtServiceTaxRegNo2);
+            this.Controls.Add(this.txtConsignorServiceTaxRegNo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtPurchaseOrderNo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbConsignorName);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtServiceTaxRegNo);
+            this.Controls.Add(this.txtConsigneeServiceTaxRegNo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtInvoiceNo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbConsineeName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dpDate1);
+            this.Controls.Add(this.dpCompanyDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPolicyNo);
             this.Controls.Add(this.label2);
@@ -1656,21 +1659,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPolicyNo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dpDate1;
+        private System.Windows.Forms.DateTimePicker dpCompanyDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbConsineeName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtInvoiceNo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtServiceTaxRegNo;
+        private System.Windows.Forms.TextBox txtConsigneeServiceTaxRegNo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbConsignorName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPurchaseOrderNo;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtServiceTaxRegNo2;
+        private System.Windows.Forms.TextBox txtConsignorServiceTaxRegNo;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dpDate3;
+        private System.Windows.Forms.DateTimePicker dpAdvancePaymentDate;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtFromCodeName;
         private System.Windows.Forms.Label label15;
@@ -1688,10 +1691,10 @@
         private System.Windows.Forms.TextBox txtRate;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtCharges;
-        private System.Windows.Forms.TextBox txtAmount2;
+        private System.Windows.Forms.TextBox txtCharges1;
+        private System.Windows.Forms.TextBox txtAmount1;
         private System.Windows.Forms.TextBox txtRate2;
-        private System.Windows.Forms.TextBox txtAmount3;
+        private System.Windows.Forms.TextBox txtAmount2;
         private System.Windows.Forms.TextBox txtCharges2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtFinalAmount;
@@ -1700,15 +1703,15 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtKms;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.DateTimePicker dpDate2;
+        private System.Windows.Forms.DateTimePicker dpConsignmentDate;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtBusinessType;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtSalesTaxForm;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox txtPrivvateMarks;
+        private System.Windows.Forms.TextBox txtPrivateMarks;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtAmount7;
+        private System.Windows.Forms.TextBox txtAdvancePaymentAmount;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtLength;
         private System.Windows.Forms.Label label34;
@@ -1716,7 +1719,7 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtHeight;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txtNoOfPkgs;
+        private System.Windows.Forms.TextBox txtDiamentionNoOfPkgs;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtTotalCFT;
         private System.Windows.Forms.Label label38;
@@ -1724,7 +1727,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtValidType;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox txtDeclaredValue;
+        private System.Windows.Forms.TextBox txtDeclaredValueGoods;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox txtServiceTaxThrough;
         private System.Windows.Forms.Label label42;
@@ -1740,7 +1743,7 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox txtRebooking;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox txtOrigional;
+        private System.Windows.Forms.TextBox txtMainConsignment;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.ComboBox cmbServiceTaxisPaybleBy;
         private System.Windows.Forms.Button btnSave;
@@ -1770,15 +1773,15 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.TextBox txtCentralisedServiceTaxRegNo;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.TextBox txtAmount1;
+        private System.Windows.Forms.TextBox txtCompanyAmount;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.TextBox txtPhoneNo;
+        private System.Windows.Forms.TextBox txtCompanyPhoneNo;
         private System.Windows.Forms.TextBox txtCharges3;
-        private System.Windows.Forms.TextBox txtAmount4;
+        private System.Windows.Forms.TextBox txtAmount3;
         private System.Windows.Forms.TextBox txtCharges4;
-        private System.Windows.Forms.TextBox txtAmount5;
+        private System.Windows.Forms.TextBox txtAmount4;
         private System.Windows.Forms.TextBox txtCharges5;
-        private System.Windows.Forms.TextBox txtAmount6;
+        private System.Windows.Forms.TextBox txtAmount5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorCompanyName;
         private System.Windows.Forms.ErrorProvider errorDate;

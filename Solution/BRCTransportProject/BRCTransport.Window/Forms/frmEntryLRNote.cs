@@ -1,7 +1,6 @@
 ﻿using BRCTransport.BAL;
 using BRCTransport.Domain;
 using BRCTransport.Window.Class;
-using BRCTransport.Window.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,8 +61,8 @@ namespace BRCTransport.Window.Forms
             ErrorHanding.SetErrorCount();
             ErrorHanding.SetTextboxErrorWithCount(errorCompanyName, txtCompanyName, "Enter CompanyName");
             ErrorHanding.SetTextboxErrorWithCount(errorConsignmentNote, txtConsignmentNoteNo, "Enter Consignment Note number");
-            ErrorHanding.SetTextboxErrorWithCount(errorCharges, txtCharges, "Enter Charges");
-            ErrorHanding.SetTextboxErrorWithCount(errorAmount, txtAmount2, "Enter Amount");
+            ErrorHanding.SetTextboxErrorWithCount(errorCharges, txtCharges1, "Enter Charges");
+            ErrorHanding.SetTextboxErrorWithCount(errorAmount, txtAmount1, "Enter Amount");
             ErrorHanding.SetTextboxErrorWithCount(errorFromCode, txtFromCodeName, "Enter from Code name");
             ErrorHanding.SetTextboxErrorWithCount(errorToCode, txtToCodeName, "Enterto code name");
 
@@ -84,10 +83,61 @@ namespace BRCTransport.Window.Forms
             txtWidth.Text = "";
             txtValidType.Text = "";
             txtTotalCFT.Text = "";
+            txtAdvancePaymentAmount.Text = "";
+            txtAmount1.Text = "";
+            txtAmount2.Text = "";
+            txtAmount3.Text = "";
+            txtAmount4.Text = "";
+            txtAmount5.Text = "";
+            txtBasicOfBooking.Text = "";
+            txtBilledWith.Text = "";
+            txtBranchCode.Text = "";
+            txtBusinessType.Text = "";
+            txtCentralisedServiceTaxRegNo.Text = "";
+            txtCharges1.Text = "";
+            txtCharges2.Text = "";
+            txtCharges3.Text = "";
+            txtCharges4.Text = "";
+            txtCharges5.Text = "";
+            txtChargeWeightInKg.Text = "";
+            txtCompanyAmount.Text = "";
+            txtCompanyName.Text = "";
+            txtCompanyPhoneNo.Text = "";
+            txtConsignmentNoteNo.Text = "";
+            txtDeclaredValueGoods.Text = "";
+            txtDiamentionNoOfPkgs.Text = "";
+            txtDistance.Text = "";
+            txtDescription.Text = "";
+            txtFinalAmount.Text = "";
+            txtFromCodeName.Text = "";
+            txtHeight.Text = "";
+            txtInvoiceNo.Text = "";
+            txtKms.Text = "";
+            txtLength.Text = "";
+            txtLoadType.Text = "";
+            txtMainConsignment.Text = "";
+            txtMethodOfPacking.Text = "";
+            txtMRNo.Text = "";
+            txtNoOfPackages.Text = "";
+            txtPanNo.Text = "";
+            txtPartyCode.Text = "";
+            txtPolicyNo.Text = "";
+            txtPrivateMarks.Text = "";
+            txtPurchaseOrderNo.Text = "";
+            txtRate.Text = "";
+            txtRate2.Text = "";
+            txtRebooking.Text = "";
+            txtSalesTaxForm.Text = "";
+            txtServiceTaxThrough.Text = "";
+            txtSinglePiece.Text = "";
+            txtToCodeName.Text = "";
+            txtToPay.Text = "";
+            txtTotalCFT.Text = "";
+            txtValidType.Text = "";
+            txtWidth.Text = "";
+            
         }
         #endregion
-
-
 
         public static int ConsignmentId { get; set; }
 
@@ -119,62 +169,68 @@ namespace BRCTransport.Window.Forms
             {
                 tblConsignmentNoteDTO consignNoteDTO = new tblConsignmentNoteDTO();
                 consignNoteDTO.CompanyName = txtCompanyName.Text;
-                consignNoteDTO.ActualWtInKGS = txtActualWeightInKg.Text;
+                consignNoteDTO.PolicyNo = txtPolicyNo.Text;
+                consignNoteDTO.CompanyDate = Convert.ToDateTime(dpCompanyDate.Value);
+                consignNoteDTO.CompanyAmount = Convert.ToDouble(txtCompanyAmount.Text);
+                consignNoteDTO.ConsigneeId = Convert.ToInt32(cmbConsineeName.SelectedValue);
+                consignNoteDTO.ConsigneeInvoiceNo = txtInvoiceNo.Text;
+                consignNoteDTO.ConsigneeServiceTaxRegNo = txtConsigneeServiceTaxRegNo.Text;
+                consignNoteDTO.ConsignorId = Convert.ToInt32(cmbConsignorName.SelectedValue);
+                consignNoteDTO.ConsignorPurchaseOrderNo = txtPurchaseOrderNo.Text;
+                consignNoteDTO.ConsignorServiceTaxRegNo = txtConsignorServiceTaxRegNo.Text;
+                consignNoteDTO.PanNo = txtPanNo.Text;
+                consignNoteDTO.CentralisedServiceTaxRegnNo = txtCentralisedServiceTaxRegNo.Text;
+                consignNoteDTO.FromCode = txtFromCodeName.Text;
+                consignNoteDTO.ConsignmentNoteNo = Convert.ToInt32(txtConsignmentNoteNo.Text);
+                consignNoteDTO.ConsignmentDate = Convert.ToDateTime(dpConsignmentDate.Value);
                 consignNoteDTO.AddressofIssuing = txtAddressOfIssueOffice.Text;
-                consignNoteDTO.AdvancedPaymentAmount = txtAmount1.Text;
-               consignNoteDTO.AdvancedPaymentDate = Convert.ToDateTime(dpDate1.MaxDate);
-                consignNoteDTO.AdvancedPaymentMRNo = txtMRNo.Text;
-                consignNoteDTO.Amount1 = double.Parse(txtAmount2.Text);
-                consignNoteDTO.Amount2 = double.Parse(txtAmount3.Text);
-                consignNoteDTO.Amount3 = double.Parse(txtAmount4.Text);
-                consignNoteDTO.Amount4 = double.Parse(txtAmount5.Text);
-                consignNoteDTO.Amount5 = double.Parse(txtAmount6.Text);
+                consignNoteDTO.ToCode = txtToCodeName.Text;
+                consignNoteDTO.CompanyPhone = txtCompanyPhoneNo.Text;
+                consignNoteDTO.NoofPackages = txtNoOfPackages.Text;
+                consignNoteDTO.MethodOfPacking = txtMethodOfPacking.Text;
+                consignNoteDTO.ActualWtInKGS = txtActualWeightInKg.Text;
+                consignNoteDTO.CategoryOfLoad = txtChargeWeightInKg.Text;
+                consignNoteDTO.Rate = txtRate.Text;
+                consignNoteDTO.Charges1 = txtCharges1.Text;
+                consignNoteDTO.Amount1 = double.Parse(txtAmount1.Text);
+                consignNoteDTO.LoadType = txtLoadType.Text;
+                consignNoteDTO.Distance = txtDistance.Text;
+                consignNoteDTO.KMS = txtKms.Text;
+                consignNoteDTO.Charges1 = txtCharges1.Text;
+                consignNoteDTO.Charges2 = txtCharges2.Text;
+                consignNoteDTO.Amount2 =  double.Parse(txtAmount2.Text);
+                consignNoteDTO.Charges3 = txtCharges3.Text;
+                consignNoteDTO.Charges4 = txtCharges4.Text;
+                consignNoteDTO.AdvancedPaymentDate = Convert.ToDateTime(dpAdvancePaymentDate.Value);
+                consignNoteDTO.Charges5 = txtCharges5.Text;
+                consignNoteDTO.Amount3 = Convert.ToDouble(txtAmount3.Text);
+                consignNoteDTO.Amount4 = Convert.ToDouble(txtAmount4.Text);
+                consignNoteDTO.Amount5 = Convert.ToDouble(txtAmount5.Text);
+                txtFinalAmount.Text = (Convert.ToDouble(txtAmount1.Text) + Convert.ToDouble(txtAmount2.Text) + Convert.ToDouble(txtAmount3.Text) + Convert.ToDouble(txtAmount4.Text) + Convert.ToDouble(txtAmount5.Text)).ToString();
+                consignNoteDTO.FinalAmount = Convert.ToDouble(txtFinalAmount.Text);
+                consignNoteDTO.PrivateMarketOtherIdentificaion = txtPrivateMarks.Text;
+                consignNoteDTO.AdvancedPaymentAmount = txtAdvancePaymentAmount.Text;
+                consignNoteDTO.BusinessType = txtBusinessType.Text;
+                consignNoteDTO.DeclarationNo = txtDeclaredValueGoods.Text;
+                consignNoteDTO.DimensionLength = txtLength.Text;
+                consignNoteDTO.DimensionWidth = txtWidth.Text;
+                consignNoteDTO.DimensionHeight = txtHeight.Text;
+                consignNoteDTO.DimensionNoOfPKGS = txtDiamentionNoOfPkgs.Text;
+                consignNoteDTO.DimensionTotalCFTCMT = txtTotalCFT.Text;
+                consignNoteDTO.DimensionSinglePieceWeight = txtSinglePiece.Text;
+                consignNoteDTO.ValidType = txtValidType.Text;
+                consignNoteDTO.DeclaredValueOfGoods = txtDeclaredValueGoods.Text;
+                consignNoteDTO.ServicetaxThrough = txtServiceTaxThrough.Text;
                 consignNoteDTO.BasicOfBooking = txtBasicOfBooking.Text;
                 consignNoteDTO.BilledWithMs = txtBilledWith.Text;
                 consignNoteDTO.BranchCode = txtBranchCode.Text;
-                consignNoteDTO.BusinessType = txtBusinessType.Text;
-                consignNoteDTO.CategoryOfLoad = txtLoadType.Text;
-                consignNoteDTO.CentralisedServiceTaxRegnNo = txtCentralisedServiceTaxRegNo.Text;
-                consignNoteDTO.Charges1 = txtCharges.Text;
-                consignNoteDTO.Charges2 = txtCharges2.Text;
-                consignNoteDTO.Charges3 = txtCharges3.Text;
-                consignNoteDTO.Charges4 = txtCharges4.Text;
-                consignNoteDTO.Charges5 = txtCharges5.Text;
-                consignNoteDTO.CompanyAmount = double.Parse(txtAmount2.Text);
-               consignNoteDTO.CompanyDate = Convert.ToDateTime(dpDate2.MaxDate);
-               
-                consignNoteDTO.CompanyPhone = txtPhoneNo.Text;
-                consignNoteDTO.ConsigneeId = Convert.ToInt32(cmbConsineeName.SelectedValue);
-                consignNoteDTO.ConsigneeInvoiceNo = txtInvoiceNo.Text;
-                consignNoteDTO.ConsigneeServiceTaxRegNo = txtServiceTaxRegNo.Text;
-                consignNoteDTO.ConsignmentDate = Convert.ToDateTime(dpDate3.MaxDate);
-                consignNoteDTO.ConsignmentNoteNo = Convert.ToInt32(txtConsignmentNoteNo.Text);
-                consignNoteDTO.ConsignorId = Convert.ToInt32(cmbConsignorName.SelectedValue);
-                consignNoteDTO.ConsignorPurchaseOrderNo = txtPurchaseOrderNo.Text;
-                consignNoteDTO.ConsignorServiceTaxRegNo = txtServiceTaxRegNo2.Text;
-                consignNoteDTO.DeclarationNo = txtDeclaredValue.Text;
-                consignNoteDTO.DimensionHeight = txtHeight.Text;
-                consignNoteDTO.DimensionLength = txtLength.Text;
-                consignNoteDTO.DimensionNoOfPKGS = txtNoOfPackages.Text;
-                consignNoteDTO.DimensionSinglePieceWeight = txtSinglePiece.Text;
-                consignNoteDTO.DimensionTotalCFTCMT = txtTotalCFT.Text;
-                consignNoteDTO.DimensionWidth = txtWidth.Text;
-                consignNoteDTO.Distance = txtDistance.Text;
-                consignNoteDTO.FinalAmount = double.Parse(txtFinalAmount.Text);
-                consignNoteDTO.FromCode = txtFromCodeName.Text;
-                consignNoteDTO.ToCode = txtToCodeName.Text;
-                consignNoteDTO.ValidType = txtValidType.Text;
-                consignNoteDTO.PanNo = txtPanNo.Text;
-                consignNoteDTO.PolicyNo = txtPolicyNo.Text;
-                consignNoteDTO.PrivateMarketOtherIdentificaion = txtPrivvateMarks.Text;
-                consignNoteDTO.Rate = txtRate.Text;
-                consignNoteDTO.Rebooking = txtRebooking.Text;
-                consignNoteDTO.ServicetaxThrough = txtServiceTaxThrough.Text;
                 consignNoteDTO.PartyCode = txtPartyCode.Text;
-                consignNoteDTO.MethodOfPacking = txtMethodOfPacking.Text;
-                consignNoteDTO.DescriptionSaidToContain = txtDescription.Text;
+                consignNoteDTO.ToPay = txtToPay.Text;
+                consignNoteDTO.Rebooking = txtRebooking.Text;
+                consignNoteDTO.MainConsignmentNo = txtMainConsignment.Text;
                 consignNoteDTO.ServiceTaxisPayableBy = (cmbServiceTaxisPaybleBy.SelectedItem).ToString();
-                consignNoteDTO.ValidUpto = txtOrigional.Text;
+                
+               
                 if (ConsignmentNoteBusinessLogic.CheckDuplicateConsignmentNoteNo(consignNoteDTO.ConsignmentId, Convert.ToInt32(consignNoteDTO.ConsignmentNoteNo)) == false)
                 {
                     var result = ConsignmentNoteBusinessLogic.Save(consignNoteDTO);
@@ -194,7 +250,7 @@ namespace BRCTransport.Window.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-           
+            clearData();
         }
     }
 }
