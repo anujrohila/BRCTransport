@@ -16,6 +16,7 @@ namespace BRCTransport.Window.Forms
     public partial class frmEntryChallan : Form
     {
         public int ChallanId = 0;
+      
         public frmEntryChallan()
         {
             InitializeComponent();
@@ -77,7 +78,6 @@ namespace BRCTransport.Window.Forms
         }
 
         public static int ChallanEntryNo { get; set; }
-
 
         private void clearData()
         {
