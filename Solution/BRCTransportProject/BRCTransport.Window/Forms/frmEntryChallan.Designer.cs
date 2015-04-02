@@ -164,6 +164,9 @@
             this.txtLorryChallenNo.Name = "txtLorryChallenNo";
             this.txtLorryChallenNo.Size = new System.Drawing.Size(127, 20);
             this.txtLorryChallenNo.TabIndex = 1;
+            this.txtLorryChallenNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtLorryChallenNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLorryChallenNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label2
             // 
@@ -180,6 +183,9 @@
             this.dpChallanDate.Name = "dpChallanDate";
             this.dpChallanDate.Size = new System.Drawing.Size(127, 20);
             this.dpChallanDate.TabIndex = 2;
+            this.dpChallanDate.Enter += new System.EventHandler(this.EnterEvent);
+            this.dpChallanDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.dpChallanDate.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label3
             // 
@@ -196,6 +202,9 @@
             this.txtVehicleNo.Name = "txtVehicleNo";
             this.txtVehicleNo.Size = new System.Drawing.Size(127, 20);
             this.txtVehicleNo.TabIndex = 3;
+            this.txtVehicleNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label4
             // 
@@ -212,6 +221,9 @@
             this.txtVehicleType.Name = "txtVehicleType";
             this.txtVehicleType.Size = new System.Drawing.Size(127, 20);
             this.txtVehicleType.TabIndex = 4;
+            this.txtVehicleType.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleType.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label5
             // 
@@ -228,6 +240,9 @@
             this.txtMake.Name = "txtMake";
             this.txtMake.Size = new System.Drawing.Size(127, 20);
             this.txtMake.TabIndex = 5;
+            this.txtMake.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtMake.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtMake.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label6
             // 
@@ -271,6 +286,9 @@
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(127, 20);
             this.txtModel.TabIndex = 6;
+            this.txtModel.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtModel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtModel.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtLoading
             // 
@@ -278,6 +296,9 @@
             this.txtLoading.Name = "txtLoading";
             this.txtLoading.Size = new System.Drawing.Size(127, 20);
             this.txtLoading.TabIndex = 7;
+            this.txtLoading.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtLoading.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLoading.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtUnloading
             // 
@@ -285,6 +306,9 @@
             this.txtUnloading.Name = "txtUnloading";
             this.txtUnloading.Size = new System.Drawing.Size(127, 20);
             this.txtUnloading.TabIndex = 8;
+            this.txtUnloading.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtUnloading.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtUnloading.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCompanyFeetCode
             // 
@@ -292,6 +316,9 @@
             this.txtCompanyFeetCode.Name = "txtCompanyFeetCode";
             this.txtCompanyFeetCode.Size = new System.Drawing.Size(127, 20);
             this.txtCompanyFeetCode.TabIndex = 9;
+            this.txtCompanyFeetCode.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtCompanyFeetCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtCompanyFeetCode.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label10
             // 
@@ -659,6 +686,9 @@
             this.txtFromBrCode.Name = "txtFromBrCode";
             this.txtFromBrCode.Size = new System.Drawing.Size(127, 20);
             this.txtFromBrCode.TabIndex = 10;
+            this.txtFromBrCode.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtFromBrCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtFromBrCode.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtLoadedFrom
             // 
@@ -666,6 +696,9 @@
             this.txtLoadedFrom.Name = "txtLoadedFrom";
             this.txtLoadedFrom.Size = new System.Drawing.Size(127, 20);
             this.txtLoadedFrom.TabIndex = 11;
+            this.txtLoadedFrom.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtLoadedFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLoadedFrom.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtToBrCode
             // 
@@ -673,6 +706,9 @@
             this.txtToBrCode.Name = "txtToBrCode";
             this.txtToBrCode.Size = new System.Drawing.Size(127, 20);
             this.txtToBrCode.TabIndex = 12;
+            this.txtToBrCode.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtToBrCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtToBrCode.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDestination
             // 
@@ -680,6 +716,9 @@
             this.txtDestination.Name = "txtDestination";
             this.txtDestination.Size = new System.Drawing.Size(127, 20);
             this.txtDestination.TabIndex = 13;
+            this.txtDestination.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDestination.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDestination.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDistance
             // 
@@ -687,6 +726,9 @@
             this.txtDistance.Name = "txtDistance";
             this.txtDistance.Size = new System.Drawing.Size(127, 20);
             this.txtDistance.TabIndex = 14;
+            this.txtDistance.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDistance.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDistance.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtScheduleDateofArrival
             // 
@@ -694,6 +736,9 @@
             this.txtScheduleDateofArrival.Name = "txtScheduleDateofArrival";
             this.txtScheduleDateofArrival.Size = new System.Drawing.Size(127, 20);
             this.txtScheduleDateofArrival.TabIndex = 15;
+            this.txtScheduleDateofArrival.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtScheduleDateofArrival.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtScheduleDateofArrival.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDriverName
             // 
@@ -701,6 +746,9 @@
             this.txtDriverName.Name = "txtDriverName";
             this.txtDriverName.Size = new System.Drawing.Size(127, 20);
             this.txtDriverName.TabIndex = 16;
+            this.txtDriverName.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDriverName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDriverName.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtVehicleEngineNo
             // 
@@ -708,6 +756,9 @@
             this.txtVehicleEngineNo.Name = "txtVehicleEngineNo";
             this.txtVehicleEngineNo.Size = new System.Drawing.Size(127, 20);
             this.txtVehicleEngineNo.TabIndex = 17;
+            this.txtVehicleEngineNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleEngineNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleEngineNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtVehicleChassisNo
             // 
@@ -715,6 +766,9 @@
             this.txtVehicleChassisNo.Name = "txtVehicleChassisNo";
             this.txtVehicleChassisNo.Size = new System.Drawing.Size(136, 20);
             this.txtVehicleChassisNo.TabIndex = 18;
+            this.txtVehicleChassisNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleChassisNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleChassisNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDriverMobileNo
             // 
@@ -722,6 +776,9 @@
             this.txtDriverMobileNo.Name = "txtDriverMobileNo";
             this.txtDriverMobileNo.Size = new System.Drawing.Size(136, 20);
             this.txtDriverMobileNo.TabIndex = 19;
+            this.txtDriverMobileNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDriverMobileNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDriverMobileNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDriverAddress
             // 
@@ -729,6 +786,9 @@
             this.txtDriverAddress.Name = "txtDriverAddress";
             this.txtDriverAddress.Size = new System.Drawing.Size(136, 20);
             this.txtDriverAddress.TabIndex = 20;
+            this.txtDriverAddress.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDriverAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDriverAddress.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtTaxTokenNumber
             // 
@@ -736,6 +796,9 @@
             this.txtTaxTokenNumber.Name = "txtTaxTokenNumber";
             this.txtTaxTokenNumber.Size = new System.Drawing.Size(136, 20);
             this.txtTaxTokenNumber.TabIndex = 21;
+            this.txtTaxTokenNumber.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtTaxTokenNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTaxTokenNumber.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtTaxtokenValidUpto
             // 
@@ -743,6 +806,9 @@
             this.txtTaxtokenValidUpto.Name = "txtTaxtokenValidUpto";
             this.txtTaxtokenValidUpto.Size = new System.Drawing.Size(136, 20);
             this.txtTaxtokenValidUpto.TabIndex = 22;
+            this.txtTaxtokenValidUpto.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtTaxtokenValidUpto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTaxtokenValidUpto.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtIssuedFrom
             // 
@@ -750,6 +816,9 @@
             this.txtIssuedFrom.Name = "txtIssuedFrom";
             this.txtIssuedFrom.Size = new System.Drawing.Size(136, 20);
             this.txtIssuedFrom.TabIndex = 23;
+            this.txtIssuedFrom.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtIssuedFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtIssuedFrom.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtDriverLicenceNo
             // 
@@ -757,6 +826,9 @@
             this.txtDriverLicenceNo.Name = "txtDriverLicenceNo";
             this.txtDriverLicenceNo.Size = new System.Drawing.Size(136, 20);
             this.txtDriverLicenceNo.TabIndex = 24;
+            this.txtDriverLicenceNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtDriverLicenceNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDriverLicenceNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtLicenceIssuedFrom
             // 
@@ -764,6 +836,9 @@
             this.txtLicenceIssuedFrom.Name = "txtLicenceIssuedFrom";
             this.txtLicenceIssuedFrom.Size = new System.Drawing.Size(136, 20);
             this.txtLicenceIssuedFrom.TabIndex = 25;
+            this.txtLicenceIssuedFrom.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtLicenceIssuedFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLicenceIssuedFrom.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtLicenceValidUpto
             // 
@@ -771,6 +846,9 @@
             this.txtLicenceValidUpto.Name = "txtLicenceValidUpto";
             this.txtLicenceValidUpto.Size = new System.Drawing.Size(136, 20);
             this.txtLicenceValidUpto.TabIndex = 26;
+            this.txtLicenceValidUpto.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtLicenceValidUpto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLicenceValidUpto.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtOwnerName
             // 
@@ -778,6 +856,9 @@
             this.txtOwnerName.Name = "txtOwnerName";
             this.txtOwnerName.Size = new System.Drawing.Size(136, 20);
             this.txtOwnerName.TabIndex = 27;
+            this.txtOwnerName.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtOwnerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtOwnerName.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtRoadPermitNumber
             // 
@@ -785,6 +866,9 @@
             this.txtRoadPermitNumber.Name = "txtRoadPermitNumber";
             this.txtRoadPermitNumber.Size = new System.Drawing.Size(136, 20);
             this.txtRoadPermitNumber.TabIndex = 28;
+            this.txtRoadPermitNumber.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtRoadPermitNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtRoadPermitNumber.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtRoadPermitValidUpto3
             // 
@@ -792,6 +876,9 @@
             this.txtRoadPermitValidUpto3.Name = "txtRoadPermitValidUpto3";
             this.txtRoadPermitValidUpto3.Size = new System.Drawing.Size(136, 20);
             this.txtRoadPermitValidUpto3.TabIndex = 29;
+            this.txtRoadPermitValidUpto3.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtRoadPermitValidUpto3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtRoadPermitValidUpto3.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtVehicleOwnerMobileMobileNo
             // 
@@ -799,6 +886,9 @@
             this.txtVehicleOwnerMobileMobileNo.Name = "txtVehicleOwnerMobileMobileNo";
             this.txtVehicleOwnerMobileMobileNo.Size = new System.Drawing.Size(136, 20);
             this.txtVehicleOwnerMobileMobileNo.TabIndex = 30;
+            this.txtVehicleOwnerMobileMobileNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleOwnerMobileMobileNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleOwnerMobileMobileNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtVehicleOwnerAddress
             // 
@@ -807,6 +897,9 @@
             this.txtVehicleOwnerAddress.Name = "txtVehicleOwnerAddress";
             this.txtVehicleOwnerAddress.Size = new System.Drawing.Size(136, 20);
             this.txtVehicleOwnerAddress.TabIndex = 31;
+            this.txtVehicleOwnerAddress.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleOwnerAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleOwnerAddress.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtInsPolicyNo
             // 
@@ -814,6 +907,9 @@
             this.txtInsPolicyNo.Name = "txtInsPolicyNo";
             this.txtInsPolicyNo.Size = new System.Drawing.Size(136, 20);
             this.txtInsPolicyNo.TabIndex = 32;
+            this.txtInsPolicyNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtInsPolicyNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtInsPolicyNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtPANNo
             // 
@@ -821,6 +917,9 @@
             this.txtPANNo.Name = "txtPANNo";
             this.txtPANNo.Size = new System.Drawing.Size(136, 20);
             this.txtPANNo.TabIndex = 33;
+            this.txtPANNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtPANNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtPANNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtInsCoWithStn
             // 
@@ -828,6 +927,9 @@
             this.txtInsCoWithStn.Name = "txtInsCoWithStn";
             this.txtInsCoWithStn.Size = new System.Drawing.Size(145, 20);
             this.txtInsCoWithStn.TabIndex = 34;
+            this.txtInsCoWithStn.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtInsCoWithStn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtInsCoWithStn.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtAgentName
             // 
@@ -835,6 +937,9 @@
             this.txtAgentName.Name = "txtAgentName";
             this.txtAgentName.Size = new System.Drawing.Size(145, 20);
             this.txtAgentName.TabIndex = 35;
+            this.txtAgentName.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAgentName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAgentName.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtEngagedByEmpCode1
             // 
@@ -842,6 +947,9 @@
             this.txtEngagedByEmpCode1.Name = "txtEngagedByEmpCode1";
             this.txtEngagedByEmpCode1.Size = new System.Drawing.Size(145, 20);
             this.txtEngagedByEmpCode1.TabIndex = 36;
+            this.txtEngagedByEmpCode1.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtEngagedByEmpCode1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtEngagedByEmpCode1.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtAgentMobileNumber
             // 
@@ -849,6 +957,9 @@
             this.txtAgentMobileNumber.Name = "txtAgentMobileNumber";
             this.txtAgentMobileNumber.Size = new System.Drawing.Size(145, 20);
             this.txtAgentMobileNumber.TabIndex = 37;
+            this.txtAgentMobileNumber.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAgentMobileNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAgentMobileNumber.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtAgentAddress
             // 
@@ -856,6 +967,9 @@
             this.txtAgentAddress.Name = "txtAgentAddress";
             this.txtAgentAddress.Size = new System.Drawing.Size(145, 20);
             this.txtAgentAddress.TabIndex = 38;
+            this.txtAgentAddress.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtAgentAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAgentAddress.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtEngagedByEmpCode2
             // 
@@ -863,6 +977,9 @@
             this.txtEngagedByEmpCode2.Name = "txtEngagedByEmpCode2";
             this.txtEngagedByEmpCode2.Size = new System.Drawing.Size(145, 20);
             this.txtEngagedByEmpCode2.TabIndex = 39;
+            this.txtEngagedByEmpCode2.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtEngagedByEmpCode2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtEngagedByEmpCode2.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtVehicleFinancier
             // 
@@ -870,69 +987,99 @@
             this.txtVehicleFinancier.Name = "txtVehicleFinancier";
             this.txtVehicleFinancier.Size = new System.Drawing.Size(145, 20);
             this.txtVehicleFinancier.TabIndex = 40;
+            this.txtVehicleFinancier.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtVehicleFinancier.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtVehicleFinancier.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtLoadingAdviceNo
             // 
             this.txtLoadingAdviceNo.Location = new System.Drawing.Point(795, 192);
             this.txtLoadingAdviceNo.Name = "txtLoadingAdviceNo";
             this.txtLoadingAdviceNo.Size = new System.Drawing.Size(145, 20);
-            this.txtLoadingAdviceNo.TabIndex = 40;
+            this.txtLoadingAdviceNo.TabIndex = 41;
+            this.txtLoadingAdviceNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtLoadingAdviceNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLoadingAdviceNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtMaterialUnloadingBy
             // 
             this.txtMaterialUnloadingBy.Location = new System.Drawing.Point(795, 218);
             this.txtMaterialUnloadingBy.Name = "txtMaterialUnloadingBy";
             this.txtMaterialUnloadingBy.Size = new System.Drawing.Size(145, 20);
-            this.txtMaterialUnloadingBy.TabIndex = 41;
+            this.txtMaterialUnloadingBy.TabIndex = 42;
+            this.txtMaterialUnloadingBy.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtMaterialUnloadingBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtMaterialUnloadingBy.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtTotalPackageNo
             // 
             this.txtTotalPackageNo.Location = new System.Drawing.Point(795, 244);
             this.txtTotalPackageNo.Name = "txtTotalPackageNo";
             this.txtTotalPackageNo.Size = new System.Drawing.Size(145, 20);
-            this.txtTotalPackageNo.TabIndex = 42;
+            this.txtTotalPackageNo.TabIndex = 43;
+            this.txtTotalPackageNo.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtTotalPackageNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTotalPackageNo.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtChargedWeightKg
             // 
             this.txtChargedWeightKg.Location = new System.Drawing.Point(795, 270);
             this.txtChargedWeightKg.Name = "txtChargedWeightKg";
             this.txtChargedWeightKg.Size = new System.Drawing.Size(145, 20);
-            this.txtChargedWeightKg.TabIndex = 43;
+            this.txtChargedWeightKg.TabIndex = 44;
+            this.txtChargedWeightKg.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtChargedWeightKg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtChargedWeightKg.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtRatePerTon
             // 
             this.txtRatePerTon.Location = new System.Drawing.Point(795, 296);
             this.txtRatePerTon.Name = "txtRatePerTon";
             this.txtRatePerTon.Size = new System.Drawing.Size(145, 20);
-            this.txtRatePerTon.TabIndex = 44;
+            this.txtRatePerTon.TabIndex = 45;
+            this.txtRatePerTon.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtRatePerTon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtRatePerTon.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtTotalLorryHire
             // 
             this.txtTotalLorryHire.Location = new System.Drawing.Point(795, 322);
             this.txtTotalLorryHire.Name = "txtTotalLorryHire";
             this.txtTotalLorryHire.Size = new System.Drawing.Size(145, 20);
-            this.txtTotalLorryHire.TabIndex = 45;
+            this.txtTotalLorryHire.TabIndex = 46;
+            this.txtTotalLorryHire.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtTotalLorryHire.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTotalLorryHire.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtITDC
             // 
             this.txtITDC.Location = new System.Drawing.Point(795, 348);
             this.txtITDC.Name = "txtITDC";
             this.txtITDC.Size = new System.Drawing.Size(145, 20);
-            this.txtITDC.TabIndex = 46;
+            this.txtITDC.TabIndex = 47;
+            this.txtITDC.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtITDC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtITDC.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtPartLorryHire
             // 
             this.txtPartLorryHire.Location = new System.Drawing.Point(795, 374);
             this.txtPartLorryHire.Name = "txtPartLorryHire";
             this.txtPartLorryHire.Size = new System.Drawing.Size(145, 20);
-            this.txtPartLorryHire.TabIndex = 47;
+            this.txtPartLorryHire.TabIndex = 48;
+            this.txtPartLorryHire.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtPartLorryHire.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtPartLorryHire.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtBalanceLorryHire
             // 
             this.txtBalanceLorryHire.Location = new System.Drawing.Point(795, 400);
             this.txtBalanceLorryHire.Name = "txtBalanceLorryHire";
             this.txtBalanceLorryHire.Size = new System.Drawing.Size(145, 20);
-            this.txtBalanceLorryHire.TabIndex = 48;
+            this.txtBalanceLorryHire.TabIndex = 49;
+            this.txtBalanceLorryHire.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtBalanceLorryHire.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtBalanceLorryHire.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // btnSave
             // 

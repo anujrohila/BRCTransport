@@ -23,6 +23,11 @@ namespace BRCTransport.Window.Forms
             this.Load += frmEntryChallan_Load;
         }
 
+        private void GenerateCode()
+        {
+            txtLorryChallenNo.Text = Convert.ToString(ChallanBusinessLogic.GetChallanNo() + 1);
+        }
+
         private void frmEntryChallan_Load(object sender, EventArgs e)
         {
             if (ChallanId > 0)
@@ -74,6 +79,7 @@ namespace BRCTransport.Window.Forms
                 txtITDC.Text = (tblChallanDTO.ITDSDeduction).ToString();
                 txtPartLorryHire.Text = (tblChallanDTO.PartyLorryHire).ToString();
                 txtBalanceLorryHire.Text = (tblChallanDTO.BalanceLorryHire).ToString();
+                GenerateCode();
             }
         }
 
@@ -229,5 +235,27 @@ namespace BRCTransport.Window.Forms
             var childchallan = new frmChildChallan();
             childchallan.ShowDialog();
         }
+
+        #region Key Event
+
+        private void EnterEvent(object sender, EventArgs e)
+        {
+            CommonClass.EnterEvents(sender, e);
+        }
+
+        private void LeaveEvent(object sender, EventArgs e)
+        {
+            CommonClass.LeaveEvents(sender, e);
+        }
+
+        private void txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        #endregion
     }
 }
