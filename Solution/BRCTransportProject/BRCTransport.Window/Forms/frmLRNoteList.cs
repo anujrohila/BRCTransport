@@ -27,7 +27,7 @@ namespace BRCTransport.Window.Forms
 
         public void fillgriddata()
         {
-            var Lrlist = ConsignorBusinessLogic.GetAll();
+            var Lrlist = ConsignmentNoteBusinessLogic.GetAll();
             GridViewLR.DataSource = Lrlist;
         
         }
@@ -43,11 +43,11 @@ namespace BRCTransport.Window.Forms
 
             if (Action == "Edit")
             {
-                ConsignmentId = Convert.ToInt32(GridViewLR.Rows[e.RowIndex].Cells[0].Value);
-               
-              
-                lrnote.FormClosed += frmParty_FormClosed;
-                lrnote.Show();
+                frmEntryLRNote frm = new frmEntryLRNote(); 
+                 ConsignmentId = Convert.ToInt32(GridViewLR.Rows[e.RowIndex].Cells[0].Value);
+                 frm.Consignmentid = ConsignmentId;
+                 frm.FormClosed += frm_FormClosed;
+                frm.Show();
             }
 
             if (Action == "Delete")
@@ -58,7 +58,7 @@ namespace BRCTransport.Window.Forms
                     var messageBoxResult = MessageBox.Show("Are you sure want to delete this record?", "Delete", MessageBoxButtons.YesNo);
                     if (messageBoxResult == DialogResult.Yes)
                     {
-                        var result = ConsignorBusinessLogic.Delete(ConsignmentId);
+                        var result = ConsignmentNoteBusinessLogic.Delete(ConsignmentId);
                         MessageBox.Show("Party deleted successfully.");
                         fillgriddata();
                     }
@@ -71,6 +71,11 @@ namespace BRCTransport.Window.Forms
             }
         }
 
-        public FormClosedEventHandler frmParty_FormClosed { get; set; }
+        void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fillgriddata();
+        }
+
+       
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GridViewLR = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsignmentNoteNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PolicyNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +50,7 @@
             this.GridViewLR.AllowUserToOrderColumns = true;
             this.GridViewLR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewLR.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.ConsignmentNoteNo,
             this.CompanyName,
             this.PolicyNo,
@@ -64,26 +66,34 @@
             this.GridViewLR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewLR.Location = new System.Drawing.Point(0, 0);
             this.GridViewLR.Name = "GridViewLR";
-            this.GridViewLR.Size = new System.Drawing.Size(641, 427);
+            this.GridViewLR.Size = new System.Drawing.Size(1160, 427);
             this.GridViewLR.TabIndex = 0;
             this.GridViewLR.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ConsignmentId";
+            this.id.HeaderText = "ConsignmentId";
+            this.id.Name = "id";
+            this.id.Visible = false;
             // 
             // ConsignmentNoteNo
             // 
             this.ConsignmentNoteNo.DataPropertyName = "ConsignmentNoteNo";
-            this.ConsignmentNoteNo.HeaderText = "ConsignmentNoteNo";
+            this.ConsignmentNoteNo.HeaderText = "Consignment Note Number";
             this.ConsignmentNoteNo.Name = "ConsignmentNoteNo";
+            this.ConsignmentNoteNo.Width = 120;
             // 
             // CompanyName
             // 
             this.CompanyName.DataPropertyName = "CompanyName";
-            this.CompanyName.HeaderText = "CompanyName";
+            this.CompanyName.HeaderText = "Company Name";
             this.CompanyName.Name = "CompanyName";
             // 
             // PolicyNo
             // 
             this.PolicyNo.DataPropertyName = "PolicyNo";
-            this.PolicyNo.HeaderText = "PolicyNo";
+            this.PolicyNo.HeaderText = "Policy Number";
             this.PolicyNo.Name = "PolicyNo";
             // 
             // CompanyDate
@@ -146,10 +156,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 427);
+            this.ClientSize = new System.Drawing.Size(1160, 427);
             this.Controls.Add(this.GridViewLR);
             this.Name = "frmLRNoteList";
-            this.Text = "frmLRNoteList";
+            this.Text = "frm LRNote List";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmLRNoteList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewLR)).EndInit();
@@ -160,6 +170,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridViewLR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConsignmentNoteNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PolicyNo;
