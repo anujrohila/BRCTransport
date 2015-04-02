@@ -28,6 +28,7 @@ namespace BRCTransport.DAL
                     {
                         foreach (var billEntry in tblBillDTO.BillEntryList)
                         {
+                            billEntry.BillId = tblBillDTO.BillId;
                             dbObject.tblBillEntries.Add(billEntry.ToEntity());
                         }
                     }
@@ -47,6 +48,20 @@ namespace BRCTransport.DAL
                     tblBillObject.CheckedBy = tblBillDTO.CheckedBy;
                     tblBillObject.GrandTotal = tblBillDTO.GrandTotal;
                     tblBillObject.ServiceTaxRegdNo = tblBillDTO.ServiceTaxRegdNo;
+                    List<tblBillEntry> entry = new List<tblBillEntry>();
+                    entry = dbObject.tblBillEntries.Where(h => h.BillId == tblBillDTO.BillId).ToList();
+                    foreach (var item in entry)
+                    {
+                        dbObject.tblBillEntries.Remove(item);
+                    }
+                    if (tblBillDTO.BillEntryList != null)
+                    {
+                        foreach (var billEntry in tblBillDTO.BillEntryList)
+                        {
+                            billEntry.BillId = tblBillDTO.BillId;
+                            dbObject.tblBillEntries.Add(billEntry.ToEntity());
+                        }
+                    }
                 }
                 dbObject.SaveChanges();
                 return tblBillObject.BillId;
@@ -85,7 +100,10 @@ namespace BRCTransport.DAL
         {
             using (var dbObject = new BRCTransportDBEntities())
             {
-                return dbObject.tblBills.Find(billId).ToDTO();
+                tblBillDTO temp = new tblBillDTO();
+                temp = dbObject.tblBills.Find(billId).ToDTO();
+                temp.BillEntryList = dbObject.tblBillEntries.Where(h => h.BillId == billId).ToList().ToDTOs();
+                return temp;
             }
         }
 
