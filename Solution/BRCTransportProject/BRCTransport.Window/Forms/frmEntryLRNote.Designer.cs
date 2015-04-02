@@ -1062,7 +1062,11 @@
             // 
             this.cmbServiceTaxisPaybleBy.FormattingEnabled = true;
             this.cmbServiceTaxisPaybleBy.Items.AddRange(new object[] {
-            "Consignor"});
+            "--Select--",
+            "CONSIGNOR",
+            "CONSIGNEE",
+            "Transport",
+            ""});
             this.cmbServiceTaxisPaybleBy.Location = new System.Drawing.Point(617, 575);
             this.cmbServiceTaxisPaybleBy.Name = "cmbServiceTaxisPaybleBy";
             this.cmbServiceTaxisPaybleBy.Size = new System.Drawing.Size(165, 21);

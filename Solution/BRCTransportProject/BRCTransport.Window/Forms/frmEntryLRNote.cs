@@ -15,6 +15,7 @@ namespace BRCTransport.Window.Forms
 {
     public partial class frmEntryLRNote : Form
     {
+        public Int32 Consignmentid = 0;
         public frmEntryLRNote()
         {
             InitializeComponent();
@@ -23,6 +24,65 @@ namespace BRCTransport.Window.Forms
 
         void frmEntryLRNote_Load(object sender, EventArgs e)
         {
+            if (Consignmentid > 0)
+            {
+                var LRdetail = ConsignmentNoteBusinessLogic.Get(Consignmentid);
+                txtCompanyName.Text = LRdetail.CompanyName;
+                txtActualWeightInKg.Text = LRdetail.ActualWtInKGS;
+                txtAddressOfIssueOffice.Text = LRdetail.AddressofIssuing;
+                txtAdvancePaymentAmount.Text = LRdetail.AdvancedPaymentAmount;
+                txtAmount1.Text = (LRdetail.Amount1).ToString();
+                txtAmount2.Text = (LRdetail.Amount2).ToString();
+                txtAmount3.Text = (LRdetail.Amount3).ToString();
+                txtAmount4.Text = (LRdetail.Amount4).ToString();
+                txtAmount5.Text = (LRdetail.Amount5).ToString();
+                txtBasicOfBooking.Text = LRdetail.BasicOfBooking;
+                txtBilledWith.Text = LRdetail.BilledWithMs;
+                txtBranchCode.Text = LRdetail.BranchCode;
+                txtBusinessType.Text = LRdetail.BusinessType;
+                txtCentralisedServiceTaxRegNo.Text = LRdetail.CentralisedServiceTaxRegnNo;
+                txtCharges1.Text = LRdetail.Charges1;
+                txtCharges2.Text = LRdetail.Charges2;
+                txtCharges3.Text = LRdetail.Charges3;
+                txtCharges4.Text = LRdetail.Charges4;
+                txtCharges5.Text = LRdetail.Charges5;
+                txtChargeWeightInKg.Text = LRdetail.CategoryOfLoad;
+                txtCompanyAmount.Text = (LRdetail.CompanyAmount).ToString();
+                txtCompanyPhoneNo.Text = LRdetail.CompanyPhone;
+                txtConsigneeServiceTaxRegNo.Text = LRdetail.ConsigneeServiceTaxRegNo;
+                txtConsignmentNoteNo.Text = (LRdetail.ConsignmentNoteNo).ToString();
+                txtConsignorServiceTaxRegNo.Text = LRdetail.ConsignorServiceTaxRegNo;
+                txtDeclaredValueGoods.Text = LRdetail.DeclaredValueOfGoods;
+                txtDescription.Text = LRdetail.DescriptionSaidToContain;
+                txtDiamentionNoOfPkgs.Text = LRdetail.DimensionNoOfPKGS;
+                txtDistance.Text = LRdetail.Distance;
+                txtFinalAmount.Text = (LRdetail.FinalAmount).ToString();
+                txtFromCodeName.Text = LRdetail.FromCode;
+                txtHeight.Text = LRdetail.DimensionHeight;
+                txtInvoiceNo.Text = LRdetail.ConsigneeInvoiceNo;
+                txtKms.Text = LRdetail.KMS;
+                txtLength.Text = LRdetail.DimensionLength;
+                txtLoadType.Text = LRdetail.LoadType;
+                txtMainConsignment.Text = LRdetail.MainConsignmentNo;
+                txtMethodOfPacking.Text = LRdetail.MethodOfPacking;
+                txtMRNo.Text = LRdetail.AdvancedPaymentMRNo;
+                txtNoOfPackages.Text = LRdetail.NoofPackages;
+                txtPanNo.Text = LRdetail.PanNo;
+                txtPartyCode.Text = LRdetail.PartyCode;
+                txtPolicyNo.Text = LRdetail.PolicyNo;
+                txtPrivateMarks.Text = LRdetail.PrivateMarketOtherIdentificaion;
+                txtPurchaseOrderNo.Text = LRdetail.ConsignorPurchaseOrderNo;
+                txtRate.Text = LRdetail.Rate;
+                txtRate2.Text = LRdetail.Rate;
+                txtRebooking.Text = LRdetail.Rebooking;
+                txtServiceTaxThrough.Text = LRdetail.ServicetaxThrough;
+                txtSinglePiece.Text = LRdetail.DimensionSinglePieceWeight;
+                txtToCodeName.Text = LRdetail.ToCode;
+                txtToPay.Text = LRdetail.ToPay;
+                txtTotalCFT.Text = LRdetail.DimensionTotalCFTCMT;
+                txtValidType.Text = LRdetail.ValidType;
+                txtWidth.Text = LRdetail.DimensionWidth;
+            }
             loadConsigneeName();
             loadConsignorName();
         }
@@ -135,12 +195,11 @@ namespace BRCTransport.Window.Forms
             txtTotalCFT.Text = "";
             txtValidType.Text = "";
             txtWidth.Text = "";
+            cmbServiceTaxisPaybleBy.SelectedIndex = 0;
             
         }
         #endregion
-
-        public static int ConsignmentId { get; set; }
-
+      
         #region Key Event
 
         private void EnterEvent(object sender, EventArgs e)
@@ -246,7 +305,6 @@ namespace BRCTransport.Window.Forms
 
 
         }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
