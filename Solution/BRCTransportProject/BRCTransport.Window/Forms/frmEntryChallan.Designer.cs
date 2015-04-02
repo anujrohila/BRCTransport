@@ -140,27 +140,13 @@
             this.errorVehicleNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorVehicleType = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorMake = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorLoadedFrom = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorToBrCode = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorTotalPackageNo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorDestination = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorPartLorryHire = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorITDC = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorTotalLorryHire = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorChargedWeightKg = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridChallan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorChallanDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorVehicleNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorVehicleType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMake)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorLoadedFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorToBrCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorTotalPackageNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorDestination)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPartLorryHire)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorITDC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorTotalLorryHire)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorChargedWeightKg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -1062,37 +1048,9 @@
             // 
             this.errorMake.ContainerControl = this;
             // 
-            // errorLoadedFrom
-            // 
-            this.errorLoadedFrom.ContainerControl = this;
-            // 
             // errorToBrCode
             // 
             this.errorToBrCode.ContainerControl = this;
-            // 
-            // errorTotalPackageNo
-            // 
-            this.errorTotalPackageNo.ContainerControl = this;
-            // 
-            // errorDestination
-            // 
-            this.errorDestination.ContainerControl = this;
-            // 
-            // errorPartLorryHire
-            // 
-            this.errorPartLorryHire.ContainerControl = this;
-            // 
-            // errorITDC
-            // 
-            this.errorITDC.ContainerControl = this;
-            // 
-            // errorTotalLorryHire
-            // 
-            this.errorTotalLorryHire.ContainerControl = this;
-            // 
-            // errorChargedWeightKg
-            // 
-            this.errorChargedWeightKg.ContainerControl = this;
             // 
             // frmEntryChallan
             // 
@@ -1214,14 +1172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorVehicleNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorVehicleType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMake)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorLoadedFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorToBrCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorTotalPackageNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorDestination)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPartLorryHire)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorITDC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorTotalLorryHire)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorChargedWeightKg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1340,13 +1291,6 @@
         private System.Windows.Forms.ErrorProvider errorVehicleNo;
         private System.Windows.Forms.ErrorProvider errorVehicleType;
         private System.Windows.Forms.ErrorProvider errorMake;
-        private System.Windows.Forms.ErrorProvider errorLoadedFrom;
         private System.Windows.Forms.ErrorProvider errorToBrCode;
-        private System.Windows.Forms.ErrorProvider errorTotalPackageNo;
-        private System.Windows.Forms.ErrorProvider errorDestination;
-        private System.Windows.Forms.ErrorProvider errorPartLorryHire;
-        private System.Windows.Forms.ErrorProvider errorITDC;
-        private System.Windows.Forms.ErrorProvider errorTotalLorryHire;
-        private System.Windows.Forms.ErrorProvider errorChargedWeightKg;
     }
 }
