@@ -43,7 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.text_destination = new System.Windows.Forms.TextBox();
             this.button_save = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +61,9 @@
             this.text_bkg.Name = "text_bkg";
             this.text_bkg.Size = new System.Drawing.Size(176, 20);
             this.text_bkg.TabIndex = 1;
-            this.text_bkg.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.text_bkg.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_bkg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_bkg.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label2
             // 
@@ -78,6 +80,9 @@
             this.text_cnno.Name = "text_cnno";
             this.text_cnno.Size = new System.Drawing.Size(176, 20);
             this.text_cnno.TabIndex = 2;
+            this.text_cnno.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_cnno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_cnno.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label3
             // 
@@ -94,6 +99,9 @@
             this.text_package.Name = "text_package";
             this.text_package.Size = new System.Drawing.Size(176, 20);
             this.text_package.TabIndex = 3;
+            this.text_package.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_package.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_package.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label4
             // 
@@ -110,6 +118,9 @@
             this.text_pckmethod.Name = "text_pckmethod";
             this.text_pckmethod.Size = new System.Drawing.Size(176, 20);
             this.text_pckmethod.TabIndex = 4;
+            this.text_pckmethod.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_pckmethod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_pckmethod.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label5
             // 
@@ -126,6 +137,9 @@
             this.text_said.Name = "text_said";
             this.text_said.Size = new System.Drawing.Size(176, 20);
             this.text_said.TabIndex = 5;
+            this.text_said.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_said.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_said.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label6
             // 
@@ -142,6 +156,9 @@
             this.text_actual.Name = "text_actual";
             this.text_actual.Size = new System.Drawing.Size(176, 20);
             this.text_actual.TabIndex = 6;
+            this.text_actual.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_actual.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_actual.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label7
             // 
@@ -158,10 +175,13 @@
             this.text_destination.Name = "text_destination";
             this.text_destination.Size = new System.Drawing.Size(176, 20);
             this.text_destination.TabIndex = 7;
+            this.text_destination.Enter += new System.EventHandler(this.EnterEvent);
+            this.text_destination.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.text_destination.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(143, 256);
+            this.button_save.Location = new System.Drawing.Point(136, 256);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 23);
             this.button_save.TabIndex = 14;
@@ -169,21 +189,22 @@
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.btnsave_click);
             // 
-            // button2
+            // btnclose
             // 
-            this.button2.Location = new System.Drawing.Point(224, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnclose.Location = new System.Drawing.Point(224, 256);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(75, 23);
+            this.btnclose.TabIndex = 15;
+            this.btnclose.Text = "Close";
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // frmChildChallan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 297);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.text_destination);
             this.Controls.Add(this.label7);
@@ -199,7 +220,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.text_bkg);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmChildChallan";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Save Challan Order";
             this.Load += new System.EventHandler(this.frmChildChallan_Load);
             this.ResumeLayout(false);
@@ -224,6 +250,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox text_destination;
         private System.Windows.Forms.Button button_save;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnclose;
     }
 }

@@ -52,6 +52,7 @@ namespace BRCTransport.Window.Forms
             
                 frmaccount.AccountId = Convert.ToInt32(gridViewAccount.Rows[e.RowIndex].Cells[0].Value);
                 frmaccount.FormClosed += frmaccount_FormClosed;
+                frmaccount.ShowInTaskbar = false;
                 frmaccount.Show();
             }
 

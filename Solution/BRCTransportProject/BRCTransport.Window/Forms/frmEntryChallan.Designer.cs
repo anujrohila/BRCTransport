@@ -141,6 +141,16 @@
             this.errorVehicleType = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorMake = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorToBrCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SrNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BkgStnCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNNoWithAlphaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PackagesMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaidToContain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualWeightKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DestinationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChallanEntryNos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridChallan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorChallanDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorVehicleNo)).BeginInit();
@@ -179,6 +189,8 @@
             // 
             // dpChallanDate
             // 
+            this.dpChallanDate.CustomFormat = "dd-MM-yyyy";
+            this.dpChallanDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpChallanDate.Location = new System.Drawing.Point(151, 28);
             this.dpChallanDate.Name = "dpChallanDate";
             this.dpChallanDate.Size = new System.Drawing.Size(127, 20);
@@ -1086,7 +1098,7 @@
             this.btnSave.Location = new System.Drawing.Point(428, 591);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 98;
+            this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -1096,17 +1108,17 @@
             this.btnCancel.Location = new System.Drawing.Point(519, 591);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 99;
+            this.btnCancel.TabIndex = 52;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAddEntry
             // 
-            this.btnAddEntry.Location = new System.Drawing.Point(336, 591);
+            this.btnAddEntry.Location = new System.Drawing.Point(443, 426);
             this.btnAddEntry.Name = "btnAddEntry";
             this.btnAddEntry.Size = new System.Drawing.Size(75, 23);
-            this.btnAddEntry.TabIndex = 100;
+            this.btnAddEntry.TabIndex = 50;
             this.btnAddEntry.Text = "Add Entry";
             this.btnAddEntry.UseVisualStyleBackColor = true;
             this.btnAddEntry.Click += new System.EventHandler(this.AddEntry_Click);
@@ -1174,10 +1186,22 @@
             // gridChallan
             // 
             this.gridChallan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridChallan.Location = new System.Drawing.Point(3, 477);
+            this.gridChallan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SrNo,
+            this.BkgStnCode,
+            this.CNNoWithAlphaCode,
+            this.PackagesMethod,
+            this.SaidToContain,
+            this.ActualWeightKgs,
+            this.DestinationName,
+            this.ChallanEntryNos,
+            this.Edit,
+            this.Delete});
+            this.gridChallan.Location = new System.Drawing.Point(5, 454);
             this.gridChallan.Name = "gridChallan";
-            this.gridChallan.Size = new System.Drawing.Size(961, 75);
+            this.gridChallan.Size = new System.Drawing.Size(1057, 131);
             this.gridChallan.TabIndex = 113;
+            this.gridChallan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridChallan_CellContentClick);
             // 
             // errorChallanDate
             // 
@@ -1199,11 +1223,73 @@
             // 
             this.errorToBrCode.ContainerControl = this;
             // 
+            // SrNo
+            // 
+            this.SrNo.DataPropertyName = "SrNo";
+            this.SrNo.HeaderText = "SrNo";
+            this.SrNo.Name = "SrNo";
+            // 
+            // BkgStnCode
+            // 
+            this.BkgStnCode.DataPropertyName = "BkgStnCode";
+            this.BkgStnCode.HeaderText = "BkgStnCode";
+            this.BkgStnCode.Name = "BkgStnCode";
+            // 
+            // CNNoWithAlphaCode
+            // 
+            this.CNNoWithAlphaCode.DataPropertyName = "CNNoWithAlphaCode";
+            this.CNNoWithAlphaCode.HeaderText = "CNNoWithAlphaCode";
+            this.CNNoWithAlphaCode.Name = "CNNoWithAlphaCode";
+            // 
+            // PackagesMethod
+            // 
+            this.PackagesMethod.DataPropertyName = "PackagesMethod";
+            this.PackagesMethod.HeaderText = "PackagesMethod";
+            this.PackagesMethod.Name = "PackagesMethod";
+            // 
+            // SaidToContain
+            // 
+            this.SaidToContain.DataPropertyName = "SaidToContain";
+            this.SaidToContain.HeaderText = "SaidToContain";
+            this.SaidToContain.Name = "SaidToContain";
+            // 
+            // ActualWeightKgs
+            // 
+            this.ActualWeightKgs.DataPropertyName = "ActualWeightKgs";
+            this.ActualWeightKgs.HeaderText = "ActualWeightKgs";
+            this.ActualWeightKgs.Name = "ActualWeightKgs";
+            // 
+            // DestinationName
+            // 
+            this.DestinationName.DataPropertyName = "DestinationName";
+            this.DestinationName.HeaderText = "DestinationName";
+            this.DestinationName.Name = "DestinationName";
+            // 
+            // ChallanEntryNos
+            // 
+            this.ChallanEntryNos.DataPropertyName = "ChallanEntryNo";
+            this.ChallanEntryNos.HeaderText = "ChallanEntryNos";
+            this.ChallanEntryNos.Name = "ChallanEntryNos";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
             // frmEntryChallan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 626);
+            this.ClientSize = new System.Drawing.Size(1067, 623);
             this.Controls.Add(this.gridChallan);
             this.Controls.Add(this.label55);
             this.Controls.Add(this.label53);
@@ -1439,5 +1525,15 @@
         private System.Windows.Forms.ErrorProvider errorVehicleType;
         private System.Windows.Forms.ErrorProvider errorMake;
         private System.Windows.Forms.ErrorProvider errorToBrCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SrNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BkgStnCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNNoWithAlphaCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PackagesMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaidToContain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActualWeightKgs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DestinationName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChallanEntryNos;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }

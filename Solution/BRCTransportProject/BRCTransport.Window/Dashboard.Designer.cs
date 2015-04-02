@@ -93,7 +93,7 @@
             this.partyListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.partyListToolStripMenuItem.Tag = "Party List";
             this.partyListToolStripMenuItem.Text = "Party List";
-            this.partyListToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.partyListToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // challanToolStripMenuItem
             // 
@@ -118,7 +118,7 @@
             this.listChallanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listChallanToolStripMenuItem.Tag = "List Challan";
             this.listChallanToolStripMenuItem.Text = "List Challan";
-            this.listChallanToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.listChallanToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // billToolStripMenuItem
             // 
@@ -144,7 +144,7 @@
             this.listBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listBillToolStripMenuItem.Tag = "List Bill";
             this.listBillToolStripMenuItem.Text = "List Bill";
-            this.listBillToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.listBillToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // lRNoteToolStripMenuItem
             // 
@@ -169,7 +169,7 @@
             this.listLRNoteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listLRNoteToolStripMenuItem.Tag = "List LR Note";
             this.listLRNoteToolStripMenuItem.Text = "List LR Note";
-            this.listLRNoteToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.listLRNoteToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // mRNoteToolStripMenuItem
             // 
@@ -195,7 +195,7 @@
             this.listMRNoteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listMRNoteToolStripMenuItem.Tag = "List MR Note";
             this.listMRNoteToolStripMenuItem.Text = "List MR Note";
-            this.listMRNoteToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.listMRNoteToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // accountToolStripMenuItem
             // 
@@ -223,7 +223,7 @@
             this.accountListToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.accountListToolStripMenuItem.Tag = "Account List";
             this.accountListToolStripMenuItem.Text = "Account List";
-            this.accountListToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.accountListToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // transactionToolStripMenuItem
             // 
@@ -239,7 +239,7 @@
             this.transactionListToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.transactionListToolStripMenuItem.Tag = "Transaction List";
             this.transactionListToolStripMenuItem.Text = "Transaction List";
-            this.transactionListToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);
+            this.transactionListToolStripMenuItem.Click += new System.EventHandler(this.Popup_Show);
             // 
             // reportToolStripMenuItem
             // 
@@ -252,7 +252,7 @@
             // billReportToolStripMenuItem
             // 
             this.billReportToolStripMenuItem.Name = "billReportToolStripMenuItem";
-            this.billReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.billReportToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.billReportToolStripMenuItem.Tag = "Bill Report";
             this.billReportToolStripMenuItem.Text = "Bill Report";
             this.billReportToolStripMenuItem.Click += new System.EventHandler(this.Popup_Showdialog);

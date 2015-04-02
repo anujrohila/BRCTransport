@@ -46,6 +46,7 @@ namespace BRCTransport.Window.Forms
                 MRId = Convert.ToInt32(GridViewMr.Rows[e.RowIndex].Cells[0].Value);
                 frm.MRId = MRId;
                 frm.FormClosed += frm_FormClosed;
+                frm.ShowInTaskbar = false;
                 frm.Show();
                 
             }

@@ -20,7 +20,8 @@ namespace BRCTransport.Window.Forms
         public frmEntryChallan()
         {
             InitializeComponent();
-            this.Load += frmEntryChallan_Load;
+           
+            gridChallan.AutoGenerateColumns = false;
         }
 
         private void GenerateCode()
@@ -30,6 +31,7 @@ namespace BRCTransport.Window.Forms
 
         private void frmEntryChallan_Load(object sender, EventArgs e)
         {
+            clearData();
             if (ChallanId > 0)
             {
                 var tblChallanDTO = ChallanBusinessLogic.Get(ChallanId);
@@ -79,6 +81,16 @@ namespace BRCTransport.Window.Forms
                 txtITDC.Text = (tblChallanDTO.ITDSDeduction).ToString();
                 txtPartLorryHire.Text = (tblChallanDTO.PartyLorryHire).ToString();
                 txtBalanceLorryHire.Text = (tblChallanDTO.BalanceLorryHire).ToString();
+                int i = 1;
+                foreach (var item in tblChallanDTO.ChallanEntryList)
+                {
+                    item.SrNo = i++;
+                    CommonClass.tblChallanEntryDTO.Add(item);
+                }
+                fillGridData();
+            }
+            else
+            {
                 GenerateCode();
             }
         }
@@ -136,6 +148,11 @@ namespace BRCTransport.Window.Forms
             txtVehicleType.Text = "";
             txtRatePerTon.Text = "";
 
+            CommonClass.tblChallanEntryDTO.Clear();
+            gridChallan.DataSource = null;
+            txtLorryChallenNo.Focus();
+            GenerateCode();
+
         }
 
         private bool IsFormValidate()
@@ -163,9 +180,14 @@ namespace BRCTransport.Window.Forms
         {
             if (IsFormValidate())
             {
+                if (CommonClass.tblChallanEntryDTO.Count() == 0)
+                {
+                    MessageBox.Show("Enter Atlease On Challan Entry");
+                    return;
+                }
+                
+                
                 tblChallanDTO dto = new tblChallanDTO();
-
-
                 if (ChallanId > 0)
                     dto.ChallanId = ChallanId;
 
@@ -208,35 +230,64 @@ namespace BRCTransport.Window.Forms
                 dto.VechicleFinancierDetails = txtVehicleFinancier.Text;
                 dto.BrokerLoadingAdviceNoDate = txtLoadingAdviceNo.Text;
                 dto.MaterialUnLoadingBy = txtMaterialUnloadingBy.Text;
-                dto.PayableTotalPackages = Convert.ToDouble(txtTotalPackageNo.Text);
-                dto.PayableChargedWeight = Convert.ToDouble(txtChargedWeightKg.Text);
-                dto.PayableRatePerTon = Convert.ToDouble(txtRatePerTon.Text);
-                dto.TotalLorryHire = Convert.ToDouble(txtTotalLorryHire.Text);
-                dto.ITDSDeduction = Convert.ToDouble(txtITDC.Text);
-                dto.PartyLorryHire = Convert.ToDouble(txtPartLorryHire.Text);
-                dto.BalanceLorryHire = Convert.ToDouble(txtBalanceLorryHire.Text);
-                var result = ChallanBusinessLogic.Save(dto);
-                if (result > 0)
+                dto.PayableTotalPackages = txtTotalPackageNo.Text.Trim() == "" ? 0 :  Convert.ToDouble(txtTotalPackageNo.Text);
+                dto.PayableChargedWeight = txtChargedWeightKg.Text.Trim() == "" ? 0 : Convert.ToDouble(txtChargedWeightKg.Text);
+                dto.PayableRatePerTon = txtRatePerTon.Text.Trim() == "" ? 0 : Convert.ToDouble(txtRatePerTon.Text);
+                dto.TotalLorryHire = txtTotalLorryHire.Text.Trim() == "" ? 0 : Convert.ToDouble(txtTotalLorryHire.Text);
+                dto.ITDSDeduction = txtITDC.Text.Trim() == "" ? 0 : Convert.ToDouble(txtITDC.Text);
+                dto.PartyLorryHire = txtPartLorryHire.Text.Trim() == "" ? 0 : Convert.ToDouble(txtPartLorryHire.Text);
+                dto.BalanceLorryHire = txtBalanceLorryHire.Text.Trim() == "" ? 0 : Convert.ToDouble(txtBalanceLorryHire.Text);
+                dto.ChallanEntryList = CommonClass.tblChallanEntryDTO;
+
+                var resultDuplicateBllNo = ChallanBusinessLogic.CheckDuplicateChallanNo(ChallanId,  Convert.ToInt32(txtLorryChallenNo.Text));
+                if (resultDuplicateBllNo)
                 {
-                    if (ChallanId > 0)
-                        this.Close();
-                    else
-                        clearData();
+                   MessageBox.Show("Challan no already exists.");
                 }
                 else
                 {
-                    MessageBox.Show("Transaction Fail");
-                }
+                    var result = ChallanBusinessLogic.Save(dto);
+                    if (result > 0)
+                    {
+                        if (ChallanId > 0)
+                            this.Close();
+                        else
+                            clearData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Transaction Fail");
+                    }
+                }                
             }
         }
 
         private void AddEntry_Click(object sender, EventArgs e)
         {
-            var childchallan = new frmChildChallan();
+            frmChildChallan childchallan = new frmChildChallan();
+            childchallan.FormClosed += childchallan_FormClosed;
+            childchallan.ShowInTaskbar = false;
             childchallan.ShowDialog();
         }
 
+        void childchallan_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fillGridData();
+        }
+
+        private void fillGridData()
+        {
+            gridChallan.DataSource = null;
+            if (CommonClass.tblChallanEntryDTO != null)
+                gridChallan.DataSource = CommonClass.tblChallanEntryDTO.OrderBy(h => h.SrNo).ToList();
+        }
+
         #region Key Event
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonClass.KeyPressEvents(sender, e);
+        }
 
         private void EnterEvent(object sender, EventArgs e)
         {
@@ -256,6 +307,51 @@ namespace BRCTransport.Window.Forms
             }
         }
 
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
+
+
         #endregion
+
+        private void gridChallan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string Action = this.gridChallan.Columns[e.ColumnIndex].HeaderText;
+
+            if (Action == "Edit")
+            {
+                frmChildChallan childchallan = new frmChildChallan();
+                int billid = Convert.ToInt32(gridChallan.Rows[e.RowIndex].Cells[0].Value);
+                childchallan.ChallanData = CommonClass.tblChallanEntryDTO.Where(h => h.SrNo == billid).FirstOrDefault();
+                childchallan.FormClosed += childchallan_FormClosed;
+                childchallan.ShowInTaskbar = false;
+            }
+
+            if (Action == "Delete")
+            {
+                try
+                {
+                    var messageBoxResult = MessageBox.Show("Are you sure want to delete this record?", "Delete", MessageBoxButtons.YesNo);
+                    if (messageBoxResult == DialogResult.Yes)
+                    {
+                        int billid = Convert.ToInt32(gridChallan.Rows[e.RowIndex].Cells[0].Value);
+                        tblChallanEntryDTO billdata = CommonClass.tblChallanEntryDTO.Where(h => h.SrNo == billid).FirstOrDefault();
+                        CommonClass.tblChallanEntryDTO.Remove(billdata);
+                        fillGridData();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Bill already used some where else can't deleted successfully.");
+                }
+
+            }
+        }
     }
 }

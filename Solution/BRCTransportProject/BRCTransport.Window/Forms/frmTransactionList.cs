@@ -46,6 +46,7 @@ namespace BRCTransport.Window.Forms
                 TransactionId = Convert.ToInt32(GridViewtransaction.Rows[e.RowIndex].Cells[0].Value);
                 frmtransaction.TransactionId = TransactionId;
                 frmtransaction.FormClosed += frmParty_FormClosed;
+                frmtransaction.ShowInTaskbar = false;
                 frmtransaction.Show();
             }
 

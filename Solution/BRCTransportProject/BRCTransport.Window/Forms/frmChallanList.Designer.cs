@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GridViewChallan = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChallanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChallanDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             this.GridViewChallan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.GridViewChallan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewChallan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.ChallanNo,
             this.ChallanDateTime,
             this.VehicleNo,
@@ -64,6 +66,14 @@
             this.GridViewChallan.Size = new System.Drawing.Size(869, 464);
             this.GridViewChallan.TabIndex = 0;
             this.GridViewChallan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewChallan_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ChallanId";
+            this.Column1.HeaderText = "ChallanId";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            this.Column1.Width = 76;
             // 
             // ChallanNo
             // 
@@ -154,6 +164,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridViewChallan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChallanNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChallanDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleNo;

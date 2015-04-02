@@ -86,6 +86,20 @@ namespace BRCTransport.DAL
                     tblChallanObject.ITDSDeduction = tblChallanDTO.ITDSDeduction;
                     tblChallanObject.PartyLorryHire = tblChallanDTO.PartyLorryHire;
                     tblChallanObject.BalanceLorryHire = tblChallanDTO.BalanceLorryHire;
+                    List<tblChallanEntry> entry = new List<tblChallanEntry>();
+                    entry = dbObject.tblChallanEntries.Where(h => h.ChallanId == tblChallanDTO.ChallanId).ToList();
+                    foreach (var item in entry)
+                    {
+                        dbObject.tblChallanEntries.Remove(item);
+                    }
+                    if (tblChallanDTO.ChallanEntryList != null)
+                    {
+                        foreach (var billEntry in tblChallanDTO.ChallanEntryList)
+                        {
+                            billEntry.ChallanId = tblChallanDTO.ChallanId;
+                            dbObject.tblChallanEntries.Add(billEntry.ToEntity());
+                        }
+                    }
                 }
                 dbObject.SaveChanges();
                 return tblChallanObject.ChallanId;
@@ -124,7 +138,10 @@ namespace BRCTransport.DAL
         {
             using (var dbObject = new BRCTransportDBEntities())
             {
-                return dbObject.tblChallans.Find(ChallanId).ToDTO();
+                tblChallanDTO temp;
+                temp = dbObject.tblChallans.Find(ChallanId).ToDTO();
+                temp.ChallanEntryList = dbObject.tblChallanEntries.Where(h => h.ChallanId == ChallanId).ToList().ToDTOs();
+                return temp;
             }
         }
 

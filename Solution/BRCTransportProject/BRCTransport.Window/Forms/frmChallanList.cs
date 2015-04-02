@@ -55,8 +55,8 @@ namespace BRCTransport.Window.Forms
                 ChallanId = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
                 frm.ChallanId = ChallanId;
                 frm.FormClosed += frmParty_FormClosed;
+                frm.ShowInTaskbar = false;
                 frm.Show();
-              
             }
 
             if (Action == "Delete")

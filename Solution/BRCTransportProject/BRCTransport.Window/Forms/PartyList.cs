@@ -57,6 +57,7 @@ namespace BRCTransport.Window.Forms
                 PartyId = Convert.ToInt32(gridViewParty.Rows[e.RowIndex].Cells[0].Value);
                 frmParty.PartyId = PartyId;
                 frmParty.FormClosed += frmParty_FormClosed;
+                frmParty.ShowInTaskbar = false;
                 frmParty.Show();
             }
 

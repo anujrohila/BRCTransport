@@ -25,6 +25,8 @@ namespace BRCTransport.Window.Class
 
         public static List<tblBillEntryDTO> tblBillEntryDTO = new List<tblBillEntryDTO>();
 
+        public static List<tblChallanEntryDTO> tblChallanEntryDTO = new List<tblChallanEntryDTO>();
+
 
         public static void EnterEvents(object sender, EventArgs e)
         {
