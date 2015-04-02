@@ -1,4 +1,5 @@
-﻿using BRCTransport.Domain;
+﻿using BRCTransport.BAL;
+using BRCTransport.Domain;
 using BRCTransport.Window.Class;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,61 @@ namespace BRCTransport.Window.Forms
         public frmEntryChallan()
         {
             InitializeComponent();
+            this.Load += frmEntryChallan_Load;
         }
 
         private void frmEntryChallan_Load(object sender, EventArgs e)
         {
-
+            if (ChallanId > 0)
+            {
+                var tblChallanDTO = ChallanBusinessLogic.Get(ChallanId);
+                txtLorryChallenNo.Text = (tblChallanDTO.ChallanNo).ToString();
+                dpChallanDate.Value = tblChallanDTO.ChallanDateTime.Value;
+                txtVehicleNo.Text = tblChallanDTO.VehicleNo;
+                txtVehicleType.Text = tblChallanDTO.VehicleType;
+                txtMake.Text = tblChallanDTO.VechicleMake;
+                txtModel.Text = tblChallanDTO.VehicleModel;
+                txtLoading.Text = tblChallanDTO.VehicleNoOfPointLoading;
+                txtUnloading.Text = tblChallanDTO.Vehicle4NoOfPointUnLoading;
+                txtCompanyFeetCode.Text = tblChallanDTO.VehicleFleetCode;
+                txtFromBrCode.Text = tblChallanDTO.FromBrCode;
+                txtLoadedFrom.Text = tblChallanDTO.LoadedForm;
+                txtToBrCode.Text = tblChallanDTO.ToBrCode;
+                txtDestination.Text = tblChallanDTO.Destination;
+                txtDistance.Text = tblChallanDTO.DistanceKM;
+                txtScheduleDateofArrival.Text = tblChallanDTO.ScheduleDateofActual;
+                txtVehicleEngineNo.Text = tblChallanDTO.VechicleEngineNo;
+                txtVehicleChassisNo.Text = tblChallanDTO.VechicleChassisNo;
+                txtDriverMobileNo.Text = tblChallanDTO.DriverMobileNo;
+                txtDriverAddress.Text = tblChallanDTO.DriverAddress;
+                txtTaxTokenNumber.Text = tblChallanDTO.TaxTokenNo;
+                txtTaxtokenValidUpto.Text = tblChallanDTO.TaxTokenNoValidUpto;
+                txtDriverLicenceNo.Text = tblChallanDTO.DriverLicenseNo;
+                txtIssuedFrom.Text = tblChallanDTO.LicenseIssuedFrom;
+                txtLicenceValidUpto.Text = tblChallanDTO.LicenseValidUpto;
+                txtOwnerName.Text = tblChallanDTO.VechicleOwnerName;
+                txtRoadPermitNumber.Text = tblChallanDTO.RoadPermitNo;
+                txtRoadPermitValidUpto3.Text = tblChallanDTO.RoadPermitValidUpto;
+                txtVehicleOwnerMobileMobileNo.Text = tblChallanDTO.VechicleOwnerMobileNo;
+                txtVehicleOwnerAddress.Text = tblChallanDTO.VechicleOwnerAddress;
+                txtInsPolicyNo.Text = tblChallanDTO.InsPolicyNo;
+                txtPANNo.Text = tblChallanDTO.VechicleOwnerPanNo;
+                txtAgentName.Text = tblChallanDTO.VechicleAgentName;
+                txtEngagedByEmpCode1.Text = tblChallanDTO.VechicleEngagedByNameWithEmpCode1;
+                txtAgentMobileNumber.Text = tblChallanDTO.VechicleMobileNo;
+                txtAgentAddress.Text = tblChallanDTO.VechicleAgentAddress;
+                txtEngagedByEmpCode2.Text = tblChallanDTO.VechicleEngagedByNameWithEmpCode2;
+                txtVehicleFinancier.Text = tblChallanDTO.VechicleFinancierDetails;
+                txtLoadingAdviceNo.Text = tblChallanDTO.BrokerLoadingAdviceNoDate;
+                txtMaterialUnloadingBy.Text = tblChallanDTO.MaterialUnLoadingBy;
+                txtTotalPackageNo.Text = (tblChallanDTO.PayableTotalPackages).ToString();
+                txtChargedWeightKg.Text = (tblChallanDTO.PayableChargedWeight).ToString();
+                txtRatePerTon.Text = (tblChallanDTO.PayableRatePerTon).ToString();
+                txtTotalLorryHire.Text = (tblChallanDTO.TotalLorryHire).ToString();
+                txtITDC.Text = (tblChallanDTO.ITDSDeduction).ToString();
+                txtPartLorryHire.Text = (tblChallanDTO.PartyLorryHire).ToString();
+                txtBalanceLorryHire.Text = (tblChallanDTO.BalanceLorryHire).ToString();
+            }
         }
 
         public static int ChallanEntryNo { get; set; }
@@ -77,8 +128,8 @@ namespace BRCTransport.Window.Forms
             txtVehicleFinancier.Text = "";
             txtVehicleNo.Text = "";
             txtVehicleType.Text = "";
-            txtWeightPerTon.Text = "";
-            
+            txtRatePerTon.Text = "";
+
         }
 
         private bool IsFormValidate()
@@ -99,7 +150,7 @@ namespace BRCTransport.Window.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            clearData();
+            this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -107,6 +158,7 @@ namespace BRCTransport.Window.Forms
             if (IsFormValidate())
             {
                 tblChallanDTO dto = new tblChallanDTO();
+
 
                 if (ChallanId > 0)
                     dto.ChallanId = ChallanId;
@@ -149,8 +201,26 @@ namespace BRCTransport.Window.Forms
                 dto.VechicleEngagedByNameWithEmpCode2 = txtEngagedByEmpCode2.Text;
                 dto.VechicleFinancierDetails = txtVehicleFinancier.Text;
                 dto.BrokerLoadingAdviceNoDate = txtLoadingAdviceNo.Text;
-              
-
+                dto.MaterialUnLoadingBy = txtMaterialUnloadingBy.Text;
+                dto.PayableTotalPackages = Convert.ToDouble(txtTotalPackageNo.Text);
+                dto.PayableChargedWeight = Convert.ToDouble(txtChargedWeightKg.Text);
+                dto.PayableRatePerTon = Convert.ToDouble(txtRatePerTon.Text);
+                dto.TotalLorryHire = Convert.ToDouble(txtTotalLorryHire.Text);
+                dto.ITDSDeduction = Convert.ToDouble(txtITDC.Text);
+                dto.PartyLorryHire = Convert.ToDouble(txtPartLorryHire.Text);
+                dto.BalanceLorryHire = Convert.ToDouble(txtBalanceLorryHire.Text);
+                var result = ChallanBusinessLogic.Save(dto);
+                if (result > 0)
+                {
+                    if (ChallanId > 0)
+                        this.Close();
+                    else
+                        clearData();
+                }
+                else
+                {
+                    MessageBox.Show("Transaction Fail");
+                }
             }
         }
 

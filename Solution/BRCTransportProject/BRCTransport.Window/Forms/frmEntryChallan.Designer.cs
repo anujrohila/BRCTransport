@@ -122,7 +122,7 @@
             this.txtMaterialUnloadingBy = new System.Windows.Forms.TextBox();
             this.txtTotalPackageNo = new System.Windows.Forms.TextBox();
             this.txtChargedWeightKg = new System.Windows.Forms.TextBox();
-            this.txtWeightPerTon = new System.Windows.Forms.TextBox();
+            this.txtRatePerTon = new System.Windows.Forms.TextBox();
             this.txtTotalLorryHire = new System.Windows.Forms.TextBox();
             this.txtITDC = new System.Windows.Forms.TextBox();
             this.txtPartLorryHire = new System.Windows.Forms.TextBox();
@@ -913,12 +913,12 @@
             this.txtChargedWeightKg.Size = new System.Drawing.Size(145, 20);
             this.txtChargedWeightKg.TabIndex = 43;
             // 
-            // txtWeightPerTon
+            // txtRatePerTon
             // 
-            this.txtWeightPerTon.Location = new System.Drawing.Point(795, 296);
-            this.txtWeightPerTon.Name = "txtWeightPerTon";
-            this.txtWeightPerTon.Size = new System.Drawing.Size(145, 20);
-            this.txtWeightPerTon.TabIndex = 44;
+            this.txtRatePerTon.Location = new System.Drawing.Point(795, 296);
+            this.txtRatePerTon.Name = "txtRatePerTon";
+            this.txtRatePerTon.Size = new System.Drawing.Size(145, 20);
+            this.txtRatePerTon.TabIndex = 44;
             // 
             // txtTotalLorryHire
             // 
@@ -1112,7 +1112,7 @@
             this.Controls.Add(this.txtPartLorryHire);
             this.Controls.Add(this.txtITDC);
             this.Controls.Add(this.txtTotalLorryHire);
-            this.Controls.Add(this.txtWeightPerTon);
+            this.Controls.Add(this.txtRatePerTon);
             this.Controls.Add(this.txtChargedWeightKg);
             this.Controls.Add(this.txtTotalPackageNo);
             this.Controls.Add(this.txtMaterialUnloadingBy);
@@ -1322,7 +1322,7 @@
         private System.Windows.Forms.TextBox txtMaterialUnloadingBy;
         private System.Windows.Forms.TextBox txtTotalPackageNo;
         private System.Windows.Forms.TextBox txtChargedWeightKg;
-        private System.Windows.Forms.TextBox txtWeightPerTon;
+        private System.Windows.Forms.TextBox txtRatePerTon;
         private System.Windows.Forms.TextBox txtTotalLorryHire;
         private System.Windows.Forms.TextBox txtITDC;
         private System.Windows.Forms.TextBox txtPartLorryHire;
