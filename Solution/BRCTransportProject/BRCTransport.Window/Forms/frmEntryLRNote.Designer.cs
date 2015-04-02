@@ -558,6 +558,7 @@
             this.txtAmount1.TabIndex = 23;
             this.txtAmount1.Enter += new System.EventHandler(this.EnterEvent);
             this.txtAmount1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtAmount1.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtRate2
@@ -578,6 +579,7 @@
             this.txtAmount2.TabIndex = 29;
             this.txtAmount2.Enter += new System.EventHandler(this.EnterEvent);
             this.txtAmount2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtAmount2.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges2
@@ -762,6 +764,7 @@
             this.txtLength.TabIndex = 44;
             this.txtLength.Enter += new System.EventHandler(this.EnterEvent);
             this.txtLength.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtLength.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label34
@@ -781,6 +784,7 @@
             this.txtWidth.TabIndex = 45;
             this.txtWidth.Enter += new System.EventHandler(this.EnterEvent);
             this.txtWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtWidth.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label35
@@ -800,6 +804,7 @@
             this.txtHeight.TabIndex = 46;
             this.txtHeight.Enter += new System.EventHandler(this.EnterEvent);
             this.txtHeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtHeight.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label36
@@ -819,6 +824,7 @@
             this.txtDiamentionNoOfPkgs.TabIndex = 47;
             this.txtDiamentionNoOfPkgs.Enter += new System.EventHandler(this.EnterEvent);
             this.txtDiamentionNoOfPkgs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtDiamentionNoOfPkgs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtDiamentionNoOfPkgs.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label37
@@ -838,6 +844,7 @@
             this.txtTotalCFT.TabIndex = 48;
             this.txtTotalCFT.Enter += new System.EventHandler(this.EnterEvent);
             this.txtTotalCFT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTotalCFT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtTotalCFT.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label38
@@ -881,7 +888,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(9, 477);
+            this.label40.Location = new System.Drawing.Point(9, 466);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(129, 13);
             this.label40.TabIndex = 0;
@@ -889,7 +896,7 @@
             // 
             // txtDeclaredValueGoods
             // 
-            this.txtDeclaredValueGoods.Location = new System.Drawing.Point(158, 474);
+            this.txtDeclaredValueGoods.Location = new System.Drawing.Point(158, 463);
             this.txtDeclaredValueGoods.Name = "txtDeclaredValueGoods";
             this.txtDeclaredValueGoods.Size = new System.Drawing.Size(165, 20);
             this.txtDeclaredValueGoods.TabIndex = 51;
@@ -900,7 +907,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(9, 502);
+            this.label41.Location = new System.Drawing.Point(9, 491);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(113, 13);
             this.label41.TabIndex = 0;
@@ -908,7 +915,7 @@
             // 
             // txtServiceTaxThrough
             // 
-            this.txtServiceTaxThrough.Location = new System.Drawing.Point(158, 499);
+            this.txtServiceTaxThrough.Location = new System.Drawing.Point(158, 488);
             this.txtServiceTaxThrough.Name = "txtServiceTaxThrough";
             this.txtServiceTaxThrough.Size = new System.Drawing.Size(165, 20);
             this.txtServiceTaxThrough.TabIndex = 52;
@@ -919,7 +926,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(9, 527);
+            this.label42.Location = new System.Drawing.Point(9, 516);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(90, 13);
             this.label42.TabIndex = 0;
@@ -927,7 +934,7 @@
             // 
             // txtBasicOfBooking
             // 
-            this.txtBasicOfBooking.Location = new System.Drawing.Point(158, 524);
+            this.txtBasicOfBooking.Location = new System.Drawing.Point(158, 513);
             this.txtBasicOfBooking.Name = "txtBasicOfBooking";
             this.txtBasicOfBooking.Size = new System.Drawing.Size(165, 20);
             this.txtBasicOfBooking.TabIndex = 53;
@@ -938,7 +945,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(9, 553);
+            this.label43.Location = new System.Drawing.Point(9, 542);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(76, 13);
             this.label43.TabIndex = 0;
@@ -946,7 +953,7 @@
             // 
             // txtBilledWith
             // 
-            this.txtBilledWith.Location = new System.Drawing.Point(158, 550);
+            this.txtBilledWith.Location = new System.Drawing.Point(158, 539);
             this.txtBilledWith.Name = "txtBilledWith";
             this.txtBilledWith.Size = new System.Drawing.Size(165, 20);
             this.txtBilledWith.TabIndex = 54;
@@ -957,7 +964,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(9, 579);
+            this.label44.Location = new System.Drawing.Point(9, 568);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(75, 13);
             this.label44.TabIndex = 0;
@@ -965,7 +972,7 @@
             // 
             // txtBranchCode
             // 
-            this.txtBranchCode.Location = new System.Drawing.Point(158, 576);
+            this.txtBranchCode.Location = new System.Drawing.Point(158, 565);
             this.txtBranchCode.Name = "txtBranchCode";
             this.txtBranchCode.Size = new System.Drawing.Size(165, 20);
             this.txtBranchCode.TabIndex = 55;
@@ -976,7 +983,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(357, 477);
+            this.label45.Location = new System.Drawing.Point(357, 466);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(65, 13);
             this.label45.TabIndex = 0;
@@ -984,7 +991,7 @@
             // 
             // txtPartyCode
             // 
-            this.txtPartyCode.Location = new System.Drawing.Point(617, 474);
+            this.txtPartyCode.Location = new System.Drawing.Point(617, 463);
             this.txtPartyCode.Name = "txtPartyCode";
             this.txtPartyCode.Size = new System.Drawing.Size(165, 20);
             this.txtPartyCode.TabIndex = 56;
@@ -995,7 +1002,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(357, 506);
+            this.label46.Location = new System.Drawing.Point(357, 495);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(186, 13);
             this.label46.TabIndex = 0;
@@ -1003,7 +1010,7 @@
             // 
             // txtToPay
             // 
-            this.txtToPay.Location = new System.Drawing.Point(617, 499);
+            this.txtToPay.Location = new System.Drawing.Point(617, 488);
             this.txtToPay.Name = "txtToPay";
             this.txtToPay.Size = new System.Drawing.Size(165, 20);
             this.txtToPay.TabIndex = 57;
@@ -1014,7 +1021,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(357, 531);
+            this.label47.Location = new System.Drawing.Point(357, 520);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(111, 13);
             this.label47.TabIndex = 0;
@@ -1022,7 +1029,7 @@
             // 
             // txtRebooking
             // 
-            this.txtRebooking.Location = new System.Drawing.Point(617, 524);
+            this.txtRebooking.Location = new System.Drawing.Point(617, 513);
             this.txtRebooking.Name = "txtRebooking";
             this.txtRebooking.Size = new System.Drawing.Size(165, 20);
             this.txtRebooking.TabIndex = 58;
@@ -1033,7 +1040,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(357, 554);
+            this.label48.Location = new System.Drawing.Point(357, 543);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(235, 13);
             this.label48.TabIndex = 0;
@@ -1041,7 +1048,7 @@
             // 
             // txtMainConsignment
             // 
-            this.txtMainConsignment.Location = new System.Drawing.Point(617, 550);
+            this.txtMainConsignment.Location = new System.Drawing.Point(617, 539);
             this.txtMainConsignment.Name = "txtMainConsignment";
             this.txtMainConsignment.Size = new System.Drawing.Size(165, 20);
             this.txtMainConsignment.TabIndex = 59;
@@ -1052,7 +1059,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(357, 576);
+            this.label50.Location = new System.Drawing.Point(357, 565);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(127, 13);
             this.label50.TabIndex = 0;
@@ -1060,6 +1067,7 @@
             // 
             // cmbServiceTaxisPaybleBy
             // 
+            this.cmbServiceTaxisPaybleBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbServiceTaxisPaybleBy.FormattingEnabled = true;
             this.cmbServiceTaxisPaybleBy.Items.AddRange(new object[] {
             "--Select--",
@@ -1067,7 +1075,7 @@
             "CONSIGNEE",
             "Transport",
             ""});
-            this.cmbServiceTaxisPaybleBy.Location = new System.Drawing.Point(617, 575);
+            this.cmbServiceTaxisPaybleBy.Location = new System.Drawing.Point(617, 564);
             this.cmbServiceTaxisPaybleBy.Name = "cmbServiceTaxisPaybleBy";
             this.cmbServiceTaxisPaybleBy.Size = new System.Drawing.Size(165, 21);
             this.cmbServiceTaxisPaybleBy.TabIndex = 60;
@@ -1077,7 +1085,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(438, 632);
+            this.btnSave.Location = new System.Drawing.Point(921, 543);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(105, 34);
             this.btnSave.TabIndex = 61;
@@ -1090,7 +1098,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(560, 632);
+            this.btnCancel.Location = new System.Drawing.Point(1043, 543);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(103, 34);
             this.btnCancel.TabIndex = 62;
@@ -1209,7 +1217,7 @@
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label59.ForeColor = System.Drawing.Color.Red;
-            this.label59.Location = new System.Drawing.Point(595, 576);
+            this.label59.Location = new System.Drawing.Point(595, 565);
             this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(17, 24);
@@ -1411,6 +1419,7 @@
             this.txtAmount3.TabIndex = 32;
             this.txtAmount3.Enter += new System.EventHandler(this.EnterEvent);
             this.txtAmount3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtAmount3.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges4
@@ -1431,6 +1440,7 @@
             this.txtAmount4.TabIndex = 36;
             this.txtAmount4.Enter += new System.EventHandler(this.EnterEvent);
             this.txtAmount4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtAmount4.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtCharges5
@@ -1451,6 +1461,7 @@
             this.txtAmount5.TabIndex = 40;
             this.txtAmount5.Enter += new System.EventHandler(this.EnterEvent);
             this.txtAmount5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtAmount5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtAmount5.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label4
@@ -1506,7 +1517,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 679);
+            this.ClientSize = new System.Drawing.Size(1157, 593);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCharges5);
             this.Controls.Add(this.txtAmount5);
@@ -1637,9 +1648,11 @@
             this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.label1);
             this.Name = "frmEntryLRNote";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LR Note";
             this.Enter += new System.EventHandler(this.EnterEvent);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.Leave += new System.EventHandler(this.LeaveEvent);
             ((System.ComponentModel.ISupportInitialize)(this.errorCompanyName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDate)).EndInit();

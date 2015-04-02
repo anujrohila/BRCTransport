@@ -83,6 +83,7 @@ namespace BRCTransport.Window.Forms
                 txtTotalCFT.Text = LRdetail.DimensionTotalCFTCMT;
                 txtValidType.Text = LRdetail.ValidType;
                 txtWidth.Text = LRdetail.DimensionWidth;
+                cmbServiceTaxisPaybleBy.SelectedItem = LRdetail.ServiceTaxisPayableBy;
             }
             loadConsigneeName();
             loadConsignorName();
@@ -105,17 +106,6 @@ namespace BRCTransport.Window.Forms
             cmbConsignorName.DisplayMember = "ConsignorName";
         }
 
-        //public loadServiceTaxPaybleBy()
-        //{
-        //    List<ServiceTax> stuList = new List<ServiceTax>();
-        //    {
-        //             stuList.Add("CONSIGNOR");
-        //            stuList.Add("CONSIGNEE");
-        //             stuList.Add("Transport");
-        //    }
-
-
-        //}
 
         private Boolean ValidateData()
         {
@@ -126,6 +116,7 @@ namespace BRCTransport.Window.Forms
             ErrorHanding.SetTextboxErrorWithCount(errorAmount, txtAmount1, "Enter Amount");
             ErrorHanding.SetTextboxErrorWithCount(errorFromCode, txtFromCodeName, "Enter from Code name");
             ErrorHanding.SetTextboxErrorWithCount(errorToCode, txtToCodeName, "Enterto code name");
+            ErrorHanding.SetTextboxErrorWithCount(errorServiceTax, cmbServiceTaxisPaybleBy, "select ServiceTax");
 
             if (ErrorHanding.GetErrorCount() == 0)
                 return true;
@@ -197,11 +188,16 @@ namespace BRCTransport.Window.Forms
             txtValidType.Text = "";
             txtWidth.Text = "";
             cmbServiceTaxisPaybleBy.SelectedIndex = 0;
-            
+
         }
         #endregion
 
         #region Key Event
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonClass.KeyPressEvents(sender, e);
+        }
+           
 
         private void EnterEvent(object sender, EventArgs e)
         {
@@ -227,11 +223,22 @@ namespace BRCTransport.Window.Forms
         {
             if (ValidateData())
             {
+                if (txtAmount1.Text.Trim() == "")
+                    txtAmount1.Text = "0";
+                if (txtAmount2.Text.Trim() == "")
+                    txtAmount2.Text = "0";
+                if (txtAmount3.Text.Trim() == "")
+                    txtAmount3.Text = "0";
+                if (txtAmount4.Text.Trim() == "")
+                    txtAmount4.Text = "0";
+                if (txtAmount5.Text.Trim() == "")
+                    txtAmount5.Text = "0";
+
                 tblConsignmentNoteDTO consignNoteDTO = new tblConsignmentNoteDTO();
                 consignNoteDTO.CompanyName = txtCompanyName.Text;
                 consignNoteDTO.PolicyNo = txtPolicyNo.Text;
                 consignNoteDTO.CompanyDate = Convert.ToDateTime(dpCompanyDate.Value);
-                consignNoteDTO.CompanyAmount = Convert.ToDouble(txtCompanyAmount.Text);
+                consignNoteDTO.CompanyAmount = txtCompanyAmount.Text.Trim() == "" ? 0 : Convert.ToDouble(txtCompanyAmount.Text);
                 consignNoteDTO.ConsigneeId = Convert.ToInt32(cmbConsineeName.SelectedValue);
                 consignNoteDTO.ConsigneeInvoiceNo = txtInvoiceNo.Text;
                 consignNoteDTO.ConsigneeServiceTaxRegNo = txtConsigneeServiceTaxRegNo.Text;
@@ -241,7 +248,7 @@ namespace BRCTransport.Window.Forms
                 consignNoteDTO.PanNo = txtPanNo.Text;
                 consignNoteDTO.CentralisedServiceTaxRegnNo = txtCentralisedServiceTaxRegNo.Text;
                 consignNoteDTO.FromCode = txtFromCodeName.Text;
-                consignNoteDTO.ConsignmentNoteNo = Convert.ToInt32(txtConsignmentNoteNo.Text);
+                consignNoteDTO.ConsignmentNoteNo = txtConsignmentNoteNo.Text.Trim() == "" ? 0 : Convert.ToInt32(txtConsignmentNoteNo.Text);
                 consignNoteDTO.ConsignmentDate = Convert.ToDateTime(dpConsignmentDate.Value);
                 consignNoteDTO.AddressofIssuing = txtAddressOfIssueOffice.Text;
                 consignNoteDTO.ToCode = txtToCodeName.Text;
@@ -258,14 +265,14 @@ namespace BRCTransport.Window.Forms
                 consignNoteDTO.KMS = txtKms.Text;
                 consignNoteDTO.Charges1 = txtCharges1.Text;
                 consignNoteDTO.Charges2 = txtCharges2.Text;
-                consignNoteDTO.Amount2 =  double.Parse(txtAmount2.Text);
+                consignNoteDTO.Amount2 = double.Parse(txtAmount2.Text);
                 consignNoteDTO.Charges3 = txtCharges3.Text;
                 consignNoteDTO.Charges4 = txtCharges4.Text;
                 consignNoteDTO.AdvancedPaymentDate = Convert.ToDateTime(dpAdvancePaymentDate.Value);
                 consignNoteDTO.Charges5 = txtCharges5.Text;
-                consignNoteDTO.Amount3 = Convert.ToDouble(txtAmount3.Text);
-                consignNoteDTO.Amount4 = Convert.ToDouble(txtAmount4.Text);
-                consignNoteDTO.Amount5 = Convert.ToDouble(txtAmount5.Text);
+                consignNoteDTO.Amount3 = txtAmount3.Text.Trim() == "" ? 0 : Convert.ToDouble(txtAmount3.Text);
+                consignNoteDTO.Amount4 = txtAmount4.Text.Trim() == "" ? 0 : Convert.ToDouble(txtAmount4.Text);
+                consignNoteDTO.Amount5 = txtAmount5.Text.Trim() == "" ? 0 : Convert.ToDouble(txtAmount5.Text);
                 txtFinalAmount.Text = (Convert.ToDouble(txtAmount1.Text) + Convert.ToDouble(txtAmount2.Text) + Convert.ToDouble(txtAmount3.Text) + Convert.ToDouble(txtAmount4.Text) + Convert.ToDouble(txtAmount5.Text)).ToString();
                 consignNoteDTO.FinalAmount = Convert.ToDouble(txtFinalAmount.Text);
                 consignNoteDTO.PrivateMarketOtherIdentificaion = txtPrivateMarks.Text;
@@ -289,19 +296,31 @@ namespace BRCTransport.Window.Forms
                 consignNoteDTO.Rebooking = txtRebooking.Text;
                 consignNoteDTO.MainConsignmentNo = txtMainConsignment.Text;
                 consignNoteDTO.ServiceTaxisPayableBy = (cmbServiceTaxisPaybleBy.SelectedItem).ToString();
-                
-               
-                if (ConsignmentNoteBusinessLogic.CheckDuplicateConsignmentNoteNo(consignNoteDTO.ConsignmentId, Convert.ToInt32(consignNoteDTO.ConsignmentNoteNo)) == false)
+                consignNoteDTO.ConsignmentId = Consignmentid;
+              
+
+                var resultCheckDuplicateConsignmentNoteNo = ConsignmentNoteBusinessLogic.CheckDuplicateConsignmentNoteNo(Consignmentid, Convert.ToInt32(txtConsignmentNoteNo.Text));
+                if (resultCheckDuplicateConsignmentNoteNo)
                 {
-                    var result = ConsignmentNoteBusinessLogic.Save(consignNoteDTO);
-                    if (result > 0)
-                        this.Close();
+                    MessageBox.Show("Consignment Number already exists.");
+                    txtConsignmentNoteNo.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Consignment Number already exists.");
+                    var result = ConsignmentNoteBusinessLogic.Save(consignNoteDTO);
+                    if (result > 0)
+                    {
+                        MessageBox.Show("LR Note Successfully Generate");
+                        if (Consignmentid > 0)
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            clearData();
+                        }
+                    }
                 }
-
             }
 
 
@@ -309,7 +328,7 @@ namespace BRCTransport.Window.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            clearData();
+            this.Close();
         }
     }
 }
