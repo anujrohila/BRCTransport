@@ -1,4 +1,5 @@
-﻿using BRCTransport.Window.Class;
+﻿using BRCTransport.Domain;
+using BRCTransport.Window.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace BRCTransport.Window.Forms
 {
     public partial class frmEntryChallan : Form
     {
+        public int ChallanId = 0;
         public frmEntryChallan()
         {
             InitializeComponent();
@@ -28,8 +30,8 @@ namespace BRCTransport.Window.Forms
 
         private void clearData()
         {
-            txtAddress.Text = "";
-            txtAddress2.Text = "";
+            txtDriverAddress.Text = "";
+            txtVehicleOwnerAddress.Text = "";
             txtAgentAddress.Text = "";
             txtAgentMobileNumber.Text = "";
             txtAgentName.Text = "";
@@ -41,7 +43,7 @@ namespace BRCTransport.Window.Forms
             txtDistance.Text = "";
             txtDriverLicenceNo.Text = "";
             txtDriverName.Text = "";
-            txtEngagedByName.Text = "";
+            txtEngagedByEmpCode2.Text = "";
             txtFromBrCode.Text = "";
             txtInsCoWithStn.Text = "";
             txtInsPolicyNo.Text = "";
@@ -54,8 +56,8 @@ namespace BRCTransport.Window.Forms
             txtLorryChallenNo.Text = "";
             txtMake.Text = "";
             txtMaterialUnloadingBy.Text = "";
-            txtMobileNo.Text = "";
-            txtMobileNo2.Text = "";
+            txtDriverMobileNo.Text = "";
+            txtVehicleOwnerMobileMobileNo.Text = "";
             txtModel.Text = "";
             txtOwnerName.Text = "";
             txtPANNo.Text = "";
@@ -67,15 +69,16 @@ namespace BRCTransport.Window.Forms
             txtTotalLorryHire.Text = "";
             txtTotalPackageNo.Text = "";
             txtUnloading.Text = "";
-            txtValidUpto.Text = "";
-            txtValidUpto2.Text = "";
-            txtValidUpto3.Text = "";
+            txtTaxtokenValidUpto.Text = "";
+            txtLicenceValidUpto.Text = "";
+            txtRoadPermitValidUpto3.Text = "";
             txtVehicleChassisNo.Text = "";
             txtVehicleEngineNo.Text = "";
             txtVehicleFinancier.Text = "";
             txtVehicleNo.Text = "";
             txtVehicleType.Text = "";
             txtWeightPerTon.Text = "";
+            
         }
 
         private bool IsFormValidate()
@@ -101,7 +104,54 @@ namespace BRCTransport.Window.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (IsFormValidate())
+            {
+                tblChallanDTO dto = new tblChallanDTO();
 
+                if (ChallanId > 0)
+                    dto.ChallanId = ChallanId;
+
+                dto.ChallanNo = Convert.ToInt32(txtLorryChallenNo.Text);
+                dto.ChallanDateTime = dpChallanDate.Value;
+                dto.VehicleNo = txtVehicleNo.Text;
+                dto.VehicleType = txtVehicleType.Text;
+                dto.VechicleMake = txtMake.Text;
+                dto.VehicleModel = txtModel.Text;
+                dto.VehicleNoOfPointLoading = txtLoading.Text;
+                dto.Vehicle4NoOfPointUnLoading = txtUnloading.Text;
+                dto.VehicleFleetCode = txtCompanyFeetCode.Text;
+                dto.FromBrCode = txtFromBrCode.Text;
+                dto.LoadedForm = txtLoadedFrom.Text;
+                dto.ToBrCode = txtToBrCode.Text;
+                dto.Destination = txtDestination.Text;
+                dto.DistanceKM = txtDistance.Text;
+                dto.ScheduleDateofActual = txtScheduleDateofArrival.Text;
+                dto.VechicleEngineNo = txtVehicleEngineNo.Text;
+                dto.VechicleChassisNo = txtVehicleChassisNo.Text;
+                dto.DriverMobileNo = txtDriverMobileNo.Text;
+                dto.DriverAddress = txtDriverAddress.Text;
+                dto.TaxTokenNo = txtTaxTokenNumber.Text;
+                dto.TaxTokenNoValidUpto = txtTaxtokenValidUpto.Text;
+                dto.DriverLicenseNo = txtDriverLicenceNo.Text;
+                dto.LicenseIssuedFrom = txtIssuedFrom.Text;
+                dto.LicenseValidUpto = txtLicenceValidUpto.Text;
+                dto.VechicleOwnerName = txtOwnerName.Text;
+                dto.RoadPermitNo = txtRoadPermitNumber.Text;
+                dto.RoadPermitValidUpto = txtRoadPermitValidUpto3.Text;
+                dto.VechicleOwnerMobileNo = txtVehicleOwnerMobileMobileNo.Text;
+                dto.VechicleOwnerAddress = txtVehicleOwnerAddress.Text;
+                dto.InsPolicyNo = txtInsPolicyNo.Text;
+                dto.VechicleOwnerPanNo = txtPANNo.Text;
+                dto.VechicleAgentName = txtAgentName.Text;
+                dto.VechicleEngagedByNameWithEmpCode1 = txtEngagedByEmpCode1.Text;
+                dto.VechicleMobileNo = txtAgentMobileNumber.Text;
+                dto.VechicleAgentAddress = txtAgentAddress.Text;
+                dto.VechicleEngagedByNameWithEmpCode2 = txtEngagedByEmpCode2.Text;
+                dto.VechicleFinancierDetails = txtVehicleFinancier.Text;
+                dto.BrokerLoadingAdviceNoDate = txtLoadingAdviceNo.Text;
+              
+
+            }
         }
 
         private void AddEntry_Click(object sender, EventArgs e)

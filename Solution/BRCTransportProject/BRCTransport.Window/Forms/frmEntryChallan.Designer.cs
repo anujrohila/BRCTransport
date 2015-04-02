@@ -96,27 +96,27 @@
             this.txtDriverName = new System.Windows.Forms.TextBox();
             this.txtVehicleEngineNo = new System.Windows.Forms.TextBox();
             this.txtVehicleChassisNo = new System.Windows.Forms.TextBox();
-            this.txtMobileNo = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtDriverMobileNo = new System.Windows.Forms.TextBox();
+            this.txtDriverAddress = new System.Windows.Forms.TextBox();
             this.txtTaxTokenNumber = new System.Windows.Forms.TextBox();
-            this.txtValidUpto = new System.Windows.Forms.TextBox();
+            this.txtTaxtokenValidUpto = new System.Windows.Forms.TextBox();
             this.txtIssuedFrom = new System.Windows.Forms.TextBox();
             this.txtDriverLicenceNo = new System.Windows.Forms.TextBox();
             this.txtLicenceIssuedFrom = new System.Windows.Forms.TextBox();
-            this.txtValidUpto2 = new System.Windows.Forms.TextBox();
+            this.txtLicenceValidUpto = new System.Windows.Forms.TextBox();
             this.txtOwnerName = new System.Windows.Forms.TextBox();
             this.txtRoadPermitNumber = new System.Windows.Forms.TextBox();
-            this.txtValidUpto3 = new System.Windows.Forms.TextBox();
-            this.txtMobileNo2 = new System.Windows.Forms.TextBox();
-            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.txtRoadPermitValidUpto3 = new System.Windows.Forms.TextBox();
+            this.txtVehicleOwnerMobileMobileNo = new System.Windows.Forms.TextBox();
+            this.txtVehicleOwnerAddress = new System.Windows.Forms.TextBox();
             this.txtInsPolicyNo = new System.Windows.Forms.TextBox();
             this.txtPANNo = new System.Windows.Forms.TextBox();
             this.txtInsCoWithStn = new System.Windows.Forms.TextBox();
             this.txtAgentName = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.txtEngagedByEmpCode1 = new System.Windows.Forms.TextBox();
             this.txtAgentMobileNumber = new System.Windows.Forms.TextBox();
             this.txtAgentAddress = new System.Windows.Forms.TextBox();
-            this.txtEngagedByName = new System.Windows.Forms.TextBox();
+            this.txtEngagedByEmpCode2 = new System.Windows.Forms.TextBox();
             this.txtVehicleFinancier = new System.Windows.Forms.TextBox();
             this.txtLoadingAdviceNo = new System.Windows.Forms.TextBox();
             this.txtMaterialUnloadingBy = new System.Windows.Forms.TextBox();
@@ -134,14 +134,7 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
             this.gridChallan = new System.Windows.Forms.DataGridView();
             this.errorChallanDate = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorVehicleNo = new System.Windows.Forms.ErrorProvider(this.components);
@@ -737,19 +730,19 @@
             this.txtVehicleChassisNo.Size = new System.Drawing.Size(136, 20);
             this.txtVehicleChassisNo.TabIndex = 18;
             // 
-            // txtMobileNo
+            // txtDriverMobileNo
             // 
-            this.txtMobileNo.Location = new System.Drawing.Point(428, 36);
-            this.txtMobileNo.Name = "txtMobileNo";
-            this.txtMobileNo.Size = new System.Drawing.Size(136, 20);
-            this.txtMobileNo.TabIndex = 19;
+            this.txtDriverMobileNo.Location = new System.Drawing.Point(428, 36);
+            this.txtDriverMobileNo.Name = "txtDriverMobileNo";
+            this.txtDriverMobileNo.Size = new System.Drawing.Size(136, 20);
+            this.txtDriverMobileNo.TabIndex = 19;
             // 
-            // txtAddress
+            // txtDriverAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(428, 62);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(136, 20);
-            this.txtAddress.TabIndex = 20;
+            this.txtDriverAddress.Location = new System.Drawing.Point(428, 62);
+            this.txtDriverAddress.Name = "txtDriverAddress";
+            this.txtDriverAddress.Size = new System.Drawing.Size(136, 20);
+            this.txtDriverAddress.TabIndex = 20;
             // 
             // txtTaxTokenNumber
             // 
@@ -758,12 +751,12 @@
             this.txtTaxTokenNumber.Size = new System.Drawing.Size(136, 20);
             this.txtTaxTokenNumber.TabIndex = 21;
             // 
-            // txtValidUpto
+            // txtTaxtokenValidUpto
             // 
-            this.txtValidUpto.Location = new System.Drawing.Point(428, 114);
-            this.txtValidUpto.Name = "txtValidUpto";
-            this.txtValidUpto.Size = new System.Drawing.Size(136, 20);
-            this.txtValidUpto.TabIndex = 22;
+            this.txtTaxtokenValidUpto.Location = new System.Drawing.Point(428, 114);
+            this.txtTaxtokenValidUpto.Name = "txtTaxtokenValidUpto";
+            this.txtTaxtokenValidUpto.Size = new System.Drawing.Size(136, 20);
+            this.txtTaxtokenValidUpto.TabIndex = 22;
             // 
             // txtIssuedFrom
             // 
@@ -786,12 +779,12 @@
             this.txtLicenceIssuedFrom.Size = new System.Drawing.Size(136, 20);
             this.txtLicenceIssuedFrom.TabIndex = 25;
             // 
-            // txtValidUpto2
+            // txtLicenceValidUpto
             // 
-            this.txtValidUpto2.Location = new System.Drawing.Point(428, 218);
-            this.txtValidUpto2.Name = "txtValidUpto2";
-            this.txtValidUpto2.Size = new System.Drawing.Size(136, 20);
-            this.txtValidUpto2.TabIndex = 26;
+            this.txtLicenceValidUpto.Location = new System.Drawing.Point(428, 218);
+            this.txtLicenceValidUpto.Name = "txtLicenceValidUpto";
+            this.txtLicenceValidUpto.Size = new System.Drawing.Size(136, 20);
+            this.txtLicenceValidUpto.TabIndex = 26;
             // 
             // txtOwnerName
             // 
@@ -807,27 +800,27 @@
             this.txtRoadPermitNumber.Size = new System.Drawing.Size(136, 20);
             this.txtRoadPermitNumber.TabIndex = 28;
             // 
-            // txtValidUpto3
+            // txtRoadPermitValidUpto3
             // 
-            this.txtValidUpto3.Location = new System.Drawing.Point(428, 296);
-            this.txtValidUpto3.Name = "txtValidUpto3";
-            this.txtValidUpto3.Size = new System.Drawing.Size(136, 20);
-            this.txtValidUpto3.TabIndex = 29;
+            this.txtRoadPermitValidUpto3.Location = new System.Drawing.Point(428, 296);
+            this.txtRoadPermitValidUpto3.Name = "txtRoadPermitValidUpto3";
+            this.txtRoadPermitValidUpto3.Size = new System.Drawing.Size(136, 20);
+            this.txtRoadPermitValidUpto3.TabIndex = 29;
             // 
-            // txtMobileNo2
+            // txtVehicleOwnerMobileMobileNo
             // 
-            this.txtMobileNo2.Location = new System.Drawing.Point(428, 322);
-            this.txtMobileNo2.Name = "txtMobileNo2";
-            this.txtMobileNo2.Size = new System.Drawing.Size(136, 20);
-            this.txtMobileNo2.TabIndex = 30;
+            this.txtVehicleOwnerMobileMobileNo.Location = new System.Drawing.Point(428, 322);
+            this.txtVehicleOwnerMobileMobileNo.Name = "txtVehicleOwnerMobileMobileNo";
+            this.txtVehicleOwnerMobileMobileNo.Size = new System.Drawing.Size(136, 20);
+            this.txtVehicleOwnerMobileMobileNo.TabIndex = 30;
             // 
-            // txtAddress2
+            // txtVehicleOwnerAddress
             // 
-            this.txtAddress2.Location = new System.Drawing.Point(428, 348);
-            this.txtAddress2.Multiline = true;
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(136, 20);
-            this.txtAddress2.TabIndex = 31;
+            this.txtVehicleOwnerAddress.Location = new System.Drawing.Point(428, 348);
+            this.txtVehicleOwnerAddress.Multiline = true;
+            this.txtVehicleOwnerAddress.Name = "txtVehicleOwnerAddress";
+            this.txtVehicleOwnerAddress.Size = new System.Drawing.Size(136, 20);
+            this.txtVehicleOwnerAddress.TabIndex = 31;
             // 
             // txtInsPolicyNo
             // 
@@ -857,12 +850,12 @@
             this.txtAgentName.Size = new System.Drawing.Size(145, 20);
             this.txtAgentName.TabIndex = 35;
             // 
-            // textBox35
+            // txtEngagedByEmpCode1
             // 
-            this.textBox35.Location = new System.Drawing.Point(795, 62);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(145, 20);
-            this.textBox35.TabIndex = 36;
+            this.txtEngagedByEmpCode1.Location = new System.Drawing.Point(795, 62);
+            this.txtEngagedByEmpCode1.Name = "txtEngagedByEmpCode1";
+            this.txtEngagedByEmpCode1.Size = new System.Drawing.Size(145, 20);
+            this.txtEngagedByEmpCode1.TabIndex = 36;
             // 
             // txtAgentMobileNumber
             // 
@@ -878,12 +871,12 @@
             this.txtAgentAddress.Size = new System.Drawing.Size(145, 20);
             this.txtAgentAddress.TabIndex = 38;
             // 
-            // txtEngagedByName
+            // txtEngagedByEmpCode2
             // 
-            this.txtEngagedByName.Location = new System.Drawing.Point(795, 140);
-            this.txtEngagedByName.Name = "txtEngagedByName";
-            this.txtEngagedByName.Size = new System.Drawing.Size(145, 20);
-            this.txtEngagedByName.TabIndex = 39;
+            this.txtEngagedByEmpCode2.Location = new System.Drawing.Point(795, 140);
+            this.txtEngagedByEmpCode2.Name = "txtEngagedByEmpCode2";
+            this.txtEngagedByEmpCode2.Size = new System.Drawing.Size(145, 20);
+            this.txtEngagedByEmpCode2.TabIndex = 39;
             // 
             // txtVehicleFinancier
             // 
@@ -1033,18 +1026,6 @@
             this.label53.TabIndex = 104;
             this.label53.Text = "*";
             // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.ForeColor = System.Drawing.Color.Red;
-            this.label54.Location = new System.Drawing.Point(134, 246);
-            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(17, 24);
-            this.label54.TabIndex = 105;
-            this.label54.Text = "*";
-            // 
             // label55
             // 
             this.label55.AutoSize = true;
@@ -1056,78 +1037,6 @@
             this.label55.Size = new System.Drawing.Size(17, 24);
             this.label55.TabIndex = 106;
             this.label55.Text = "*";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.Red;
-            this.label56.Location = new System.Drawing.Point(134, 296);
-            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(17, 24);
-            this.label56.TabIndex = 107;
-            this.label56.Text = "*";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.ForeColor = System.Drawing.Color.Red;
-            this.label57.Location = new System.Drawing.Point(776, 246);
-            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(17, 24);
-            this.label57.TabIndex = 108;
-            this.label57.Text = "*";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.ForeColor = System.Drawing.Color.Red;
-            this.label58.Location = new System.Drawing.Point(776, 271);
-            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(17, 24);
-            this.label58.TabIndex = 109;
-            this.label58.Text = "*";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.ForeColor = System.Drawing.Color.Red;
-            this.label59.Location = new System.Drawing.Point(776, 323);
-            this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(17, 24);
-            this.label59.TabIndex = 110;
-            this.label59.Text = "*";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.ForeColor = System.Drawing.Color.Red;
-            this.label60.Location = new System.Drawing.Point(776, 348);
-            this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(17, 24);
-            this.label60.TabIndex = 111;
-            this.label60.Text = "*";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.ForeColor = System.Drawing.Color.Red;
-            this.label61.Location = new System.Drawing.Point(776, 374);
-            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(17, 24);
-            this.label61.TabIndex = 112;
-            this.label61.Text = "*";
             // 
             // gridChallan
             // 
@@ -1191,14 +1100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 626);
             this.Controls.Add(this.gridChallan);
-            this.Controls.Add(this.label61);
-            this.Controls.Add(this.label60);
-            this.Controls.Add(this.label59);
-            this.Controls.Add(this.label58);
-            this.Controls.Add(this.label57);
-            this.Controls.Add(this.label56);
             this.Controls.Add(this.label55);
-            this.Controls.Add(this.label54);
             this.Controls.Add(this.label53);
             this.Controls.Add(this.label52);
             this.Controls.Add(this.label51);
@@ -1216,27 +1118,27 @@
             this.Controls.Add(this.txtMaterialUnloadingBy);
             this.Controls.Add(this.txtLoadingAdviceNo);
             this.Controls.Add(this.txtVehicleFinancier);
-            this.Controls.Add(this.txtEngagedByName);
+            this.Controls.Add(this.txtEngagedByEmpCode2);
             this.Controls.Add(this.txtAgentAddress);
             this.Controls.Add(this.txtAgentMobileNumber);
-            this.Controls.Add(this.textBox35);
+            this.Controls.Add(this.txtEngagedByEmpCode1);
             this.Controls.Add(this.txtAgentName);
             this.Controls.Add(this.txtInsCoWithStn);
             this.Controls.Add(this.txtPANNo);
             this.Controls.Add(this.txtInsPolicyNo);
-            this.Controls.Add(this.txtAddress2);
-            this.Controls.Add(this.txtMobileNo2);
-            this.Controls.Add(this.txtValidUpto3);
+            this.Controls.Add(this.txtVehicleOwnerAddress);
+            this.Controls.Add(this.txtVehicleOwnerMobileMobileNo);
+            this.Controls.Add(this.txtRoadPermitValidUpto3);
             this.Controls.Add(this.txtRoadPermitNumber);
             this.Controls.Add(this.txtOwnerName);
-            this.Controls.Add(this.txtValidUpto2);
+            this.Controls.Add(this.txtLicenceValidUpto);
             this.Controls.Add(this.txtLicenceIssuedFrom);
             this.Controls.Add(this.txtDriverLicenceNo);
             this.Controls.Add(this.txtIssuedFrom);
-            this.Controls.Add(this.txtValidUpto);
+            this.Controls.Add(this.txtTaxtokenValidUpto);
             this.Controls.Add(this.txtTaxTokenNumber);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtMobileNo);
+            this.Controls.Add(this.txtDriverAddress);
+            this.Controls.Add(this.txtDriverMobileNo);
             this.Controls.Add(this.txtVehicleChassisNo);
             this.Controls.Add(this.txtVehicleEngineNo);
             this.Controls.Add(this.txtDriverName);
@@ -1394,27 +1296,27 @@
         private System.Windows.Forms.TextBox txtDriverName;
         private System.Windows.Forms.TextBox txtVehicleEngineNo;
         private System.Windows.Forms.TextBox txtVehicleChassisNo;
-        private System.Windows.Forms.TextBox txtMobileNo;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtDriverMobileNo;
+        private System.Windows.Forms.TextBox txtDriverAddress;
         private System.Windows.Forms.TextBox txtTaxTokenNumber;
-        private System.Windows.Forms.TextBox txtValidUpto;
+        private System.Windows.Forms.TextBox txtTaxtokenValidUpto;
         private System.Windows.Forms.TextBox txtIssuedFrom;
         private System.Windows.Forms.TextBox txtDriverLicenceNo;
         private System.Windows.Forms.TextBox txtLicenceIssuedFrom;
-        private System.Windows.Forms.TextBox txtValidUpto2;
+        private System.Windows.Forms.TextBox txtLicenceValidUpto;
         private System.Windows.Forms.TextBox txtOwnerName;
         private System.Windows.Forms.TextBox txtRoadPermitNumber;
-        private System.Windows.Forms.TextBox txtValidUpto3;
-        private System.Windows.Forms.TextBox txtMobileNo2;
-        private System.Windows.Forms.TextBox txtAddress2;
+        private System.Windows.Forms.TextBox txtRoadPermitValidUpto3;
+        private System.Windows.Forms.TextBox txtVehicleOwnerMobileMobileNo;
+        private System.Windows.Forms.TextBox txtVehicleOwnerAddress;
         private System.Windows.Forms.TextBox txtInsPolicyNo;
         private System.Windows.Forms.TextBox txtPANNo;
         private System.Windows.Forms.TextBox txtInsCoWithStn;
         private System.Windows.Forms.TextBox txtAgentName;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox txtEngagedByEmpCode1;
         private System.Windows.Forms.TextBox txtAgentMobileNumber;
         private System.Windows.Forms.TextBox txtAgentAddress;
-        private System.Windows.Forms.TextBox txtEngagedByName;
+        private System.Windows.Forms.TextBox txtEngagedByEmpCode2;
         private System.Windows.Forms.TextBox txtVehicleFinancier;
         private System.Windows.Forms.TextBox txtLoadingAdviceNo;
         private System.Windows.Forms.TextBox txtMaterialUnloadingBy;
@@ -1432,14 +1334,7 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
         private System.Windows.Forms.DataGridView gridChallan;
         private System.Windows.Forms.ErrorProvider errorChallanDate;
         private System.Windows.Forms.ErrorProvider errorVehicleNo;
