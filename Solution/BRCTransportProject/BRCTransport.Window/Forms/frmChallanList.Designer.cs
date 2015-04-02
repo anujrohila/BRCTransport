@@ -34,13 +34,9 @@
             this.VehicleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Destination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DistanceKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduleDateofActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverMobileNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DriverLicenseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BalanceLorryHire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChallan)).BeginInit();
@@ -57,19 +53,15 @@
             this.VehicleNo,
             this.VehicleType,
             this.Destination,
-            this.DistanceKM,
-            this.ScheduleDateofActual,
             this.DriverName,
             this.DriverMobileNo,
             this.DriverAddress,
-            this.DriverLicenseNo,
-            this.BalanceLorryHire,
             this.Edit,
             this.Delete});
             this.GridViewChallan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewChallan.Location = new System.Drawing.Point(0, 0);
             this.GridViewChallan.Name = "GridViewChallan";
-            this.GridViewChallan.Size = new System.Drawing.Size(814, 464);
+            this.GridViewChallan.Size = new System.Drawing.Size(869, 464);
             this.GridViewChallan.TabIndex = 0;
             this.GridViewChallan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewChallan_CellContentClick);
             // 
@@ -108,20 +100,6 @@
             this.Destination.Name = "Destination";
             this.Destination.Width = 85;
             // 
-            // DistanceKM
-            // 
-            this.DistanceKM.DataPropertyName = "DistanceKM";
-            this.DistanceKM.HeaderText = "DistanceKM";
-            this.DistanceKM.Name = "DistanceKM";
-            this.DistanceKM.Width = 90;
-            // 
-            // ScheduleDateofActual
-            // 
-            this.ScheduleDateofActual.DataPropertyName = "ScheduleDateofActual";
-            this.ScheduleDateofActual.HeaderText = "ScheduleDateofActual";
-            this.ScheduleDateofActual.Name = "ScheduleDateofActual";
-            this.ScheduleDateofActual.Width = 139;
-            // 
             // DriverName
             // 
             this.DriverName.DataPropertyName = "DriverName";
@@ -143,20 +121,6 @@
             this.DriverAddress.Name = "DriverAddress";
             this.DriverAddress.Width = 98;
             // 
-            // DriverLicenseNo
-            // 
-            this.DriverLicenseNo.DataPropertyName = "DriverLicenseNo";
-            this.DriverLicenseNo.HeaderText = "DriverLicenseNo";
-            this.DriverLicenseNo.Name = "DriverLicenseNo";
-            this.DriverLicenseNo.Width = 111;
-            // 
-            // BalanceLorryHire
-            // 
-            this.BalanceLorryHire.DataPropertyName = "BalanceLorryHire";
-            this.BalanceLorryHire.HeaderText = "BalanceLorryHire";
-            this.BalanceLorryHire.Name = "BalanceLorryHire";
-            this.BalanceLorryHire.Width = 113;
-            // 
             // Edit
             // 
             this.Edit.HeaderText = "Edit";
@@ -177,10 +141,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 464);
+            this.ClientSize = new System.Drawing.Size(869, 464);
             this.Controls.Add(this.GridViewChallan);
             this.Name = "ChallanList";
-            this.Text = "frmChallanList";
+            this.Text = "Challan List";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChallan)).EndInit();
             this.ResumeLayout(false);
@@ -195,13 +159,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Destination;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DistanceKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ScheduleDateofActual;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverMobileNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DriverLicenseNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BalanceLorryHire;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }

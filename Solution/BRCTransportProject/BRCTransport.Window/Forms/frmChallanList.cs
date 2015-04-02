@@ -36,10 +36,6 @@ namespace BRCTransport.Window.Forms
             FillGridData();
         }
 
-        
-
-       
-
         private void FillGridData()
         {
 
@@ -55,10 +51,11 @@ namespace BRCTransport.Window.Forms
 
             if (Action == "Edit")
             {
+                frmEntryChallan frm = new frmEntryChallan();
                 ChallanId = Convert.ToInt32(GridViewChallan.Rows[e.RowIndex].Cells[0].Value);
-                //frmchallan.ChallanEntryNo = ChallanEntryNo;
-                frmchallan.FormClosed += frmParty_FormClosed;
-                frmchallan.Show();
+                frm.ChallanId = ChallanId;
+                frm.FormClosed += frmParty_FormClosed;
+                frm.Show();
               
             }
 
