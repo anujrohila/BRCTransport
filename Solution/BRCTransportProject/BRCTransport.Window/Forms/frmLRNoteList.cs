@@ -47,7 +47,8 @@ namespace BRCTransport.Window.Forms
                  ConsignmentId = Convert.ToInt32(GridViewLR.Rows[e.RowIndex].Cells[0].Value);
                  frm.Consignmentid = ConsignmentId;
                  frm.FormClosed += frm_FormClosed;
-                frm.Show();
+                 frm.ShowInTaskbar = false;
+                frm.ShowDialog();
             }
 
             if (Action == "Delete")

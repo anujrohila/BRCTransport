@@ -66,7 +66,7 @@
             this.GridViewLR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridViewLR.Location = new System.Drawing.Point(0, 0);
             this.GridViewLR.Name = "GridViewLR";
-            this.GridViewLR.Size = new System.Drawing.Size(1160, 427);
+            this.GridViewLR.Size = new System.Drawing.Size(1300, 506);
             this.GridViewLR.TabIndex = 0;
             this.GridViewLR.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 427);
+            this.ClientSize = new System.Drawing.Size(1300, 506);
             this.Controls.Add(this.GridViewLR);
             this.Name = "frmLRNoteList";
             this.Text = "frm LRNote List";
