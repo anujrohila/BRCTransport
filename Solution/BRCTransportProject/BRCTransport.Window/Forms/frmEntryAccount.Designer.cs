@@ -289,6 +289,7 @@
             this.textopeningbal.TabIndex = 7;
             this.textopeningbal.Enter += new System.EventHandler(this.EnterEvent);
             this.textopeningbal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.textopeningbal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.textopeningbal.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label14

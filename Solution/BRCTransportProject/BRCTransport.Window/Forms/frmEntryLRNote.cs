@@ -1,6 +1,7 @@
 ﻿using BRCTransport.BAL;
 using BRCTransport.Domain;
 using BRCTransport.Window.Class;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -199,7 +200,7 @@ namespace BRCTransport.Window.Forms
             
         }
         #endregion
-      
+
         #region Key Event
 
         private void EnterEvent(object sender, EventArgs e)

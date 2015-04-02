@@ -294,7 +294,8 @@
             this.txtbillno.TabIndex = 6;
             this.txtbillno.Enter += new System.EventHandler(this.EnterEvent);
             this.txtbillno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
-            this.txtbillno.Leave += new System.EventHandler(this.txtbillno_Leave);
+            this.txtbillno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            this.txtbillno.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label13
             // 
@@ -377,6 +378,7 @@
             this.txtNoofPackage.TabIndex = 9;
             this.txtNoofPackage.Enter += new System.EventHandler(this.EnterEvent);
             this.txtNoofPackage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtNoofPackage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtNoofPackage.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label18
@@ -508,6 +510,7 @@
             this.txtFright.TabIndex = 13;
             this.txtFright.Enter += new System.EventHandler(this.EnterEvent);
             this.txtFright.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtFright.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtFright.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label27
@@ -527,6 +530,7 @@
             this.txtstch.TabIndex = 14;
             this.txtstch.Enter += new System.EventHandler(this.EnterEvent);
             this.txtstch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtstch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtstch.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label29
@@ -546,6 +550,7 @@
             this.txtHamali.TabIndex = 15;
             this.txtHamali.Enter += new System.EventHandler(this.EnterEvent);
             this.txtHamali.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtHamali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtHamali.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label31
@@ -592,6 +597,7 @@
             this.txtOther1.TabIndex = 16;
             this.txtOther1.Enter += new System.EventHandler(this.EnterEvent);
             this.txtOther1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtOther1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtOther1.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtOther2
@@ -602,6 +608,7 @@
             this.txtOther2.TabIndex = 17;
             this.txtOther2.Enter += new System.EventHandler(this.EnterEvent);
             this.txtOther2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtOther2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtOther2.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtOther3
@@ -612,6 +619,7 @@
             this.txtOther3.TabIndex = 18;
             this.txtOther3.Enter += new System.EventHandler(this.EnterEvent);
             this.txtOther3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtOther3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtOther3.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // txtOther4
@@ -622,6 +630,7 @@
             this.txtOther4.TabIndex = 19;
             this.txtOther4.Enter += new System.EventHandler(this.EnterEvent);
             this.txtOther4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtOther4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             this.txtOther4.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // btnSave
@@ -694,6 +703,10 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(201, 21);
             this.txtTotal.TabIndex = 68;
+            this.txtTotal.Enter += new System.EventHandler(this.EnterEvent);
+            this.txtTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            this.txtTotal.Leave += new System.EventHandler(this.LeaveEvent);
             // 
             // label26
             // 

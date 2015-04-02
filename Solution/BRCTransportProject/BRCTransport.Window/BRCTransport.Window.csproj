@@ -36,11 +36,24 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +63,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Web.Mvc">
+      <HintPath>..\packages\TelerikMvcExtensions.2013.2.611\lib\net40\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ErrorHanding.cs" />
@@ -105,11 +122,11 @@
     <Compile Include="Forms\frmEntryAccount.Designer.cs">
       <DependentUpon>frmEntryAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmEntryBill.cs">
+    <Compile Include="Forms\frmEntryBills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmEntryBill.Designer.cs">
-      <DependentUpon>frmEntryBill.cs</DependentUpon>
+    <Compile Include="Forms\frmEntryBills.Designer.cs">
+      <DependentUpon>frmEntryBills.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEntryChallan.cs">
       <SubType>Form</SubType>
@@ -193,6 +210,9 @@
     <EmbeddedResource Include="Forms\frmAccountList.resx">
       <DependentUpon>frmAccountList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBillList.resx">
+      <DependentUpon>frmBillList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmChallanList.resx">
       <DependentUpon>frmChallanList.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,8 +225,8 @@
     <EmbeddedResource Include="Forms\frmEntryAccount.resx">
       <DependentUpon>frmEntryAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmEntryBill.resx">
-      <DependentUpon>frmEntryBill.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmEntryBills.resx">
+      <DependentUpon>frmEntryBills.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEntryChallan.resx">
       <DependentUpon>frmEntryChallan.cs</DependentUpon>
@@ -287,6 +307,10 @@
     <ProjectReference Include="..\BRCTransport.Domain\BRCTransport.Domain.csproj">
       <Project>{2f717a83-033b-408e-a234-22a6d0f7a96b}</Project>
       <Name>BRCTransport.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BRCTransport.Web\BRCTransport.Web.csproj">
+      <Project>{68E49060-CA7C-47DE-BEDD-423030483EF9}</Project>
+      <Name>BRCTransport.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

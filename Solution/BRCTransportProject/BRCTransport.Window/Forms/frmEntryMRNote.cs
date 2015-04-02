@@ -136,6 +136,11 @@ namespace BRCTransport.Window.Forms
             }
         }
 
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonClass.KeyPressEvents(sender, e);
+        }
+
         #endregion
 
         private void btnSave_Click(object sender, EventArgs e)

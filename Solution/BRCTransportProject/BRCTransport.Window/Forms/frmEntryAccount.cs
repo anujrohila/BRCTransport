@@ -128,6 +128,11 @@ namespace BRCTransport.Window.Forms
 
         #region Key Event
 
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonClass.KeyPressEvents(sender, e);
+        }
+
         private void EnterEvent(object sender, EventArgs e)
         {
             CommonClass.EnterEvents(sender, e);

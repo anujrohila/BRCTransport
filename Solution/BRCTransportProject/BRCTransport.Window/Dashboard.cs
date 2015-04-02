@@ -36,7 +36,7 @@ namespace BRCTransport.Window
                 case "Add Challan": winform = new frmChildChallan(); break;
                 case "List Challan": winform = new frmChildBill(); break;
                 case "List Bill": winform = new frmBillList(); break;
-                case "Add Bill": winform = new frmChildBill(); break;
+                case "Add Bill": winform = new frmEntryBills(); break;
                 case "Add LR Note": winform = new frmEntryLRNote(); break;
                 case "List LR Note": winform = new frmLRNoteList(); break;
                 case "Add MR Note": winform = new frmEntryMRNote(); break;
