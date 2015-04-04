@@ -18,7 +18,7 @@ namespace BRCTransport.Window
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BillReport());
+            Application.Run(new Dashboard());
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BRCTransport.BAL;
+using BRCTransport.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,24 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BRCTransport.BAL;
-using BRCTransport.Domain;
 
 namespace BRCTransport.Window.Report
 {
-    public partial class BillMRDataReport : Form
+    public partial class MRReport : Form
     {
-        public BillMRDataReport()
+        public MRReport()
         {
             InitializeComponent();
         }
-
-        private void BillReport_Load(object sender, EventArgs e)
-        {
-            ddlStartDate.Value = DateTime.Now.AddMonths(-1);
-            FillPartys();
-        }
-
 
         private void FillPartys()
         {
@@ -43,9 +36,7 @@ namespace BRCTransport.Window.Report
             int billNo;
             int.TryParse(txtBillNo.Text, out billNo);
             var result = BillReportBusinessLogic.GetMRReport(int.Parse(cbPartyWise.SelectedValue.ToString()), ddlStartDate.Value, ddlEndDate.Value, billNo);
-            BRCTransport.Window.ReportFiles.BillReport myDataReport = new BRCTransport.Window.ReportFiles.BillReport();
-
-            BillReportDTO bill = new BillReportDTO();
+            BRCTransport.Window.ReportFiles.MRNoteReport myDataReport = new BRCTransport.Window.ReportFiles.MRNoteReport();
 
             myDataReport.SetDataSource(result);
 
@@ -55,6 +46,12 @@ namespace BRCTransport.Window.Report
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             FilLReport();
+        }
+
+        private void MRReport_Load(object sender, EventArgs e)
+        {
+            ddlStartDate.Value = DateTime.Now.AddMonths(-1);
+            FillPartys();
         }
     }
 }

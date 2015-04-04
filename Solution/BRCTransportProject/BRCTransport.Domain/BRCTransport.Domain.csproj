@@ -57,6 +57,7 @@
     <Compile Include="Assembilers\tblMRNoteAssembler.cs" />
     <Compile Include="Assembilers\tblTransactionAssembler.cs" />
     <Compile Include="DTO\BillReportDTO.cs" />
+    <Compile Include="DTO\MRReportDTO.cs" />
     <Compile Include="DTO\tblAccountsMasterDTO.cs" />
     <Compile Include="DTO\tblBillDTO.cs" />
     <Compile Include="DTO\tblBillEntryDTO.cs" />

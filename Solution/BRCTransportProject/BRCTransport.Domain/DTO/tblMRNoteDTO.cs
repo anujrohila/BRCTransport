@@ -101,5 +101,7 @@ namespace BRCTransport.Domain
         public String CompanyName { get; set; }
 
         public int CompanyId { get; set; }
+
+        public DateTime BillDateObject { get; set; }
     }
 }

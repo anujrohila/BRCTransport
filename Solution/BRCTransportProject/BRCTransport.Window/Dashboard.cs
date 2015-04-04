@@ -1,5 +1,5 @@
 ﻿using BRCTransport.Window.Forms;
-
+using BRCTransport.Window.ReportFiles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,6 +82,7 @@ namespace BRCTransport.Window
                 case "Add MR Note": winform = new frmEntryMRNote(); break;
                 case "Add Account": winform = new frmEntryAccount(); break;
                 case "Add Transaction": winform = new frmEntryTransaction(); break;
+                case "Bill Report": winform = (Form)new BRCTransport.Window.Report.BillReport(); break;
             }
 
          

@@ -836,7 +836,7 @@ namespace BRCTransport.Window.Dataset {
             
             private global::System.Data.DataColumn columnBIllNo;
             
-            private global::System.Data.DataColumn columnBillDate;
+            private global::System.Data.DataColumn columnBillDateObject;
             
             private global::System.Data.DataColumn columnCompanyId;
             
@@ -909,9 +909,9 @@ namespace BRCTransport.Window.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BillDateColumn {
+            public global::System.Data.DataColumn BillDateObjectColumn {
                 get {
-                    return this.columnBillDate;
+                    return this.columnBillDateObject;
                 }
             }
             
@@ -1032,12 +1032,12 @@ namespace BRCTransport.Window.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BillMrNoteReportRow AddBillMrNoteReportRow(string BillId, string BIllNo, System.DateTime BillDate, string CompanyId, System.DateTime PaymentDueDate, double BIllAmount, string CompanyName, double AmountRecieved, System.DateTime MRDate, string LocationFrom, string LocationTo, int MrNo, int MRId) {
+            public BillMrNoteReportRow AddBillMrNoteReportRow(string BillId, string BIllNo, System.DateTime BillDateObject, string CompanyId, System.DateTime PaymentDueDate, double BIllAmount, string CompanyName, double AmountRecieved, System.DateTime MRDate, string LocationFrom, string LocationTo, int MrNo, int MRId) {
                 BillMrNoteReportRow rowBillMrNoteReportRow = ((BillMrNoteReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         BillId,
                         BIllNo,
-                        BillDate,
+                        BillDateObject,
                         CompanyId,
                         PaymentDueDate,
                         BIllAmount,
@@ -1072,7 +1072,7 @@ namespace BRCTransport.Window.Dataset {
             internal void InitVars() {
                 this.columnBillId = base.Columns["BillId"];
                 this.columnBIllNo = base.Columns["BIllNo"];
-                this.columnBillDate = base.Columns["BillDate"];
+                this.columnBillDateObject = base.Columns["BillDateObject"];
                 this.columnCompanyId = base.Columns["CompanyId"];
                 this.columnPaymentDueDate = base.Columns["PaymentDueDate"];
                 this.columnBIllAmount = base.Columns["BIllAmount"];
@@ -1092,8 +1092,8 @@ namespace BRCTransport.Window.Dataset {
                 base.Columns.Add(this.columnBillId);
                 this.columnBIllNo = new global::System.Data.DataColumn("BIllNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBIllNo);
-                this.columnBillDate = new global::System.Data.DataColumn("BillDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillDate);
+                this.columnBillDateObject = new global::System.Data.DataColumn("BillDateObject", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBillDateObject);
                 this.columnCompanyId = new global::System.Data.DataColumn("CompanyId", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCompanyId);
                 this.columnPaymentDueDate = new global::System.Data.DataColumn("PaymentDueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1836,17 +1836,17 @@ namespace BRCTransport.Window.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime BillDate {
+            public System.DateTime BillDateObject {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableBillMrNoteReport.BillDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableBillMrNoteReport.BillDateObjectColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BillDate\' in table \'BillMrNoteReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BillDateObject\' in table \'BillMrNoteReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBillMrNoteReport.BillDateColumn] = value;
+                    this[this.tableBillMrNoteReport.BillDateObjectColumn] = value;
                 }
             }
             
@@ -2036,14 +2036,14 @@ namespace BRCTransport.Window.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBillDateNull() {
-                return this.IsNull(this.tableBillMrNoteReport.BillDateColumn);
+            public bool IsBillDateObjectNull() {
+                return this.IsNull(this.tableBillMrNoteReport.BillDateObjectColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBillDateNull() {
-                this[this.tableBillMrNoteReport.BillDateColumn] = global::System.Convert.DBNull;
+            public void SetBillDateObjectNull() {
+                this[this.tableBillMrNoteReport.BillDateObjectColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

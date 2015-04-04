@@ -202,11 +202,11 @@
     <Compile Include="Report\BillReport.Designer.cs">
       <DependentUpon>BillReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\BillMRDataReport.cs">
+    <Compile Include="Report\MRReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report\BillMRDataReport.Designer.cs">
-      <DependentUpon>BillMRDataReport.cs</DependentUpon>
+    <Compile Include="Report\MRReport.Designer.cs">
+      <DependentUpon>MRReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\ReportSearchForm.cs">
       <SubType>Form</SubType>
@@ -288,8 +288,8 @@
     <EmbeddedResource Include="Report\BillReport.resx">
       <DependentUpon>BillReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\BillMRDataReport.resx">
-      <DependentUpon>BillMRDataReport.cs</DependentUpon>
+    <EmbeddedResource Include="Report\MRReport.resx">
+      <DependentUpon>MRReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportSearchForm.resx">
       <DependentUpon>ReportSearchForm.cs</DependentUpon>
