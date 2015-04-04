@@ -91,5 +91,15 @@ namespace BRCTransport.Domain
         public Nullable<DateTime> CreationDate { get; set; }
 
         public List<SelectListItem> PaymentType { get; set; }
+
+        public Nullable<Int32> PartyId { get; set; }
+
+        public String BranchCode { get; set; }
+
+        public DateTime? PaymentDueDate { get; set; }
+
+        public String CompanyName { get; set; }
+
+        public int CompanyId { get; set; }
     }
 }

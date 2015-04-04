@@ -21,6 +21,11 @@ namespace BRCTransport.BAL
             return ReportRepository.GetBillPartyWiseReport(companyId, startdate, enddate);
         }
 
+        public static List<BillReportDTO> GetMRReport(int companyId, DateTime startdate, DateTime enddate, int billNo)
+        {
+            return ReportRepository.GetMRReport(companyId, startdate, enddate, billNo);
+        }
+
         #endregion
     }
 }

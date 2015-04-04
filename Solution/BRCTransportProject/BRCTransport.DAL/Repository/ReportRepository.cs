@@ -36,7 +36,7 @@ namespace BRCTransport.DAL
                                   BasicOfChargesGC = billReport.BasicOfChargesGC == null ? string.Empty : billReport.BasicOfChargesGC,
                                   Enclosure = billReport.Enclosure,
                                   ServiceTaxThrough = billReport.ServiceTaxThrough,
-                                  CheckedBy = billReport.CheckedBy == null ? string.Empty :  billReport.CheckedBy,
+                                  CheckedBy = billReport.CheckedBy == null ? string.Empty : billReport.CheckedBy,
                                   GrandTotal = billReport.GrandTotal ?? 0,
                                   CompanyName = partyList.Code + " - " + partyList.ConsignorName,
                                   Address = partyList.Address,
@@ -52,11 +52,47 @@ namespace BRCTransport.DAL
                 {
                     result = result.Where(billList => billList.CompanyId == companyId).OrderBy(o => o.CompanyName).ToList();
                 }
-
                 return result;
             }
+        }
 
+        public static List<BillReportDTO> GetMRReport(int companyId, DateTime startdate, DateTime enddate, int billNo)
+        {
+            using (var dbObject = new BRCTransportDBEntities())
+            {
+                startdate = startdate.AddMinutes(-1);
+                var result = (from tblMRNoteData in dbObject.tblMRNotes
+                              join billData in dbObject.tblBills on tblMRNoteData.BillId equals billData.BillId
+                              join partyList in dbObject.tblConsignors on billData.PartyId equals partyList.ConsignorId
+                              where billData.BillDate >= startdate && billData.BillDate <= enddate
+                              select new tblMRNoteDTO
+                              {
+                                  BillId = tblMRNoteData.BillId ?? 0,
+                                  BillNo = billData.BillNo,
+                                  BillDate = billData.BillDate.ToString(),
+                                  CompanyId = billData.PartyId ?? 0,
+                                  BranchCode = billData.BranchCode,
+                                  PaymentDueDate = billData.PaymentDueDate ?? DateTime.Now,
+                                  BillAmount = billData.GrandTotal ?? 0,
+                                  CompanyName = partyList.Code + " - " + partyList.ConsignorName,
+                                  AmountRecieved = tblMRNoteData.AmountRecieved,
+                                  MRDate = tblMRNoteData.MRDate,
+                                  LocationFrom = tblMRNoteData.LocationFrom,
+                                  LocationTo = tblMRNoteData.LocationTo,
+                                  MrNo = tblMRNoteData.MrNo,
+                                  MRId = tblMRNoteData.MRId
+                              }).ToList();
 
+                if (companyId > 0)
+                {
+                    result = result.Where(billList => billList.CompanyId == companyId).OrderBy(o => o.CompanyName).ToList();
+                }
+                if (billNo > 0)
+                {
+                    result = result.Where(billList => billList.BillNo == billNo).ToList();
+                }
+                return result;
+            }
         }
 
         #endregion
